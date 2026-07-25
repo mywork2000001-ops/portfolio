@@ -82,19 +82,19 @@ export const projects: Project[] = [
       { name: 'Electron', className: 'bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-400' },
     ],
     gradient: 'from-blue-500 via-cyan-500 to-teal-500',
-    url: '#',
+    url: 'https://mekteb-cedvel-teyin.vercel.app',
   },
   {
-    title: 'Repetitor',
+    title: 'Mekteb müəllim',
     description:
-      'Платформа для репетиторов и учебных центров: группы, тесты, видеоуроки, оплата и чат с полной изоляцией данных между учителями',
+      'Единая платформа для учителя: AI-генерация ежедневных планов уроков, электронный журнал успеваемости, учёт посещаемости и годовое тематическое планирование по учебным стандартам',
     tags: [
-      { name: 'React', className: 'bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-400' },
-      { name: 'Node.js', className: 'bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-400' },
+      { name: 'Next.js', className: 'bg-neutral-200 text-neutral-800 dark:bg-neutral-500/20 dark:text-neutral-300' },
+      { name: 'TypeScript', className: 'bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-400' },
       { name: 'PostgreSQL', className: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-400' },
     ],
     gradient: 'from-fuchsia-500 via-pink-500 to-rose-500',
-    url: '#',
+    url: 'https://arti-mu.vercel.app',
   },
 ]
 
