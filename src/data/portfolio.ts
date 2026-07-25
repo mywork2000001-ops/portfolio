@@ -44,7 +44,7 @@ export const socialLinks = [
 ]
 
 export const stats = [
-  { icon: Award, value: '3+', label: 'Года опыта', color: 'bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-400' },
+  { icon: Award, value: '9+', label: 'Лет преподавания', color: 'bg-violet-100 text-violet-600 dark:bg-violet-500/15 dark:text-violet-400' },
   { icon: FolderKanban, value: '20+', label: 'Проектов', color: 'bg-blue-100 text-blue-600 dark:bg-blue-500/15 dark:text-blue-400' },
   { icon: Users, value: '15+', label: 'Клиентов', color: 'bg-orange-100 text-orange-600 dark:bg-orange-500/15 dark:text-orange-400' },
   { icon: Smile, value: '100%', label: 'Довольных клиентов', color: 'bg-amber-100 text-amber-600 dark:bg-amber-500/15 dark:text-amber-400' },
