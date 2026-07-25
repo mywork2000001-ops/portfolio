@@ -13,11 +13,11 @@ export default function Hero({ onViewProjects, onViewAbout }: HeroProps) {
         <p className="text-lg text-neutral-500 dark:text-neutral-400">Привет, я</p>
         <h1 className="gradient-text mt-1 text-4xl font-bold sm:text-5xl">Ферид Г.</h1>
         <p className="mt-2 text-lg font-medium text-neutral-700 dark:text-neutral-300">
-          Fullstack разработчик
+          Fullstack разработчик · Учитель математики и физики
         </p>
         <p className="mt-4 text-neutral-500 dark:text-neutral-400">
-          Создаю современные веб-приложения с акцентом на чистый код, удобство пользователя и
-          высокую производительность.
+          Создаю современные веб-приложения и образовательные платформы с акцентом на чистый код,
+          удобство пользователя и высокую производительность.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">

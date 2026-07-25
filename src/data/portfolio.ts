@@ -61,34 +61,37 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: 'Taskly',
-    description: 'Приложение для управления задачами и командной работы',
+    title: 'EduHub',
+    description:
+      'Цифровая образовательная экосистема для школы: курсы, живые уроки, тесты, учёт успеваемости и общение учителя, ученика и родителя в одном приложении',
     tags: [
-      { name: 'React', className: 'bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-400' },
       { name: 'Node.js', className: 'bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-400' },
-      { name: 'MongoDB', className: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-400' },
+      { name: 'JavaScript', className: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-500/15 dark:text-yellow-400' },
+      { name: 'REST API', className: 'bg-neutral-200 text-neutral-800 dark:bg-neutral-500/20 dark:text-neutral-300' },
     ],
     gradient: 'from-indigo-500 via-violet-500 to-purple-600',
-    url: '#',
+    url: 'https://hub-educat-on.vercel.app',
   },
   {
-    title: 'FinTrack',
-    description: 'Сервис для учёта финансов и анализа расходов',
+    title: 'Cədvəl',
+    description:
+      'Конструктор школьных расписаний с автоматическим планировщиком, мульти-тенантной архитектурой и desktop-версией на Electron',
     tags: [
-      { name: 'Next.js', className: 'bg-neutral-200 text-neutral-800 dark:bg-neutral-500/20 dark:text-neutral-300' },
-      { name: 'TypeScript', className: 'bg-blue-100 text-blue-700 dark:bg-blue-500/15 dark:text-blue-400' },
-      { name: 'PostgreSQL', className: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-400' },
+      { name: 'Express', className: 'bg-neutral-200 text-neutral-800 dark:bg-neutral-500/20 dark:text-neutral-300' },
+      { name: 'Firestore', className: 'bg-orange-100 text-orange-700 dark:bg-orange-500/15 dark:text-orange-400' },
+      { name: 'Electron', className: 'bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-400' },
     ],
     gradient: 'from-blue-500 via-cyan-500 to-teal-500',
     url: '#',
   },
   {
-    title: 'ShopEase',
-    description: 'Интернет-магазин с удобной админ-панелью',
+    title: 'Repetitor',
+    description:
+      'Платформа для репетиторов и учебных центров: группы, тесты, видеоуроки, оплата и чат с полной изоляцией данных между учителями',
     tags: [
-      { name: 'Vue.js', className: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-400' },
-      { name: 'Express', className: 'bg-neutral-200 text-neutral-800 dark:bg-neutral-500/20 dark:text-neutral-300' },
-      { name: 'MySQL', className: 'bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-400' },
+      { name: 'React', className: 'bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-400' },
+      { name: 'Node.js', className: 'bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-400' },
+      { name: 'PostgreSQL', className: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-400' },
     ],
     gradient: 'from-fuchsia-500 via-pink-500 to-rose-500',
     url: '#',
