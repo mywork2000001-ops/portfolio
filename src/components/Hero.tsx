@@ -14,7 +14,7 @@ export default function Hero({ onViewProjects, onViewAbout }: HeroProps) {
     <section id="hero" className="flex scroll-mt-20 items-center justify-between gap-8 px-4 pb-10 pt-4 sm:px-8">
       <div className="max-w-xl">
         <p className="text-lg text-neutral-500 dark:text-neutral-400">{t.hero.greeting}</p>
-        <h1 className="gradient-text mt-1 text-4xl font-bold sm:text-5xl">Ферид Г.</h1>
+        <h1 className="gradient-text mt-1 text-4xl font-bold sm:text-5xl">Fərid H.</h1>
         <p className="mt-2 text-lg font-medium text-neutral-700 dark:text-neutral-300">
           {t.hero.role}
         </p>
