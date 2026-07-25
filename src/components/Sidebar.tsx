@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Download, Menu, X, Mail } from 'lucide-react'
-import { navItems, socialLinks, contacts } from '../data/portfolio'
+import { Download, Menu, X } from 'lucide-react'
+import { navItems, socialLinks } from '../data/portfolio'
 import { useLanguage } from '../context/LanguageContext'
 import type { Translation } from '../i18n/translations'
 
@@ -98,13 +98,6 @@ export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
               <Icon size={18} />
             </a>
           ))}
-          <a
-            href={`mailto:${contacts.emailUser}@${contacts.emailDomain}`}
-            aria-label="Email"
-            className="text-sidebar-text hover:text-white transition-colors"
-          >
-            <Mail size={18} />
-          </a>
         </div>
       </aside>
 

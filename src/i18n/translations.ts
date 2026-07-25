@@ -40,6 +40,7 @@ export interface Translation {
   blogText: string
   about: {
     title: string
+    birthdate: string
     familyMan: string
     text: string
     moreLink: string
@@ -101,6 +102,7 @@ export const translations: Record<Lang, Translation> = {
     blogText: 'Скоро здесь появятся статьи о веб-разработке, архитектуре и инструментах.',
     about: {
       title: 'Немного обо мне',
+      birthdate: '18 марта 1986',
       familyMan: 'Семьянин',
       text:
         'По образованию инженер-энергетик, с 2017 года — учитель математики, а в 2025-м получил магистратуру по компьютерной инженерии. Преподаю математику в школе, есть опыт репетиторства по физике, а разработкой занимаюсь параллельно — от идеи до продакшена, в связке с AI-инструментами прямо в VS Code. Люблю решать сложные задачи и воплощать идеи в реальность.',
@@ -165,6 +167,7 @@ export const translations: Record<Lang, Translation> = {
     blogText: 'Articles on web development, architecture and tooling are coming soon.',
     about: {
       title: 'A bit about me',
+      birthdate: 'March 18, 1986',
       familyMan: 'Family man',
       text:
         "By training I'm an energy engineer; since 2017 I've been teaching math, and in 2025 I completed a master's in computer engineering. I teach math at school, have tutoring experience in physics, and build software on the side — from idea to production, working with AI tools right inside VS Code. I love solving hard problems and turning ideas into reality.",
@@ -229,6 +232,7 @@ export const translations: Record<Lang, Translation> = {
     blogText: 'Tezliklə burada veb-proqramlaşdırma, arxitektura və alətlər haqqında məqalələr yerləşdiriləcək.',
     about: {
       title: 'Mənim haqqımda qısaca',
+      birthdate: '18 mart 1986',
       familyMan: 'Ailəli',
       text:
         'Təhsilimə görə enerji mühəndisiyəm, 2017-ci ildən riyaziyyat müəllimiyəm, 2025-ci ildə isə kompüter mühəndisliyi üzrə magistratura pilləsini bitirmişəm. Məktəbdə riyaziyyat tədris edirəm, fizika üzrə repetitorluq təcrübəm var, paralel olaraq isə proqram təminatı hazırlayıram — VS Code daxilində AI alətləri ilə ideyadan məhsula qədər. Mürəkkəb məsələləri həll etməyi və ideyaları reallığa çevirməyi sevirəm.',
