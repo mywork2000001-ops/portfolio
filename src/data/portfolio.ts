@@ -96,6 +96,30 @@ export const projects: Project[] = [
     gradient: 'from-fuchsia-500 via-pink-500 to-rose-500',
     url: 'https://arti-mu.vercel.app',
   },
+  {
+    title: 'Repetitor',
+    description:
+      'Платформа для репетиторов и учебных центров: группы, тесты, видеоуроки, оплата и чат с полной изоляцией данных между учителями',
+    tags: [
+      { name: 'React', className: 'bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-400' },
+      { name: 'Node.js', className: 'bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-400' },
+      { name: 'PostgreSQL', className: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-400' },
+    ],
+    gradient: 'from-amber-500 via-orange-500 to-red-500',
+    url: 'https://repetitor-rho.vercel.app/login',
+  },
+  {
+    title: 'Family OS',
+    description:
+      'Интеллектуальная операционная система семьи: финансы, покупки, задачи, календарь, цели и AI-секретарь в одном приложении',
+    tags: [
+      { name: 'Next.js', className: 'bg-neutral-200 text-neutral-800 dark:bg-neutral-500/20 dark:text-neutral-300' },
+      { name: 'NestJS', className: 'bg-red-100 text-red-700 dark:bg-red-500/15 dark:text-red-400' },
+      { name: 'PostgreSQL', className: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-400' },
+    ],
+    gradient: 'from-emerald-500 via-green-500 to-lime-600',
+    url: 'https://family-os-web.vercel.app',
+  },
 ]
 
 export const skills = [
