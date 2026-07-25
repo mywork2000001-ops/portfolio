@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface-light text-[#14141F] dark:bg-surface-dark dark:text-[#F2F2F7] font-sans transition-colors duration-300;
+}
+
+::selection {
+  background-color: #6c5ce74d;
+}
+
+.gradient-text {
+  @apply bg-accent-gradient bg-clip-text text-transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
