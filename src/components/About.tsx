@@ -1,6 +1,6 @@
 import { Quote, ArrowRight, Cake, Heart } from 'lucide-react'
 import photo from '../assets/foto.png'
-import { testimonial } from '../data/portfolio'
+import { testimonial, education } from '../data/portfolio'
 
 export default function About() {
   return (
@@ -27,10 +27,11 @@ export default function About() {
               </span>
             </div>
             <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-              Преподаю математику в школе с 2017 года, есть опыт репетиторства по физике.
-              Параллельно занимаюсь разработкой — от идеи до продакшена, в связке с AI-инструментами
-              прямо в VS Code. Совмещаю преподавание с созданием образовательных платформ и
-              веб-приложений, люблю решать сложные задачи и воплощать идеи в реальность.
+              По образованию инженер-энергетик, с 2017 года — учитель математики, а в 2025-м
+              получил магистратуру по компьютерной инженерии. Преподаю математику в школе, есть
+              опыт репетиторства по физике, а разработкой занимаюсь параллельно — от идеи до
+              продакшена, в связке с AI-инструментами прямо в VS Code. Люблю решать сложные задачи
+              и воплощать идеи в реальность.
             </p>
             <a
               href="#about"
@@ -56,6 +57,26 @@ export default function About() {
               <p className="text-xs text-neutral-500 dark:text-neutral-400">{testimonial.role}</p>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="mt-5 rounded-2xl bg-white p-6 shadow-sm dark:bg-surface-dark-card">
+        <h3 className="text-lg font-semibold">Образование</h3>
+        <div className="mt-4 flex flex-col gap-4">
+          {education.map((item) => (
+            <div key={item.institution} className="flex items-start gap-3">
+              <div className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-accent-from/10 text-accent-from dark:bg-accent-to/15 dark:text-accent-to">
+                <item.icon size={18} />
+              </div>
+              <div className="flex flex-1 flex-wrap items-baseline justify-between gap-x-3">
+                <div>
+                  <p className="text-sm font-semibold">{item.institution}</p>
+                  <p className="text-xs text-neutral-500 dark:text-neutral-400">{item.degree}</p>
+                </div>
+                <span className="text-xs text-neutral-400 dark:text-neutral-500">{item.years}</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

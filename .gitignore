@@ -4,3 +4,7 @@ dist-ssr
 *.local
 .DS_Store
 *.tsbuildinfo
+
+# Personal/sensitive documents — never publish (ID numbers, family data, etc.)
+İnform.txt
+*.txt.bak

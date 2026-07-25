@@ -17,6 +17,7 @@ import {
   FolderKanban,
   Users,
   Smile,
+  GraduationCap,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -168,3 +169,31 @@ export const contacts = {
   phone: '+994 77 302 00 59',
   location: 'Баку, Азербайджан',
 }
+
+export interface EducationItem {
+  icon: LucideIcon
+  institution: string
+  degree: string
+  years: string
+}
+
+export const education: EducationItem[] = [
+  {
+    icon: GraduationCap,
+    institution: 'Азербайджанский государственный педагогический университет',
+    degree: 'Бакалавриат · Учитель математики',
+    years: '2012–2017',
+  },
+  {
+    icon: GraduationCap,
+    institution: 'Азербайджанский государственный университет нефти и промышленности',
+    degree: 'Бакалавриат с отличием · Энергетика и энергетическое машиностроение',
+    years: '2003–2007',
+  },
+  {
+    icon: GraduationCap,
+    institution: 'Азербайджанский технологический университет',
+    degree: 'Магистратура · Компьютерная инженерия',
+    years: '2023–2025',
+  },
+]
