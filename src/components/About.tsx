@@ -1,4 +1,4 @@
-import { Quote, ArrowRight } from 'lucide-react'
+import { Quote, ArrowRight, Cake, Heart } from 'lucide-react'
 import photo from '../assets/foto.png'
 import { testimonial } from '../data/portfolio'
 
@@ -16,7 +16,17 @@ export default function About() {
           </div>
           <div>
             <h2 className="text-lg font-semibold">Немного обо мне</h2>
-            <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+            <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-neutral-400 dark:text-neutral-500">
+              <span className="flex items-center gap-1">
+                <Cake size={13} />
+                18 марта 1986
+              </span>
+              <span className="flex items-center gap-1">
+                <Heart size={13} />
+                Семьянин
+              </span>
+            </div>
+            <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
               Преподаю математику в школе с 2017 года, есть опыт репетиторства по физике.
               Параллельно занимаюсь разработкой — от идеи до продакшена, в связке с AI-инструментами
               прямо в VS Code. Совмещаю преподавание с созданием образовательных платформ и
