@@ -40,6 +40,7 @@ export default {
         orbit: 'orbit 40s linear infinite',
         'orbit-slow': 'orbit 70s linear infinite',
         'orbit-rev': 'orbit-reverse 55s linear infinite',
+        'spin-scene': 'orbit 30s linear infinite',
       },
     },
   },
