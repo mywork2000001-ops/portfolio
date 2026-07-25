@@ -14,7 +14,7 @@ export default function About() {
           <div className="shrink-0 rounded-full bg-accent-gradient p-1">
             <img
               src={photo}
-              alt="Ферид Г."
+              alt="Fərid H."
               className="h-20 w-20 rounded-full object-cover ring-2 ring-white dark:ring-surface-dark-card"
             />
           </div>
