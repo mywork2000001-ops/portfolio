@@ -40,7 +40,6 @@ export const socialLinks = [
   { label: 'GitHub', href: 'https://github.com/mywork2000001-ops/portfolio', icon: Github },
   { label: 'LinkedIn', href: 'https://linkedin.com/', icon: Linkedin },
   { label: 'Telegram', href: 'https://t.me/', icon: Send },
-  { label: 'Email', href: 'mailto:mywork2000001@gmail.com', icon: Mail },
 ]
 
 export const stats = [
@@ -126,8 +125,8 @@ export const skills = [
 export const serviceIcons: LucideIcon[] = [Code2, Server, PenTool, Gauge]
 
 export const contacts = {
-  email: 'mywork2000001@gmail.com',
-  phone: '+994 77 302 00 59',
+  emailUser: 'mywork2000001',
+  emailDomain: 'gmail.com',
 }
 
 export const educationIcon = GraduationCap

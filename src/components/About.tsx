@@ -1,4 +1,4 @@
-import { Quote, ArrowRight, Cake, Heart } from 'lucide-react'
+import { Quote, ArrowRight, Heart } from 'lucide-react'
 import photo from '../assets/foto.png'
 import { educationIcon, educationYears } from '../data/portfolio'
 import { useLanguage } from '../context/LanguageContext'
@@ -21,10 +21,6 @@ export default function About() {
           <div>
             <h2 className="text-lg font-semibold">{t.about.title}</h2>
             <div className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-xs text-neutral-400 dark:text-neutral-500">
-              <span className="flex items-center gap-1">
-                <Cake size={13} />
-                {t.about.birthdate}
-              </span>
               <span className="flex items-center gap-1">
                 <Heart size={13} />
                 {t.about.familyMan}
