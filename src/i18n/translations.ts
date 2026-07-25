@@ -1,9 +1,9 @@
 export type Lang = 'ru' | 'en' | 'az'
 
 export const languageNames: Record<Lang, string> = {
+  az: 'AZ',
   ru: 'RU',
   en: 'EN',
-  az: 'AZ',
 }
 
 export interface Translation {
@@ -105,7 +105,7 @@ export const translations: Record<Lang, Translation> = {
       birthdate: '18 марта 1986',
       familyMan: 'Семьянин',
       text:
-        'По образованию инженер-энергетик, с 2017 года — учитель математики, а в 2025-м получил магистратуру по компьютерной инженерии. Преподаю математику в школе, есть опыт репетиторства по физике, а разработкой занимаюсь параллельно — от идеи до продакшена, в связке с AI-инструментами прямо в VS Code. Люблю решать сложные задачи и воплощать идеи в реальность.',
+        'По образованию инженер-энергетик, с 2017 года — учитель математики, а в 2025-м получил магистратуру по компьютерной инженерии. Преподаю математику в школе, есть опыт репетиторства по физике, а разработкой занимаюсь параллельно — от идеи до продакшена, в стиле вайб-кодинга, в связке с AI-инструментами прямо в VS Code. Люблю решать сложные задачи и воплощать идеи в реальность.',
       moreLink: 'Подробнее обо мне',
     },
     educationTitle: 'Образование',
@@ -170,7 +170,7 @@ export const translations: Record<Lang, Translation> = {
       birthdate: 'March 18, 1986',
       familyMan: 'Family man',
       text:
-        "By training I'm an energy engineer; since 2017 I've been teaching math, and in 2025 I completed a master's in computer engineering. I teach math at school, have tutoring experience in physics, and build software on the side — from idea to production, working with AI tools right inside VS Code. I love solving hard problems and turning ideas into reality.",
+        "By training I'm an energy engineer; since 2017 I've been teaching math, and in 2025 I completed a master's in computer engineering. I teach math at school, have tutoring experience in physics, and build software on the side — from idea to production, vibe coding with AI tools right inside VS Code. I love solving hard problems and turning ideas into reality.",
       moreLink: 'More about me',
     },
     educationTitle: 'Education',
@@ -235,7 +235,7 @@ export const translations: Record<Lang, Translation> = {
       birthdate: '18 mart 1986',
       familyMan: 'Ailəli',
       text:
-        'Təhsilimə görə enerji mühəndisiyəm, 2017-ci ildən riyaziyyat müəllimiyəm, 2025-ci ildə isə kompüter mühəndisliyi üzrə magistratura pilləsini bitirmişəm. Məktəbdə riyaziyyat tədris edirəm, fizika üzrə repetitorluq təcrübəm var, paralel olaraq isə proqram təminatı hazırlayıram — VS Code daxilində AI alətləri ilə ideyadan məhsula qədər. Mürəkkəb məsələləri həll etməyi və ideyaları reallığa çevirməyi sevirəm.',
+        'Təhsilimə görə enerji mühəndisiyəm, 2017-ci ildən riyaziyyat müəllimiyəm, 2025-ci ildə isə kompüter mühəndisliyi üzrə magistratura pilləsini bitirmişəm. Məktəbdə riyaziyyat tədris edirəm, fizika üzrə repetitorluq təcrübəm var, paralel olaraq isə proqram təminatı hazırlayıram — vibe coding tərzində, VS Code daxilində AI alətləri ilə ideyadan məhsula qədər. Mürəkkəb məsələləri həll etməyi və ideyaları reallığa çevirməyi sevirəm.',
       moreLink: 'Daha ətraflı',
     },
     educationTitle: 'Təhsil',

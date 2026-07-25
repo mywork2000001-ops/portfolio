@@ -14,9 +14,9 @@ function getInitialLang(): Lang {
   if (stored === 'ru' || stored === 'en' || stored === 'az') return stored
 
   const browserLang = navigator.language.slice(0, 2).toLowerCase()
-  if (browserLang === 'az') return 'az'
+  if (browserLang === 'ru') return 'ru'
   if (browserLang === 'en') return 'en'
-  return 'ru'
+  return 'az'
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
