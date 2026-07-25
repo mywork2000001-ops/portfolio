@@ -1,10 +1,13 @@
 import { Hexagon } from 'lucide-react'
 import { skills } from '../data/portfolio'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function Skills() {
+  const { t } = useLanguage()
+
   return (
     <section id="skills" className="scroll-mt-20 px-4 pb-12 sm:px-8">
-      <h2 className="mb-5 text-xl font-semibold">Мои навыки</h2>
+      <h2 className="mb-5 text-xl font-semibold">{t.skillsTitle}</h2>
       <div className="rounded-2xl bg-white p-5 shadow-sm dark:bg-surface-dark-card">
         <div className="flex flex-wrap gap-3">
           {skills.map((skill) => (

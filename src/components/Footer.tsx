@@ -1,7 +1,10 @@
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { contacts } from '../data/portfolio'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer
       id="contacts"
@@ -18,7 +21,7 @@ export default function Footer() {
         </a>
         <span className="flex items-center gap-2">
           <MapPin size={16} />
-          {contacts.location}
+          {t.footerLocation}
         </span>
       </div>
     </footer>

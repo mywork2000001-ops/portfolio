@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react'
 import { projects } from '../data/portfolio'
+import { useLanguage } from '../context/LanguageContext'
 
 function ProjectPreview({ gradient }: { gradient: string }) {
   return (
@@ -17,20 +18,22 @@ function ProjectPreview({ gradient }: { gradient: string }) {
 }
 
 export default function Projects() {
+  const { t } = useLanguage()
+
   return (
     <section id="projects" className="scroll-mt-20 px-4 pb-12 sm:px-8">
       <div className="mb-5 flex items-center justify-between">
-        <h2 className="text-xl font-semibold">Избранные проекты</h2>
+        <h2 className="text-xl font-semibold">{t.projectsSection.title}</h2>
         <a
           href="#projects"
           className="text-sm font-medium text-violet-600 hover:underline dark:text-violet-400"
         >
-          Все проекты →
+          {t.projectsSection.viewAll}
         </a>
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
+        {projects.map((project, i) => (
           <article
             key={project.title}
             className="rounded-2xl bg-white p-4 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md dark:bg-surface-dark-card"
@@ -44,14 +47,14 @@ export default function Projects() {
                 href={project.url}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`Открыть ${project.title}`}
+                aria-label={project.title}
                 className="text-neutral-400 hover:text-violet-500"
               >
                 <ExternalLink size={16} />
               </a>
             </div>
             <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-              {project.description}
+              {t.projectDescriptions[i]}
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
               {project.tags.map((tag) => (

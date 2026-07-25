@@ -1,14 +1,27 @@
 import { useState } from 'react'
 import { Download, Menu, X } from 'lucide-react'
 import { navItems, socialLinks } from '../data/portfolio'
+import { useLanguage } from '../context/LanguageContext'
+import type { Translation } from '../i18n/translations'
 
 interface SidebarProps {
   activeSection: string
   onNavigate: (id: string) => void
 }
 
+const navKeyById: Record<string, keyof Translation['nav']> = {
+  hero: 'home',
+  about: 'about',
+  projects: 'portfolio',
+  skills: 'skills',
+  services: 'services',
+  blog: 'blog',
+  contacts: 'contacts',
+}
+
 export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { t } = useLanguage()
 
   const handleNavClick = (id: string) => {
     onNavigate(id)
@@ -23,7 +36,7 @@ export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
           Orbit <span className="text-accent-to">.</span>
         </span>
         <button
-          aria-label="Открыть меню"
+          aria-label={t.openMenu}
           onClick={() => setMobileOpen((v) => !v)}
           className="rounded-lg p-2 text-white hover:bg-white/10"
         >
@@ -60,7 +73,7 @@ export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
                     }`}
                 >
                   <Icon size={18} className={isActive ? 'text-accent-to' : ''} />
-                  {item.label}
+                  {t.nav[navKeyById[item.id]]}
                 </button>
               )
             })}
@@ -68,7 +81,7 @@ export default function Sidebar({ activeSection, onNavigate }: SidebarProps) {
 
           <button className="mt-6 flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 px-3 py-2.5 text-sm font-medium text-white hover:bg-white/5">
             <Download size={16} />
-            Скачать CV
+            {t.downloadCV}
           </button>
         </div>
 
