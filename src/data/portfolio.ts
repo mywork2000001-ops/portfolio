@@ -37,7 +37,7 @@ export const navItems: NavItem[] = [
 ]
 
 export const socialLinks = [
-  { label: 'GitHub', href: 'https://github.com/', icon: Github },
+  { label: 'GitHub', href: 'https://github.com/mywork2000001-ops', icon: Github },
   { label: 'LinkedIn', href: 'https://linkedin.com/', icon: Linkedin },
   { label: 'Telegram', href: 'https://t.me/', icon: Send },
   { label: 'Email', href: 'mailto:ferid@example.com', icon: Mail },
@@ -55,6 +55,8 @@ export interface Project {
   description: string
   tags: { name: string; className: string }[]
   gradient: string
+  /** Ссылка на живой проект/демо. Оставь '#', пока не появится реальный адрес. */
+  url: string
 }
 
 export const projects: Project[] = [
@@ -67,6 +69,7 @@ export const projects: Project[] = [
       { name: 'MongoDB', className: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-400' },
     ],
     gradient: 'from-indigo-500 via-violet-500 to-purple-600',
+    url: '#',
   },
   {
     title: 'FinTrack',
@@ -77,6 +80,7 @@ export const projects: Project[] = [
       { name: 'PostgreSQL', className: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-400' },
     ],
     gradient: 'from-blue-500 via-cyan-500 to-teal-500',
+    url: '#',
   },
   {
     title: 'ShopEase',
@@ -87,6 +91,7 @@ export const projects: Project[] = [
       { name: 'MySQL', className: 'bg-sky-100 text-sky-700 dark:bg-sky-500/15 dark:text-sky-400' },
     ],
     gradient: 'from-fuchsia-500 via-pink-500 to-rose-500',
+    url: '#',
   },
 ]
 

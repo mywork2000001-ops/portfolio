@@ -35,10 +35,20 @@ export default function Projects() {
             key={project.title}
             className="rounded-2xl bg-white p-4 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-md dark:bg-surface-dark-card"
           >
-            <ProjectPreview gradient={project.gradient} />
+            <a href={project.url} target="_blank" rel="noreferrer">
+              <ProjectPreview gradient={project.gradient} />
+            </a>
             <div className="mt-4 flex items-center justify-between">
               <h3 className="font-semibold">{project.title}</h3>
-              <ExternalLink size={16} className="text-neutral-400" />
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Открыть ${project.title}`}
+                className="text-neutral-400 hover:text-violet-500"
+              >
+                <ExternalLink size={16} />
+              </a>
             </div>
             <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
               {project.description}
