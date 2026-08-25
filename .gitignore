@@ -8,3 +8,5 @@ dist-ssr
 # Personal/sensitive documents — never publish (ID numbers, family data, etc.)
 İnform.txt
 *.txt.bak
+
+.vercel
