@@ -60,9 +60,9 @@ export const projects: Project[] = [
   {
     title: 'EduHub',
     tags: [
-      { name: 'Node.js', className: 'bg-green-100 text-green-700 dark:bg-green-500/15 dark:text-green-400' },
-      { name: 'JavaScript', className: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-500/15 dark:text-yellow-400' },
-      { name: 'REST API', className: 'bg-neutral-200 text-neutral-800 dark:bg-neutral-500/20 dark:text-neutral-300' },
+      { name: 'Next.js', className: 'bg-neutral-200 text-neutral-800 dark:bg-neutral-500/20 dark:text-neutral-300' },
+      { name: 'Supabase', className: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-400' },
+      { name: 'PostgreSQL', className: 'bg-indigo-100 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-400' },
     ],
     gradient: 'from-indigo-500 via-violet-500 to-purple-600',
     url: 'https://hub-educat-on.vercel.app',

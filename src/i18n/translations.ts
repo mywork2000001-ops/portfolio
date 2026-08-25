@@ -84,7 +84,7 @@ export const translations: Record<Lang, Translation> = {
       viewAll: 'Все проекты →',
     },
     projectDescriptions: [
-      'Цифровая образовательная экосистема для школы: курсы, живые уроки, тесты, учёт успеваемости и общение учителя, ученика и родителя в одном приложении',
+      'Образовательный хаб для школы: объединяет несколько платформ с тестовыми банками и уроками по математике и физике для 5–11 классов, подготовку к DİM и единый Next.js/Supabase-портал для учителя, ученика и родителя — успеваемость, посещаемость, оплата, чат и AI-генерация учебных материалов',
       'Конструктор школьных расписаний с автоматическим планировщиком, мульти-тенантной архитектурой и desktop-версией на Electron',
       'Единая платформа для учителя: AI-генерация ежедневных планов уроков, электронный журнал успеваемости, учёт посещаемости и годовое тематическое планирование по учебным стандартам',
       'Платформа для репетиторов и учебных центров: группы, тесты, видеоуроки, оплата и чат с полной изоляцией данных между учителями',
@@ -149,7 +149,7 @@ export const translations: Record<Lang, Translation> = {
       viewAll: 'All projects →',
     },
     projectDescriptions: [
-      'A digital education ecosystem for schools: courses, live lessons, tests, progress tracking, and communication between teachers, students and parents — all in one app',
+      'An education hub for schools: unites several test-bank and lesson platforms for math and physics across grades 5–11, DİM exam-prep tracks, and a single Next.js/Supabase portal for teachers, students and parents — grades, attendance, payments, chat and AI-generated learning materials',
       'A school timetable builder with an automatic scheduler, multi-tenant architecture and an Electron desktop version',
       'A unified platform for teachers: AI-generated daily lesson plans, a digital grade journal, attendance tracking and yearly thematic planning based on curriculum standards',
       'A platform for tutors and learning centers: groups, tests, video lessons, payments and chat, with full data isolation between teachers',
@@ -214,7 +214,7 @@ export const translations: Record<Lang, Translation> = {
       viewAll: 'Bütün layihələr →',
     },
     projectDescriptions: [
-      'Məktəb üçün rəqəmsal təhsil ekosistemi: kurslar, canlı dərslər, testlər, akademik nəticələrin izlənməsi və müəllim-şagird-valideyn ünsiyyəti bir tətbiqdə',
+      'Məktəb üçün təhsil hub-u: 5–11-ci siniflər üzrə riyaziyyat və fizika üzrə bir neçə test bankı və dərs platformasını, DİM hazırlığını və müəllim-şagird-valideyn üçün vahid Next.js/Supabase portalını birləşdirir — akademik nəticələr, davamiyyət, ödəniş, çat və AI ilə tədris materialları generasiyası',
       'Avtomatik planlaşdırıcı, çox-tenantlı arxitektura və Electron əsaslı masaüstü versiyası olan məktəb dərs cədvəli konstruktoru',
       'Müəllim üçün vahid platforma: gündəlik dərs planlarının AI ilə generasiyası, elektron jurnal, davamiyyət uçotu və tədris standartlarına əsaslanan illik tematik planlaşdırma',
       'Repetitorlar və tədris mərkəzləri üçün platforma: qruplar, testlər, video dərslər, ödəniş və çat — müəllimlər arasında tam məlumat izolyasiyası ilə',
