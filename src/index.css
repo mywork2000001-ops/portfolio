@@ -7,15 +7,32 @@ html {
 }
 
 body {
-  @apply bg-surface-light text-[#14141F] dark:bg-surface-dark dark:text-[#F2F2F7] font-sans transition-colors duration-300;
+  @apply bg-paper font-sans text-ink antialiased transition-colors duration-300 dark:bg-night dark:text-white;
+}
+
+.dark .text-muted {
+  color: #9aa4b8;
+}
+
+/* «Тетрадь в клетку» — тема физики и математики, очень тихо */
+.bg-grid {
+  background-image:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(26, 102, 255, 0.12), transparent 60%),
+    linear-gradient(rgba(11, 16, 32, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 16, 32, 0.045) 1px, transparent 1px);
+  background-size: auto, 28px 28px, 28px 28px;
+}
+.bg-grid-dark,
+.dark .dark\:bg-grid-dark {
+  background-image:
+    radial-gradient(60rem 30rem at 85% -10%, rgba(26, 102, 255, 0.18), transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: auto, 28px 28px, 28px 28px;
 }
 
 ::selection {
-  background-color: #6c5ce74d;
-}
-
-.gradient-text {
-  @apply bg-accent-gradient bg-clip-text text-transparent;
+  background-color: rgba(26, 102, 255, 0.25);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -23,5 +40,6 @@ body {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

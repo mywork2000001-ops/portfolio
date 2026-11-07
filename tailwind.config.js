@@ -5,42 +5,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        sidebar: {
-          DEFAULT: '#0B0B14',
-          text: '#B4B4C7',
-        },
-        accent: {
-          from: '#6C5CE7',
-          to: '#4E7FFF',
-        },
-        surface: {
-          light: '#F5F6FA',
-          'light-card': '#FFFFFF',
-          dark: '#0F0F1A',
-          'dark-card': '#181826',
-        },
+        ink: '#0b1020',
+        muted: '#5b6478',
+        line: '#e3e8f2',
+        paper: '#f6f8fc',
+        night: { DEFAULT: '#070b16', card: '#0f1626' },
+        brand: { DEFAULT: '#1a66ff', 600: '#1446d6' },
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
-      backgroundImage: {
-        'accent-gradient': 'linear-gradient(135deg, #6C5CE7 0%, #4E7FFF 100%)',
-      },
-      keyframes: {
-        orbit: {
-          from: { transform: 'rotate(0deg)' },
-          to: { transform: 'rotate(360deg)' },
-        },
-        'orbit-reverse': {
-          from: { transform: 'rotate(360deg)' },
-          to: { transform: 'rotate(0deg)' },
-        },
-      },
-      animation: {
-        orbit: 'orbit 40s linear infinite',
-        'orbit-slow': 'orbit 70s linear infinite',
-        'orbit-rev': 'orbit-reverse 55s linear infinite',
-        'spin-scene': 'orbit 30s linear infinite',
+      boxShadow: {
+        glow: '0 10px 30px -8px rgba(26,102,255,0.55)',
+        card: '0 24px 60px -24px rgba(11,16,32,0.35)',
       },
     },
   },

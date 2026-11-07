@@ -10,7 +10,7 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | undefined>(undefined)
 
 function getInitialLang(): Lang {
-  const stored = localStorage.getItem('orbit-lang')
+  const stored = localStorage.getItem('fx-lang')
   if (stored === 'ru' || stored === 'en' || stored === 'az') return stored
 
   const browserLang = navigator.language.slice(0, 2).toLowerCase()
@@ -23,7 +23,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>(getInitialLang)
 
   useEffect(() => {
-    localStorage.setItem('orbit-lang', lang)
+    localStorage.setItem('fx-lang', lang)
     document.documentElement.lang = lang
   }, [lang])
 

@@ -1,254 +1,228 @@
-export type Lang = 'ru' | 'en' | 'az'
+export type Lang = 'az' | 'ru' | 'en'
 
-export const languageNames: Record<Lang, string> = {
-  az: 'AZ',
-  ru: 'RU',
-  en: 'EN',
+export const languageNames: Record<Lang, string> = { az: 'AZ', ru: 'RU', en: 'EN' }
+
+interface ProjectText {
+  desc: string
+  points: [string, string, string]
 }
 
 export interface Translation {
-  nav: {
-    home: string
-    about: string
-    portfolio: string
-    skills: string
-    services: string
-    blog: string
-    contacts: string
-  }
-  downloadCV: string
-  contactMe: string
-  openMenu: string
-  toggleTheme: string
-  hero: {
-    greeting: string
-    role: string
-    description: string
-    viewWork: string
-    aboutMe: string
-  }
-  statsLabels: [string, string, string, string]
-  projectsSection: {
-    title: string
-    viewAll: string
-  }
-  projectDescriptions: [string, string, string, string, string]
-  skillsTitle: string
-  servicesTitle: string
-  services: { title: string; description: string }[]
-  blogTitle: string
-  blogText: string
-  about: {
-    title: string
-    birthdate: string
-    familyMan: string
-    text: string
-    moreLink: string
-  }
-  educationTitle: string
-  education: { institution: string; degree: string }[]
-  testimonial: {
-    quote: string
-    name: string
-    role: string
-  }
-  footerLocation: string
+  nav: { projects: string; approach: string; stack: string; about: string; contact: string }
+  menu: string
+  theme: string
+  hero: { badge: string; title: string; text: string; cta: string; contact: string; chips: [string, string, string] }
+  stats: [string, string, string, string]
+  projects: { title: string; lead: string; open: string; live: string; archive: string; archiveLead: string }
+  projectText: { muellim: ProjectText; sts: ProjectText; yttm: ProjectText }
+  archiveNames: [string, string, string]
+  approach: { title: string; lead: string; items: { title: string; text: string }[] }
+  stack: { title: string; lead: string; groups: [string, string, string, string] }
+  about: { title: string; text: string; timelineTitle: string; timeline: { years: string; title: string; place: string }[] }
+  contact: { title: string; text: string; email: string; whatsapp: string; call: string }
+  footer: string
 }
 
 export const translations: Record<Lang, Translation> = {
-  ru: {
-    nav: {
-      home: 'Главная',
-      about: 'Обо мне',
-      portfolio: 'Портфолио',
-      skills: 'Навыки',
-      services: 'Услуги',
-      blog: 'Блог',
-      contacts: 'Контакты',
-    },
-    downloadCV: 'Скачать CV',
-    contactMe: 'Связаться со мной',
-    openMenu: 'Открыть меню',
-    toggleTheme: 'Переключить тему',
+  az: {
+    nav: { projects: 'Layihələr', approach: 'Yanaşma', stack: 'Texnologiyalar', about: 'Haqqımda', contact: 'Əlaqə' },
+    menu: 'Menyu',
+    theme: 'Mövzunu dəyiş',
     hero: {
-      greeting: 'Привет, я',
-      role: 'Fullstack разработчик · Учитель математики и физики',
-      description:
-        'Создаю современные веб-приложения и образовательные платформы с акцентом на чистый код, удобство пользователя и высокую производительность.',
-      viewWork: 'Смотреть работы',
-      aboutMe: 'Обо мне',
+      badge: 'Riyaziyyat müəllimi · Tərtər',
+      title: 'Müəllim kimi düşünür, proqramçı kimi qururam.',
+      text: 'Məktəb üçün real işləyən rəqəmsal alətlər hazırlayıram: elektron jurnal və imtahanlar, telefonla test yaratmaq, kağız blankların yoxlanması, məktəb saytı. Hər biri sinifdə sınaqdan keçir.',
+      cta: 'Layihələrə bax',
+      contact: 'Əlaqə saxla',
+      chips: ['AZ · RU · EN', 'İnternetsiz də işləyir', 'QR və OCR'],
     },
-    statsLabels: ['Лет преподавания', 'Проектов', 'Клиентов', 'Довольных клиентов'],
-    projectsSection: {
-      title: 'Избранные проекты',
-      viewAll: 'Все проекты →',
+    stats: ['il tədris təcrübəsi', 'canlı layihə', 'interfeys dili', 'bulud avtomatlaşdırması'],
+    projects: {
+      title: 'Canlı layihələr',
+      lead: 'Hamısı işləkdir və hər gün müəllim və şagirdlər tərəfindən istifadə olunur.',
+      open: 'Aç',
+      live: 'Canlı',
+      archive: 'Əvvəlki layihələr',
+      archiveLead: 'Öyrəndiyim və sınadığım ilk platformalar.',
     },
-    projectDescriptions: [
-      'Образовательный хаб для школы: объединяет несколько платформ с тестовыми банками и уроками по математике и физике для 5–11 классов, подготовку к DİM и единый Next.js/Supabase-портал для учителя, ученика и родителя — успеваемость, посещаемость, оплата, чат и AI-генерация учебных материалов',
-      'Конструктор школьных расписаний с автоматическим планировщиком, мульти-тенантной архитектурой и desktop-версией на Electron',
-      'Единая платформа для учителя: AI-генерация ежедневных планов уроков, электронный журнал успеваемости, учёт посещаемости и годовое тематическое планирование по учебным стандартам',
-      'Платформа для репетиторов и учебных центров: группы, тесты, видеоуроки, оплата и чат с полной изоляцией данных между учителями',
-      'Интеллектуальная операционная система семьи: финансы, покупки, задачи, календарь, цели и AI-секретарь в одном приложении',
-    ],
-    skillsTitle: 'Мои навыки',
-    servicesTitle: 'Что я делаю',
-    services: [
-      { title: 'Веб-разработка', description: 'Создание современных и адаптивных веб-приложений' },
-      { title: 'Backend разработка', description: 'Разработка надёжных API и серверной логики' },
-      { title: 'UI/UX дизайн', description: 'Проектирование удобных интерфейсов и пользовательского опыта' },
-      { title: 'Оптимизация', description: 'Повышение производительности и SEO для быстрых результатов' },
-    ],
-    blogTitle: 'Блог',
-    blogText: 'Скоро здесь появятся статьи о веб-разработке, архитектуре и инструментах.',
+    projectText: {
+      muellim: {
+        desc: 'Məktəb üçün vahid platforma: müəllim, şagird, valideyn və administrasiya bir yerdə.',
+        points: ['Elektron jurnal, davamiyyət, imtahanlar və hesabatlar', 'Kağız blankların QR ilə avtomatik yoxlanması', 'Valideyn hesabatları və gecə avtomatik auditi'],
+      },
+      sts: {
+        desc: 'Telefonla test yaratmaq: kitabdan sualın şəklini çək — test hazırdır.',
+        points: ['Tətbiqdaxili kamera, avtomatik çərçivə, mətnin tanınması (OCR)', 'QR-lu blanklar, linklə onlayn test', 'Telefona quraşdırılır, internetsiz işləyir'],
+      },
+      yttm: {
+        desc: 'Tərtər şəhər 6 nömrəli məktəbin rəsmi saytı (YTTM layihəsi).',
+        points: ['Xəbərlər avtomatik yenilənir', 'Şagird və müəllim girişi', 'Telefona uyğun, üç dildə'],
+      },
+    },
+    archiveNames: ['Dərs cədvəli qurucusu', 'Repetitor platforması', 'Müəllim üçün planlaşdırma'],
+    approach: {
+      title: 'Necə işləyirəm',
+      lead: 'Proqramı özüm istifadə edirəm — ona görə hər detal sinif üçün düşünülüb.',
+      items: [
+        { title: 'Müəllim gözü ilə', text: 'Bir əsas düymə, ≤ 3 addım, aydın yazılar. Təlimsiz istifadə olunur.' },
+        { title: 'İnternetsiz də', text: 'Telefonda quraşdırılır, şəbəkə olmayanda da işləyir, sonra sinxronlaşır.' },
+        { title: 'Üç dildə', text: 'Azərbaycan, rus və ingilis dilləri — bütün interfeys tərcümə olunub.' },
+        { title: 'Etibarlı və təhlükəsiz', text: 'Şagird məlumatları qorunur, gündəlik ehtiyat nüsxələr, avtomatik yoxlamalar.' },
+      ],
+    },
+    stack: { title: 'Texnologiyalar', lead: 'Müasir, sürətli və pulsuz/ucuz bulud həlləri.', groups: ['İnterfeys', 'Server', 'Bulud', 'Alətlər'] },
     about: {
-      title: 'Немного обо мне',
-      birthdate: '18 марта 1986',
-      familyMan: 'Семьянин',
-      text:
-        'По образованию инженер-энергетик, с 2017 года — учитель математики, а в 2025-м получил магистратуру по компьютерной инженерии. Преподаю математику в школе, есть опыт репетиторства по физике, а разработкой занимаюсь параллельно — от идеи до продакшена, в стиле вайб-кодинга, в связке с AI-инструментами прямо в VS Code. Люблю решать сложные задачи и воплощать идеи в реальность.',
-      moreLink: 'Подробнее обо мне',
+      title: 'Haqqımda',
+      text: 'Təhsilimə görə enerji mühəndisiyəm, 2017-ci ildən riyaziyyat müəllimiyəm, 2025-ci ildə kompüter mühəndisliyi üzrə magistraturanı bitirmişəm. Məktəbdə dərs deyirəm və paralel olaraq məktəb üçün proqramlar hazırlayıram — ideyadan istifadəyə qədər, süni intellekt alətləri ilə.',
+      timelineTitle: 'Yol',
+      timeline: [
+        { years: '2023–2025', title: 'Magistratura · Kompüter mühəndisliyi', place: 'Azərbaycan Texnologiya Universiteti' },
+        { years: '2017 — indi', title: 'Riyaziyyat müəllimi', place: 'Tərtər şəhər 6 nömrəli məktəb' },
+        { years: '2012–2017', title: 'Bakalavr · Riyaziyyat müəllimliyi', place: 'Azərbaycan Dövlət Pedaqoji Universiteti' },
+        { years: '2003–2007', title: 'Bakalavr (fərqlənmə) · Energetika', place: 'Azərbaycan Dövlət Neft və Sənaye Universiteti' },
+      ],
     },
-    educationTitle: 'Образование',
-    education: [
-      { institution: 'Азербайджанский государственный педагогический университет', degree: 'Бакалавриат · Учитель математики' },
-      { institution: 'Азербайджанский государственный университет нефти и промышленности', degree: 'Бакалавриат с отличием · Энергетика и энергетическое машиностроение' },
-      { institution: 'Азербайджанский технологический университет', degree: 'Магистратура · Компьютерная инженерия' },
-    ],
-    testimonial: {
-      quote: 'Ферид — отличный специалист! Работать с ним одно удовольствие.',
-      name: 'Алексей Иванов',
-      role: 'CEO, TechCorp',
+    contact: {
+      title: 'Birlikdə nəsə quraq?',
+      text: 'Məktəbiniz və ya kursunuz üçün rəqəmsal alət lazımdırsa — yazın, danışaq.',
+      email: 'E-poçt yaz',
+      whatsapp: 'WhatsApp',
+      call: 'Zəng et',
     },
-    footerLocation: 'Баку, Азербайджан',
+    footer: 'Bütün hüquqlar qorunur.',
+  },
+  ru: {
+    nav: { projects: 'Проекты', approach: 'Подход', stack: 'Технологии', about: 'Обо мне', contact: 'Контакты' },
+    menu: 'Меню',
+    theme: 'Сменить тему',
+    hero: {
+      badge: 'Учитель математики · Тертер',
+      title: 'Думаю как учитель, строю как разработчик.',
+      text: 'Создаю цифровые инструменты, которые реально работают в школе: электронный журнал и экзамены, создание тестов телефоном, проверка бумажных бланков, сайт школы. Каждый проходит проверку в классе.',
+      cta: 'Смотреть проекты',
+      contact: 'Связаться',
+      chips: ['AZ · RU · EN', 'Работает без интернета', 'QR и OCR'],
+    },
+    stats: ['лет преподавания', 'живых проекта', 'языка интерфейса', 'облачная автоматизация'],
+    projects: {
+      title: 'Живые проекты',
+      lead: 'Все работают и каждый день используются учителями и учениками.',
+      open: 'Открыть',
+      live: 'Онлайн',
+      archive: 'Ранние проекты',
+      archiveLead: 'Первые платформы, на которых я учился.',
+    },
+    projectText: {
+      muellim: {
+        desc: 'Единая платформа для школы: учитель, ученик, родитель и администрация в одном месте.',
+        points: ['Электронный журнал, посещаемость, экзамены и отчёты', 'Автоматическая проверка бумажных бланков по QR', 'Отчёты родителям и ночной автоаудит'],
+      },
+      sts: {
+        desc: 'Тест телефоном: сфотографируйте вопрос из книги — тест готов.',
+        points: ['Камера в приложении, авторамка, распознавание текста (OCR)', 'Бланки с QR, онлайн-тест по ссылке', 'Устанавливается на телефон, работает без интернета'],
+      },
+      yttm: {
+        desc: 'Официальный сайт школы № 6 города Тертер (проект YTTM).',
+        points: ['Новости обновляются автоматически', 'Вход для учеников и учителей', 'Адаптивный, на трёх языках'],
+      },
+    },
+    archiveNames: ['Конструктор расписания', 'Платформа для репетиторов', 'Планирование для учителя'],
+    approach: {
+      title: 'Как я работаю',
+      lead: 'Я сам пользуюсь своими программами — поэтому каждая деталь продумана для класса.',
+      items: [
+        { title: 'Глазами учителя', text: 'Одно главное действие, ≤ 3 шагов, понятные подписи. Без обучения.' },
+        { title: 'Без интернета', text: 'Ставится на телефон, работает без сети и синхронизируется позже.' },
+        { title: 'На трёх языках', text: 'Азербайджанский, русский и английский — переведён весь интерфейс.' },
+        { title: 'Надёжно и безопасно', text: 'Данные учеников защищены, ежедневные копии, автоматические проверки.' },
+      ],
+    },
+    stack: { title: 'Технологии', lead: 'Современные, быстрые и бесплатные/недорогие облачные решения.', groups: ['Интерфейс', 'Сервер', 'Облако', 'Инструменты'] },
+    about: {
+      title: 'Обо мне',
+      text: 'По образованию инженер-энергетик, с 2017 года — учитель математики, в 2025-м окончил магистратуру по компьютерной инженерии. Преподаю в школе и параллельно создаю программы для школы — от идеи до использования, вместе с AI-инструментами.',
+      timelineTitle: 'Путь',
+      timeline: [
+        { years: '2023–2025', title: 'Магистратура · Компьютерная инженерия', place: 'Азербайджанский технологический университет' },
+        { years: '2017 — сейчас', title: 'Учитель математики', place: 'Школа № 6 г. Тертер' },
+        { years: '2012–2017', title: 'Бакалавриат · Учитель математики', place: 'Азербайджанский государственный педагогический университет' },
+        { years: '2003–2007', title: 'Бакалавриат с отличием · Энергетика', place: 'Азербайджанский государственный университет нефти и промышленности' },
+      ],
+    },
+    contact: {
+      title: 'Создадим что-нибудь вместе?',
+      text: 'Нужен цифровой инструмент для школы или курсов — напишите, обсудим.',
+      email: 'Написать на почту',
+      whatsapp: 'WhatsApp',
+      call: 'Позвонить',
+    },
+    footer: 'Все права защищены.',
   },
   en: {
-    nav: {
-      home: 'Home',
-      about: 'About',
-      portfolio: 'Portfolio',
-      skills: 'Skills',
-      services: 'Services',
-      blog: 'Blog',
-      contacts: 'Contact',
-    },
-    downloadCV: 'Download CV',
-    contactMe: 'Contact me',
-    openMenu: 'Open menu',
-    toggleTheme: 'Toggle theme',
+    nav: { projects: 'Projects', approach: 'Approach', stack: 'Stack', about: 'About', contact: 'Contact' },
+    menu: 'Menu',
+    theme: 'Toggle theme',
     hero: {
-      greeting: "Hi, I'm",
-      role: 'Fullstack developer · Math & physics teacher',
-      description:
-        'I build modern web applications and educational platforms, focused on clean code, great UX and high performance.',
-      viewWork: 'View projects',
-      aboutMe: 'About me',
+      badge: 'Math teacher · Tartar, Azerbaijan',
+      title: 'I think like a teacher and build like a developer.',
+      text: 'I build digital tools that actually work in schools: a gradebook and exams, phone-made tests, paper answer-sheet checking, a school website. Every one is tested in a real classroom.',
+      cta: 'View projects',
+      contact: 'Get in touch',
+      chips: ['AZ · RU · EN', 'Works offline', 'QR & OCR'],
     },
-    statsLabels: ['Years teaching', 'Projects', 'Clients', 'Client satisfaction'],
-    projectsSection: {
-      title: 'Featured projects',
-      viewAll: 'All projects →',
+    stats: ['years of teaching', 'live projects', 'interface languages', 'cloud automation'],
+    projects: {
+      title: 'Live projects',
+      lead: 'All of them are running and used by teachers and students every day.',
+      open: 'Open',
+      live: 'Live',
+      archive: 'Earlier projects',
+      archiveLead: 'The first platforms I learned on.',
     },
-    projectDescriptions: [
-      'An education hub for schools: unites several test-bank and lesson platforms for math and physics across grades 5–11, DİM exam-prep tracks, and a single Next.js/Supabase portal for teachers, students and parents — grades, attendance, payments, chat and AI-generated learning materials',
-      'A school timetable builder with an automatic scheduler, multi-tenant architecture and an Electron desktop version',
-      'A unified platform for teachers: AI-generated daily lesson plans, a digital grade journal, attendance tracking and yearly thematic planning based on curriculum standards',
-      'A platform for tutors and learning centers: groups, tests, video lessons, payments and chat, with full data isolation between teachers',
-      'An intelligent family operating system: finances, shopping, tasks, calendar, goals and an AI assistant — all in one app',
-    ],
-    skillsTitle: 'My skills',
-    servicesTitle: 'What I do',
-    services: [
-      { title: 'Web development', description: 'Building modern, responsive web applications' },
-      { title: 'Backend development', description: 'Building reliable APIs and server-side logic' },
-      { title: 'UI/UX design', description: 'Designing intuitive interfaces and user experiences' },
-      { title: 'Optimization', description: 'Improving performance and SEO for fast results' },
-    ],
-    blogTitle: 'Blog',
-    blogText: 'Articles on web development, architecture and tooling are coming soon.',
+    projectText: {
+      muellim: {
+        desc: 'One platform for the whole school: teachers, students, parents and administration.',
+        points: ['Gradebook, attendance, exams and reports', 'Automatic QR-based checking of paper answer sheets', 'Parent reports and a nightly automatic audit'],
+      },
+      sts: {
+        desc: 'Tests by phone: photograph a question from the book — the test is ready.',
+        points: ['In-app camera, auto-crop, text recognition (OCR)', 'QR answer sheets, online tests by link', 'Installs on a phone and works offline'],
+      },
+      yttm: {
+        desc: 'The official website of School No. 6 in Tartar (YTTM project).',
+        points: ['News updates automatically', 'Student and teacher sign-in', 'Responsive, in three languages'],
+      },
+    },
+    archiveNames: ['Timetable builder', 'Tutoring platform', 'Lesson planning for teachers'],
+    approach: {
+      title: 'How I work',
+      lead: 'I use my own software every day — so every detail is designed for the classroom.',
+      items: [
+        { title: "Through a teacher's eyes", text: 'One main action, ≤ 3 steps, clear labels. No training needed.' },
+        { title: 'Works offline', text: 'Installs on a phone, works without a network and syncs later.' },
+        { title: 'Three languages', text: 'Azerbaijani, Russian and English — the whole interface is translated.' },
+        { title: 'Reliable and secure', text: 'Student data is protected, daily backups, automatic checks.' },
+      ],
+    },
+    stack: { title: 'Stack', lead: 'Modern, fast and free/low-cost cloud solutions.', groups: ['Frontend', 'Backend', 'Cloud', 'Tools'] },
     about: {
-      title: 'A bit about me',
-      birthdate: 'March 18, 1986',
-      familyMan: 'Family man',
-      text:
-        "By training I'm an energy engineer; since 2017 I've been teaching math, and in 2025 I completed a master's in computer engineering. I teach math at school, have tutoring experience in physics, and build software on the side — from idea to production, vibe coding with AI tools right inside VS Code. I love solving hard problems and turning ideas into reality.",
-      moreLink: 'More about me',
+      title: 'About me',
+      text: "By training I'm an energy engineer; since 2017 I've been a math teacher, and in 2025 I completed a master's in computer engineering. I teach at school and build software for schools on the side — from idea to daily use, together with AI tools.",
+      timelineTitle: 'Path',
+      timeline: [
+        { years: '2023–2025', title: "Master's · Computer engineering", place: 'Azerbaijan Technological University' },
+        { years: '2017 — now', title: 'Math teacher', place: 'School No. 6, Tartar' },
+        { years: '2012–2017', title: "Bachelor's · Mathematics teaching", place: 'Azerbaijan State Pedagogical University' },
+        { years: '2003–2007', title: "Bachelor's with honors · Power engineering", place: 'Azerbaijan State Oil and Industry University' },
+      ],
     },
-    educationTitle: 'Education',
-    education: [
-      { institution: 'Azerbaijan State Pedagogical University', degree: "Bachelor's · Mathematics teaching" },
-      { institution: 'Azerbaijan State Oil and Industry University', degree: "Bachelor's with honors · Power engineering & energy machinery" },
-      { institution: 'Azerbaijan Technology University', degree: "Master's · Computer engineering" },
-    ],
-    testimonial: {
-      quote: "Ferid is a great specialist! It's a pleasure to work with him.",
-      name: 'Aleksey Ivanov',
-      role: 'CEO, TechCorp',
+    contact: {
+      title: 'Shall we build something together?',
+      text: 'Need a digital tool for your school or course? Write to me and let’s talk.',
+      email: 'Send an email',
+      whatsapp: 'WhatsApp',
+      call: 'Call',
     },
-    footerLocation: 'Baku, Azerbaijan',
-  },
-  az: {
-    nav: {
-      home: 'Ana səhifə',
-      about: 'Haqqımda',
-      portfolio: 'Portfolio',
-      skills: 'Bacarıqlar',
-      services: 'Xidmətlər',
-      blog: 'Blog',
-      contacts: 'Əlaqə',
-    },
-    downloadCV: 'CV-ni yüklə',
-    contactMe: 'Mənimlə əlaqə saxla',
-    openMenu: 'Menyunu aç',
-    toggleTheme: 'Mövzunu dəyiş',
-    hero: {
-      greeting: 'Salam, mən',
-      role: 'Fullstack developer · Riyaziyyat və fizika müəllimi',
-      description:
-        'Təmiz koda, rahat istifadəçi təcrübəsinə və yüksək performansa önəm verərək müasir veb-tətbiqlər və təhsil platformaları hazırlayıram.',
-      viewWork: 'Layihələrə bax',
-      aboutMe: 'Haqqımda',
-    },
-    statsLabels: ['Tədris ili', 'Layihə', 'Müştəri', 'Məmnun müştəri'],
-    projectsSection: {
-      title: 'Seçilmiş layihələr',
-      viewAll: 'Bütün layihələr →',
-    },
-    projectDescriptions: [
-      'Məktəb üçün təhsil hub-u: 5–11-ci siniflər üzrə riyaziyyat və fizika üzrə bir neçə test bankı və dərs platformasını, DİM hazırlığını və müəllim-şagird-valideyn üçün vahid Next.js/Supabase portalını birləşdirir — akademik nəticələr, davamiyyət, ödəniş, çat və AI ilə tədris materialları generasiyası',
-      'Avtomatik planlaşdırıcı, çox-tenantlı arxitektura və Electron əsaslı masaüstü versiyası olan məktəb dərs cədvəli konstruktoru',
-      'Müəllim üçün vahid platforma: gündəlik dərs planlarının AI ilə generasiyası, elektron jurnal, davamiyyət uçotu və tədris standartlarına əsaslanan illik tematik planlaşdırma',
-      'Repetitorlar və tədris mərkəzləri üçün platforma: qruplar, testlər, video dərslər, ödəniş və çat — müəllimlər arasında tam məlumat izolyasiyası ilə',
-      'Ailənin intellektual əməliyyat sistemi: maliyyə, alış-veriş, tapşırıqlar, təqvim, məqsədlər və AI-katib bir tətbiqdə',
-    ],
-    skillsTitle: 'Bacarıqlarım',
-    servicesTitle: 'Nə edirəm',
-    services: [
-      { title: 'Veb-proqramlaşdırma', description: 'Müasir və adaptiv veb-tətbiqlərin hazırlanması' },
-      { title: 'Backend proqramlaşdırma', description: 'Etibarlı API-lar və server məntiqinin hazırlanması' },
-      { title: 'UI/UX dizayn', description: 'Rahat interfeys və istifadəçi təcrübəsinin dizaynı' },
-      { title: 'Optimallaşdırma', description: 'Sürətli nəticələr üçün performans və SEO-nun yaxşılaşdırılması' },
-    ],
-    blogTitle: 'Blog',
-    blogText: 'Tezliklə burada veb-proqramlaşdırma, arxitektura və alətlər haqqında məqalələr yerləşdiriləcək.',
-    about: {
-      title: 'Mənim haqqımda qısaca',
-      birthdate: '18 mart 1986',
-      familyMan: 'Ailəli',
-      text:
-        'Təhsilimə görə enerji mühəndisiyəm, 2017-ci ildən riyaziyyat müəllimiyəm, 2025-ci ildə isə kompüter mühəndisliyi üzrə magistratura pilləsini bitirmişəm. Məktəbdə riyaziyyat tədris edirəm, fizika üzrə repetitorluq təcrübəm var, paralel olaraq isə proqram təminatı hazırlayıram — vibe coding tərzində, VS Code daxilində AI alətləri ilə ideyadan məhsula qədər. Mürəkkəb məsələləri həll etməyi və ideyaları reallığa çevirməyi sevirəm.',
-      moreLink: 'Daha ətraflı',
-    },
-    educationTitle: 'Təhsil',
-    education: [
-      { institution: 'Azərbaycan Dövlət Pedaqoji Universiteti', degree: 'Bakalavriat · Riyaziyyat müəllimliyi' },
-      { institution: 'Azərbaycan Dövlət Neft və Sənaye Universiteti', degree: 'Fərqlənmə diplomu ilə bakalavriat · Energetika və enerji maşınqayırması' },
-      { institution: 'Azərbaycan Texnologiya Universiteti', degree: 'Magistratura · Kompüter mühəndisliyi' },
-    ],
-    testimonial: {
-      quote: 'Fərid əla mütəxəssisdir! Onunla işləmək əsl zövqdür.',
-      name: 'Aleksey İvanov',
-      role: 'CEO, TechCorp',
-    },
-    footerLocation: 'Bakı, Azərbaycan',
+    footer: 'All rights reserved.',
   },
 }
