@@ -20,12 +20,6 @@ export const projects: Project[] = [
   { key: 'yttm', title: 'YTTM — məktəb saytı', url: 'https://yttm.fizmatix.com', image: yttm, stack: ['React', 'Vite', 'Python API', 'Vercel'], accent: '#d4a72c' },
 ]
 
-export const archive = [
-  'https://mekteb-cedvel-teyin.vercel.app',
-  'https://repetitor-rho.vercel.app/login',
-  'https://arti-mu.vercel.app',
-]
-
 /** Цифры — только проверяемые: учитель с 2017, 3 живых проекта, 3 языка, ночные задачи в облаке. */
 export const stats = [`${new Date().getFullYear() - 2017}+`, '3', '3', '24/7']
 
@@ -36,8 +30,7 @@ export const stackGroups: string[][] = [
   ['Tesseract OCR', 'QR / OMR', 'KaTeX', 'Claude Code'],
 ]
 
+/** Əlaqə – yalnız e-poçt (12.11.2026: telefon/WhatsApp ictimai saytdan çıxarıldı – təhlükəsizlik). */
 export const contacts = {
   email: 'mywork2000001@gmail.com',
-  phone: '+994 77 302 00 59',
-  whatsapp: 'https://wa.me/994773020059',
 }

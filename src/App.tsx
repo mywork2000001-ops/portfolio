@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react'
 import {
-  ArrowRight, ArrowUpRight, Check, Mail, MessageCircle, Moon, Phone, Sun, Menu, X,
+  ArrowRight, ArrowUpRight, Check, Mail, Moon, Sun, Menu, X,
   GraduationCap, WifiOff, Languages, ShieldCheck, Layout, Server, Cloud, Wrench,
 } from 'lucide-react'
 import photo from './assets/foto.png'
 import { useLanguage } from './context/LanguageContext'
 import { useTheme } from './context/ThemeContext'
 import { languageNames, type Lang } from './i18n/translations'
-import { archive, contacts, projects, stackGroups, stats } from './data/portfolio'
+import { contacts, projects, stackGroups, stats } from './data/portfolio'
 
 const SECTIONS = ['projects', 'approach', 'stack', 'about', 'contact'] as const
 
@@ -209,17 +209,6 @@ function Projects() {
         })}
       </div>
 
-      <div className="mt-10 rounded-3xl border border-dashed border-line p-6 dark:border-white/15">
-        <p className="font-bold text-ink dark:text-white">{t.projects.archive}</p>
-        <p className="text-sm text-muted">{t.projects.archiveLead}</p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {archive.map((u, i) => (
-            <a key={u} href={u} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full bg-ink/5 px-3.5 py-2 text-sm font-semibold text-ink transition hover:bg-ink/10 dark:bg-white/10 dark:text-white dark:hover:bg-white/15">
-              {t.archiveNames[i]} <ArrowUpRight size={14} />
-            </a>
-          ))}
-        </div>
-      </div>
     </section>
   )
 }
@@ -298,10 +287,9 @@ function About() {
           <p className="font-bold text-ink dark:text-white">{t.about.timelineTitle}</p>
           <ol className="mt-6 space-y-6 border-l-2 border-line pl-6 dark:border-white/10">
             {t.about.timeline.map((it) => (
-              <li key={it.years} className="relative">
+              <li key={it.title} className="relative">
                 <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-brand dark:border-night-card" />
-                <p className="font-mono text-xs font-semibold text-brand">{it.years}</p>
-                <p className="mt-1 font-bold text-ink dark:text-white">{it.title}</p>
+                <p className="font-bold text-ink dark:text-white">{it.title}</p>
                 <p className="text-sm text-muted">{it.place}</p>
               </li>
             ))}
@@ -324,12 +312,6 @@ function Contact() {
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a href={`mailto:${contacts.email}`} className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-bold text-ink transition hover:-translate-y-0.5">
               <Mail size={18} /> {t.contact.email}
-            </a>
-            <a href={contacts.whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#1fa855] px-6 py-3.5 font-bold text-white transition hover:-translate-y-0.5">
-              <MessageCircle size={18} /> {t.contact.whatsapp}
-            </a>
-            <a href={`tel:${contacts.phone.replace(/\s/g, '')}`} className="inline-flex items-center gap-2 rounded-full border border-white/25 px-6 py-3.5 font-bold text-white transition hover:-translate-y-0.5">
-              <Phone size={18} /> {contacts.phone}
             </a>
           </div>
           <p className="mt-6 font-mono text-sm text-white/60">{contacts.email}</p>

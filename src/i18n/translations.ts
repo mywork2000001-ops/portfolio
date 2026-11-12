@@ -13,13 +13,12 @@ export interface Translation {
   theme: string
   hero: { badge: string; title: string; text: string; cta: string; contact: string; chips: [string, string, string] }
   stats: [string, string, string, string]
-  projects: { title: string; lead: string; open: string; live: string; archive: string; archiveLead: string }
+  projects: { title: string; lead: string; open: string; live: string; }
   projectText: { muellim: ProjectText; sts: ProjectText; yttm: ProjectText }
-  archiveNames: [string, string, string]
   approach: { title: string; lead: string; items: { title: string; text: string }[] }
   stack: { title: string; lead: string; groups: [string, string, string, string] }
-  about: { title: string; text: string; timelineTitle: string; timeline: { years: string; title: string; place: string }[] }
-  contact: { title: string; text: string; email: string; whatsapp: string; call: string }
+  about: { title: string; text: string; timelineTitle: string; timeline: { title: string; place: string }[] }
+  contact: { title: string; text: string; email: string }
   footer: string
 }
 
@@ -29,7 +28,7 @@ export const translations: Record<Lang, Translation> = {
     menu: 'Menyu',
     theme: 'Mövzunu dəyiş',
     hero: {
-      badge: 'Riyaziyyat müəllimi · Tərtər',
+      badge: 'Riyaziyyat müəllimi',
       title: 'Müəllim kimi düşünür, proqramçı kimi qururam.',
       text: 'Məktəb üçün real işləyən rəqəmsal alətlər hazırlayıram: elektron jurnal və imtahanlar, telefonla test yaratmaq, kağız blankların yoxlanması, məktəb saytı. Hər biri sinifdə sınaqdan keçir.',
       cta: 'Layihələrə bax',
@@ -42,8 +41,6 @@ export const translations: Record<Lang, Translation> = {
       lead: 'Hamısı işləkdir və hər gün müəllim və şagirdlər tərəfindən istifadə olunur.',
       open: 'Aç',
       live: 'Canlı',
-      archive: 'Əvvəlki layihələr',
-      archiveLead: 'Öyrəndiyim və sınadığım ilk platformalar.',
     },
     projectText: {
       muellim: {
@@ -55,11 +52,10 @@ export const translations: Record<Lang, Translation> = {
         points: ['Tətbiqdaxili kamera, avtomatik çərçivə, mətnin tanınması (OCR)', 'QR-lu blanklar, linklə onlayn test', 'Telefona quraşdırılır, internetsiz işləyir'],
       },
       yttm: {
-        desc: 'Tərtər şəhər 6 nömrəli məktəbin rəsmi saytı (YTTM layihəsi).',
+        desc: 'Məktəbin rəsmi saytı (YTTM layihəsi).',
         points: ['Xəbərlər avtomatik yenilənir', 'Şagird və müəllim girişi', 'Telefona uyğun, üç dildə'],
       },
     },
-    archiveNames: ['Dərs cədvəli qurucusu', 'Repetitor platforması', 'Müəllim üçün planlaşdırma'],
     approach: {
       title: 'Necə işləyirəm',
       lead: 'Proqramı özüm istifadə edirəm — ona görə hər detal sinif üçün düşünülüb.',
@@ -73,21 +69,19 @@ export const translations: Record<Lang, Translation> = {
     stack: { title: 'Texnologiyalar', lead: 'Müasir, sürətli və pulsuz/ucuz bulud həlləri.', groups: ['İnterfeys', 'Server', 'Bulud', 'Alətlər'] },
     about: {
       title: 'Haqqımda',
-      text: 'Təhsilimə görə enerji mühəndisiyəm, 2017-ci ildən riyaziyyat müəllimiyəm, 2025-ci ildə kompüter mühəndisliyi üzrə magistraturanı bitirmişəm. Məktəbdə dərs deyirəm və paralel olaraq məktəb üçün proqramlar hazırlayıram — ideyadan istifadəyə qədər, süni intellekt alətləri ilə.',
+      text: 'Təhsilimə görə enerji mühəndisiyəm, riyaziyyat müəllimiyəm və kompüter mühəndisliyi üzrə magistrəm. Məktəbdə dərs deyirəm və paralel olaraq məktəb üçün proqramlar hazırlayıram — ideyadan istifadəyə qədər, süni intellekt alətləri ilə.',
       timelineTitle: 'Yol',
       timeline: [
-        { years: '2023–2025', title: 'Magistratura · Kompüter mühəndisliyi', place: 'Azərbaycan Texnologiya Universiteti' },
-        { years: '2017 — indi', title: 'Riyaziyyat müəllimi', place: 'Tərtər şəhər 6 nömrəli məktəb' },
-        { years: '2012–2017', title: 'Bakalavr · Riyaziyyat müəllimliyi', place: 'Azərbaycan Dövlət Pedaqoji Universiteti' },
-        { years: '2003–2007', title: 'Bakalavr (fərqlənmə) · Energetika', place: 'Azərbaycan Dövlət Neft və Sənaye Universiteti' },
+        { title: 'Magistratura · Kompüter mühəndisliyi', place: 'Azərbaycan Texnologiya Universiteti' },
+        { title: 'Riyaziyyat müəllimi', place: 'Ümumtəhsil məktəbi' },
+        { title: 'Bakalavr · Riyaziyyat müəllimliyi', place: 'Azərbaycan Dövlət Pedaqoji Universiteti' },
+        { title: 'Bakalavr (fərqlənmə) · Energetika', place: 'Azərbaycan Dövlət Neft və Sənaye Universiteti' },
       ],
     },
     contact: {
       title: 'Birlikdə nəsə quraq?',
       text: 'Məktəbiniz və ya kursunuz üçün rəqəmsal alət lazımdırsa — yazın, danışaq.',
       email: 'E-poçt yaz',
-      whatsapp: 'WhatsApp',
-      call: 'Zəng et',
     },
     footer: 'Bütün hüquqlar qorunur.',
   },
@@ -96,7 +90,7 @@ export const translations: Record<Lang, Translation> = {
     menu: 'Меню',
     theme: 'Сменить тему',
     hero: {
-      badge: 'Учитель математики · Тертер',
+      badge: 'Учитель математики',
       title: 'Думаю как учитель, строю как разработчик.',
       text: 'Создаю цифровые инструменты, которые реально работают в школе: электронный журнал и экзамены, создание тестов телефоном, проверка бумажных бланков, сайт школы. Каждый проходит проверку в классе.',
       cta: 'Смотреть проекты',
@@ -109,8 +103,6 @@ export const translations: Record<Lang, Translation> = {
       lead: 'Все работают и каждый день используются учителями и учениками.',
       open: 'Открыть',
       live: 'Онлайн',
-      archive: 'Ранние проекты',
-      archiveLead: 'Первые платформы, на которых я учился.',
     },
     projectText: {
       muellim: {
@@ -122,11 +114,10 @@ export const translations: Record<Lang, Translation> = {
         points: ['Камера в приложении, авторамка, распознавание текста (OCR)', 'Бланки с QR, онлайн-тест по ссылке', 'Устанавливается на телефон, работает без интернета'],
       },
       yttm: {
-        desc: 'Официальный сайт школы № 6 города Тертер (проект YTTM).',
+        desc: 'Официальный сайт школы (проект YTTM).',
         points: ['Новости обновляются автоматически', 'Вход для учеников и учителей', 'Адаптивный, на трёх языках'],
       },
     },
-    archiveNames: ['Конструктор расписания', 'Платформа для репетиторов', 'Планирование для учителя'],
     approach: {
       title: 'Как я работаю',
       lead: 'Я сам пользуюсь своими программами — поэтому каждая деталь продумана для класса.',
@@ -140,21 +131,19 @@ export const translations: Record<Lang, Translation> = {
     stack: { title: 'Технологии', lead: 'Современные, быстрые и бесплатные/недорогие облачные решения.', groups: ['Интерфейс', 'Сервер', 'Облако', 'Инструменты'] },
     about: {
       title: 'Обо мне',
-      text: 'По образованию инженер-энергетик, с 2017 года — учитель математики, в 2025-м окончил магистратуру по компьютерной инженерии. Преподаю в школе и параллельно создаю программы для школы — от идеи до использования, вместе с AI-инструментами.',
+      text: 'По образованию инженер-энергетик, учитель математики, магистр компьютерной инженерии. Преподаю в школе и параллельно создаю программы для школы — от идеи до использования, вместе с AI-инструментами.',
       timelineTitle: 'Путь',
       timeline: [
-        { years: '2023–2025', title: 'Магистратура · Компьютерная инженерия', place: 'Азербайджанский технологический университет' },
-        { years: '2017 — сейчас', title: 'Учитель математики', place: 'Школа № 6 г. Тертер' },
-        { years: '2012–2017', title: 'Бакалавриат · Учитель математики', place: 'Азербайджанский государственный педагогический университет' },
-        { years: '2003–2007', title: 'Бакалавриат с отличием · Энергетика', place: 'Азербайджанский государственный университет нефти и промышленности' },
+        { title: 'Магистратура · Компьютерная инженерия', place: 'Азербайджанский технологический университет' },
+        { title: 'Учитель математики', place: 'Общеобразовательная школа' },
+        { title: 'Бакалавриат · Учитель математики', place: 'Азербайджанский государственный педагогический университет' },
+        { title: 'Бакалавриат с отличием · Энергетика', place: 'Азербайджанский государственный университет нефти и промышленности' },
       ],
     },
     contact: {
       title: 'Создадим что-нибудь вместе?',
       text: 'Нужен цифровой инструмент для школы или курсов — напишите, обсудим.',
       email: 'Написать на почту',
-      whatsapp: 'WhatsApp',
-      call: 'Позвонить',
     },
     footer: 'Все права защищены.',
   },
@@ -163,7 +152,7 @@ export const translations: Record<Lang, Translation> = {
     menu: 'Menu',
     theme: 'Toggle theme',
     hero: {
-      badge: 'Math teacher · Tartar, Azerbaijan',
+      badge: 'Math teacher · Azerbaijan',
       title: 'I think like a teacher and build like a developer.',
       text: 'I build digital tools that actually work in schools: a gradebook and exams, phone-made tests, paper answer-sheet checking, a school website. Every one is tested in a real classroom.',
       cta: 'View projects',
@@ -176,8 +165,6 @@ export const translations: Record<Lang, Translation> = {
       lead: 'All of them are running and used by teachers and students every day.',
       open: 'Open',
       live: 'Live',
-      archive: 'Earlier projects',
-      archiveLead: 'The first platforms I learned on.',
     },
     projectText: {
       muellim: {
@@ -189,11 +176,10 @@ export const translations: Record<Lang, Translation> = {
         points: ['In-app camera, auto-crop, text recognition (OCR)', 'QR answer sheets, online tests by link', 'Installs on a phone and works offline'],
       },
       yttm: {
-        desc: 'The official website of School No. 6 in Tartar (YTTM project).',
+        desc: 'The official school website (YTTM project).',
         points: ['News updates automatically', 'Student and teacher sign-in', 'Responsive, in three languages'],
       },
     },
-    archiveNames: ['Timetable builder', 'Tutoring platform', 'Lesson planning for teachers'],
     approach: {
       title: 'How I work',
       lead: 'I use my own software every day — so every detail is designed for the classroom.',
@@ -207,21 +193,19 @@ export const translations: Record<Lang, Translation> = {
     stack: { title: 'Stack', lead: 'Modern, fast and free/low-cost cloud solutions.', groups: ['Frontend', 'Backend', 'Cloud', 'Tools'] },
     about: {
       title: 'About me',
-      text: "By training I'm an energy engineer; since 2017 I've been a math teacher, and in 2025 I completed a master's in computer engineering. I teach at school and build software for schools on the side — from idea to daily use, together with AI tools.",
+      text: "By training I'm an energy engineer, a math teacher and a master of computer engineering. I teach at school and build software for schools on the side — from idea to daily use, together with AI tools.",
       timelineTitle: 'Path',
       timeline: [
-        { years: '2023–2025', title: "Master's · Computer engineering", place: 'Azerbaijan Technological University' },
-        { years: '2017 — now', title: 'Math teacher', place: 'School No. 6, Tartar' },
-        { years: '2012–2017', title: "Bachelor's · Mathematics teaching", place: 'Azerbaijan State Pedagogical University' },
-        { years: '2003–2007', title: "Bachelor's with honors · Power engineering", place: 'Azerbaijan State Oil and Industry University' },
+        { title: "Master's · Computer engineering", place: 'Azerbaijan Technological University' },
+        { title: 'Math teacher', place: 'Public school' },
+        { title: "Bachelor's · Mathematics teaching", place: 'Azerbaijan State Pedagogical University' },
+        { title: "Bachelor's with honors · Power engineering", place: 'Azerbaijan State Oil and Industry University' },
       ],
     },
     contact: {
       title: 'Shall we build something together?',
       text: 'Need a digital tool for your school or course? Write to me and let’s talk.',
       email: 'Send an email',
-      whatsapp: 'WhatsApp',
-      call: 'Call',
     },
     footer: 'All rights reserved.',
   },
