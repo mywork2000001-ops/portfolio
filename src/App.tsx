@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import DAILY_TESTS from './data/gunun-sinaq.json'
+import { IsbatPage, VizualPage } from './Vizual'
 
 const NAVY = '#0B1026'
 const BANK_BASE = 'https://bank.fizmatix.com/P0010_Riyaziyyat_Test_Bank/app/public/lessons/tests/'
@@ -112,7 +113,7 @@ function Header() {
     ['/sinaq', 'Günün sınağı'],
     ['/bugun', 'Günün tapşırığı'],
     ['/#bolmeler', 'Bölmələr'],
-    ['/#video', 'Video'],
+    ['/vizual', 'Vizual izahlar'],
   ]
   return (
     <header className="px-4 sm:px-6" style={{ background: NAVY }}>
@@ -403,6 +404,14 @@ export default function App() {
   const path = typeof window !== 'undefined' ? window.location.pathname.replace(/\/+$/, '') : ''
   if (path === '/bugun') return <TodayPage />
   if (path === '/sinaq') return <DailyTestPage />
+  if (path === '/vizual' || path.startsWith('/isbat/'))
+    return (
+      <div className="min-h-screen bg-[#F6F7FB] text-[#0F172A]">
+        <Header />
+        {path === '/vizual' ? <VizualPage /> : <IsbatPage slug={decodeURIComponent(path.slice(7))} />}
+        <Footer />
+      </div>
+    )
   const m = path.match(/^\/bolme\/(\w+)$/)
   if (m && FRAMES[m[1]]) return <FramePage title={FRAMES[m[1]].title} src={FRAMES[m[1]].src} />
   return <HomePage />
