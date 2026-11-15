@@ -113,7 +113,7 @@ export function VizualPage() {
   return (
     <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Vizual izahlar</h1>
-      <p className="mt-2 text-[17px] text-[#475569]">Düsturun niyə doğru olduğunu gözlə gör. Video yalnız kliklə açılır.</p>
+      <p className="mt-2 text-[17px] text-[#475569]">Düsturun niyə doğru olduğunu gözlə gör: hər teorem üçün bir neçə isbat.</p>
       <h2 className="mb-3 mt-8 text-xl font-black">Teoremlər – bir neçə isbat</h2>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {Object.entries(LIST).map(([slug, it]) => (
