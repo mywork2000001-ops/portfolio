@@ -16,22 +16,46 @@ export const TOPIC_AZ: Record<string, string> = {
 }
 
 // GeoGebra: öz konstruksiyalarımız (komandalarla) – kənar materiala bağlı deyil
-const GGB: Record<string, string[]> = {
-  pifaqor: [
-    'A=(0,0)', 'B=(5,0)', 'k=Circle(Midpoint(A,B),2.5)', 'C=Point(k)', 'SetCoords(C,1.8,2.4)', 'SetVisibleInView(k,1,false)',
-    'tri=Polygon(A,B,C)', 'sc=Polygon(B,A,4)', 'sa=Polygon(C,B,4)', 'sb=Polygon(A,C,4)',
-    'SetColor(sc,"#FACC15")', 'SetColor(sa,"#3B82F6")', 'SetColor(sb,"#F472B6")', 'SetColor(tri,"#0F172A")',
-    'txt=Text("a² + b² = " + Round(Area(sa) + Area(sb), 2) + "     c² = " + Round(Area(sc), 2), (-4.5, 9.2))',
-    'ZoomIn(-6,-6,11,10.5)',
-  ],
-  'kvadrat-cem': [
-    'a=Slider(1,4,0.1)', 'b=Slider(1,4,0.1)', 'SetValue(a,2)', 'SetValue(b,3)',
-    'p1=Polygon((0,0),(a,0),(a,a),(0,a))', 'p2=Polygon((a,0),(a+b,0),(a+b,a),(a,a))',
-    'p3=Polygon((0,a),(a,a),(a,a+b),(0,a+b))', 'p4=Polygon((a,a),(a+b,a),(a+b,a+b),(a,a+b))',
-    'SetColor(p1,"#F472B6")', 'SetColor(p2,"#3B82F6")', 'SetColor(p3,"#3B82F6")', 'SetColor(p4,"#A78BFA")',
-    'txt=Text("(a+b)² = " + Round((a+b)^2, 2) + "   a² + 2ab + b² = " + Round(a^2 + 2a b + b^2, 2), (0, 9))',
-    'ZoomIn(-1,-1,10,10)',
-  ],
+// 15.11.2026 brauzerdə yoxlanıb (PROBLEMLER P-4): SetCoords/SetValue/SetVisibleInView/ZoomIn və mövqeli Text evalCommand-da
+// xəta pəncərəsi verir – onlar API ilə edilir (after); komandalar yalnız konstruksiya + rəng + dinamik mətn.
+type Api = {
+  evalCommand: (c: string) => boolean; getAllObjectNames: () => string[]; setLabelVisible: (n: string, v: boolean) => void
+  setErrorDialogsActive: (v: boolean) => void; setPerspective: (p: string) => void; setCoords: (n: string, x: number, y: number) => void
+  setVisible: (n: string, v: boolean) => void; setValue: (n: string, v: number) => void
+  setCoordSystem: (x0: number, x1: number, y0: number, y1: number) => void
+}
+const GGB: Record<string, { cmds: string[]; labels: string[]; after: (api: Api) => void }> = {
+  pifaqor: {
+    cmds: [
+      'A=(0,0)', 'B=(5,0)', 'k=Circle(Midpoint(A,B),2.5)', 'C=Point(k)',
+      'tri=Polygon(A,B,C)', 'sc=Polygon(B,A,4)', 'sa=Polygon(C,B,4)', 'sb=Polygon(A,C,4)',
+      'SetColor(sc,"#FACC15")', 'SetColor(sa,"#3B82F6")', 'SetColor(sb,"#F472B6")', 'SetColor(tri,"#0F172A")',
+      'txt="a² + b² = " + (Area(sa) + Area(sb)) + "     c² = " + Area(sc)',
+    ],
+    labels: ['C'],
+    after: (api) => {
+      api.setCoords('C', 1.8, 2.4)
+      api.setVisible('k', false)
+      api.setCoords('txt', -5, 9.6)
+      api.setCoordSystem(-6, 11, -6, 10.5)
+    },
+  },
+  'kvadrat-cem': {
+    cmds: [
+      'a=Slider(1,4,0.1)', 'b=Slider(1,4,0.1)',
+      'p1=Polygon((0,0),(a,0),(a,a),(0,a))', 'p2=Polygon((a,0),(a+b,0),(a+b,a),(a,a))',
+      'p3=Polygon((0,a),(a,a),(a,a+b),(0,a+b))', 'p4=Polygon((a,a),(a+b,a),(a+b,a+b),(a,a+b))',
+      'SetColor(p1,"#F472B6")', 'SetColor(p2,"#3B82F6")', 'SetColor(p3,"#3B82F6")', 'SetColor(p4,"#A78BFA")',
+      'txt="(a+b)² = " + ((a+b)^2) + "   a² + 2ab + b² = " + (a^2 + 2a b + b^2)',
+    ],
+    labels: ['a', 'b'],
+    after: (api) => {
+      api.setValue('a', 2)
+      api.setValue('b', 3)
+      api.setCoords('txt', -0.5, 9.3)
+      api.setCoordSystem(-1, 10, -1, 10)
+    },
+  },
 }
 
 declare global {
@@ -62,9 +86,13 @@ function GeoGebraBox({ name }: { name: string }) {
         new App({
           appName: 'classic', width: 360, height: 420, showToolBar: false, showAlgebraInput: false, showMenuBar: false,
           enableShiftDragZoom: true, showResetIcon: true, language: 'az', scaleContainerClass: 'ggb-wrap',
-          appletOnLoad: (api: { evalCommand: (c: string) => boolean; getAllObjectNames: () => string[]; setLabelVisible: (n: string, v: boolean) => void }) => {
-            GGB[name].forEach((c) => api.evalCommand(c))
-            api.getAllObjectNames().forEach((n) => api.setLabelVisible(n, ['C', 'a', 'b'].includes(n)))
+          appletOnLoad: (api: Api) => {
+            const g = GGB[name]
+            api.setErrorDialogsActive(false)
+            api.setPerspective('G')
+            g.cmds.forEach((c) => api.evalCommand(c))
+            try { g.after(api) } catch { /* çertyoj yenə işləyir */ }
+            api.getAllObjectNames().forEach((n) => api.setLabelVisible(n, g.labels.includes(n)))
           },
         }, true).inject(id)
       })
