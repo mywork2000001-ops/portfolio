@@ -1,6 +1,21 @@
 import { useState } from 'react'
+import DAILY_TESTS from './data/gunun-sinaq.json'
 
 const NAVY = '#0B1026'
+const BANK_BASE = 'https://bank.fizmatix.com/P0010_Riyaziyyat_Test_Bank/app/public/lessons/tests/'
+const FRAMES: Record<string, { title: string; src: string }> = {
+  dim9: { title: 'DİM 9-cu sinif', src: 'https://dim9.fizmatix.com/' },
+  bank: { title: 'Test bankı', src: 'https://bank.fizmatix.com/' },
+}
+
+// Günün sınağı: Bakı tarixinə görə hamı üçün eyni test (15.11.2026 = 1-ci test)
+function dailyTest() {
+  const day = (ms: number) => Math.floor(ms / 86400000)
+  const today = day(Date.now() + 4 * 3600000)
+  const n = DAILY_TESTS.length
+  const i = (((today - day(Date.UTC(2026, 10, 15))) % n) + n) % n
+  return { ...DAILY_TESTS[i], num: i + 1, n }
+}
 const GOLD = '#FACC15'
 const TIKTOK = 'https://www.tiktok.com/@fizmatix.riyaziyyat'
 
@@ -23,13 +38,13 @@ const TASK = {
 
 const SECTIONS = [
   {
-    href: 'https://dim9.fizmatix.com/',
+    href: '/bolme/dim9',
     tag: '9-cu sinif',
     title: 'DİM 9-cu sinif',
     text: 'Buraxılış imtahanı formatında testlər: vaxt, nəticə və hər sualın həlli.',
   },
   {
-    href: 'https://bank.fizmatix.com/',
+    href: '/bolme/bank',
     tag: 'Bütün siniflər',
     title: 'Test bankı',
     text: 'Mövzular üzrə testlər – I və II hissə. Zəif mövzunu seç, məşq et.',
@@ -94,10 +109,10 @@ function DailyTask() {
 
 function Header() {
   const links = [
-    ['#bolmeler', 'Bölmələr'],
+    ['/sinaq', 'Günün sınağı'],
     ['/bugun', 'Günün tapşırığı'],
-    ['#video', 'Video izahlar'],
-    ['#valideyn', 'Valideynlər üçün'],
+    ['/#bolmeler', 'Bölmələr'],
+    ['/#video', 'Video'],
   ]
   return (
     <header className="px-4 sm:px-6" style={{ background: NAVY }}>
@@ -113,7 +128,7 @@ function Header() {
             </a>
           ))}
         </nav>
-        <a href="#bolmeler" className="ml-auto rounded-xl px-4 py-3 text-[15px] font-extrabold text-[#0B1026] sm:ml-0" style={{ background: GOLD }}>
+        <a href="/sinaq" className="ml-auto rounded-xl px-4 py-3 text-[15px] font-extrabold text-[#0B1026] sm:ml-0" style={{ background: GOLD }}>
           Başla
         </a>
       </div>
@@ -139,8 +154,9 @@ function Footer() {
           <span>· Riyaziyyatı düşünərək öyrən</span>
         </div>
         <div className="flex flex-wrap gap-5 text-sm">
-          <a href="https://dim9.fizmatix.com/" className="text-[#CBD5E1] hover:text-white">DİM 9</a>
-          <a href="https://bank.fizmatix.com/" className="text-[#CBD5E1] hover:text-white">Test bankı</a>
+          <a href="/sinaq" className="text-[#CBD5E1] hover:text-white">Günün sınağı</a>
+          <a href="/bolme/dim9" className="text-[#CBD5E1] hover:text-white">DİM 9</a>
+          <a href="/bolme/bank" className="text-[#CBD5E1] hover:text-white">Test bankı</a>
           <a href={TIKTOK} className="text-[#CBD5E1] hover:text-white">TikTok</a>
         </div>
       </div>
@@ -148,25 +164,51 @@ function Footer() {
   )
 }
 
+// Bölmə səhifəsi: test sayt daxilində (iframe), şagird alt saytın ünvanını görmür
+function FramePage({ title, sub, src }: { title: string; sub?: string; src: string }) {
+  return (
+    <div className="flex min-h-screen flex-col bg-[#F6F7FB]">
+      <Header />
+      <div className="border-b border-[#E2E8F0] bg-white px-4 py-3 sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2">
+          <h1 className="text-lg font-black sm:text-xl">{title}</h1>
+          {sub && <span className="text-sm font-semibold text-[#475569]">{sub}</span>}
+        </div>
+      </div>
+      <iframe title={title} src={src} className="w-full flex-1 border-0 bg-white" style={{ minHeight: 'calc(100dvh - 140px)' }} allow="fullscreen" />
+    </div>
+  )
+}
+
+function DailyTestPage() {
+  const d = dailyTest()
+  return <FramePage title={`Günün sınağı: ${d.t}`} sub="Hər gün yeni test · hamı üçün eyni" src={BANK_BASE + d.p} />
+}
+
 function TodayPage() {
   return (
-    <div className="min-h-screen" style={{ background: NAVY }}>
-      <BetaBar />
-      <Header />
-      <main className="mx-auto max-w-xl px-4 pb-16 pt-8">
-        <h1 className="mb-3 text-3xl font-black tracking-tight text-white">Bu günün tapşırığı</h1>
-        <p className="mb-5 text-[15px] text-[#CBD5E1]">Son TikTok videosundakı tapşırığı aç və özün həll et.</p>
-        <a href="https://sual.fizmatix.com/" className="mb-8 flex min-h-[56px] items-center justify-center rounded-2xl text-[17px] font-extrabold text-[#0B1026]" style={{ background: GOLD }}>
-          Videodakı tapşırığı aç →
-        </a>
-        <p className="mb-3 text-sm font-bold uppercase tracking-wide text-[#94A3B8]">Və ya bu tapşırığı yoxla</p>
-        <DailyTask />
-        <p className="mt-6 text-center text-[15px] text-[#CBD5E1]">
-          Hər gün yeni tapşırıq – videoda izah:{' '}
-          <a href={TIKTOK} className="font-bold text-[#FACC15]">@fizmatix.riyaziyyat</a>
-        </p>
-      </main>
-      <Footer />
+    <FramePage
+      title="Günün tapşırığı"
+      sub="Son videodakı tapşırıq – özün həll et"
+      src="https://sual.fizmatix.com/"
+    />
+  )
+}
+
+function LatestVideo() {
+  return (
+    <div className="mx-auto w-full max-w-[300px]">
+      <video
+        src="/tiktok/api/video.mp4"
+        controls
+        playsInline
+        preload="metadata"
+        className="aspect-[9/16] w-full rounded-2xl bg-black shadow-[0_20px_40px_rgba(0,0,0,.4)]"
+        aria-label="Son video izah"
+      />
+      <a href={TIKTOK} className="mt-3 flex min-h-[48px] items-center justify-center rounded-xl bg-white font-extrabold text-[#0B1026]">
+        TikTok-da bütün videolar →
+      </a>
     </div>
   )
 }
@@ -190,8 +232,8 @@ function HomePage() {
               Hər gün 10 dəqiqə: tapşırığı özün həll et, səhvini gör, addım-addım izahı oxu.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href="#bolmeler" className="rounded-2xl px-6 py-4 text-[17px] font-extrabold text-[#0B1026]" style={{ background: GOLD }}>
-                Başla
+              <a href="/sinaq" className="rounded-2xl px-6 py-4 text-[17px] font-extrabold text-[#0B1026]" style={{ background: GOLD }}>
+                Günün sınağına başla
               </a>
               <a href="#gunun" className="rounded-2xl border border-[#334155] px-5 py-4 text-[17px] font-bold text-white">
                 Qeydiyyatsız yoxla
@@ -265,17 +307,8 @@ function HomePage() {
               @fizmatix.riyaziyyat
             </a>
           </div>
-          <div className="grid min-w-0 flex-[2_1_480px] grid-cols-3 gap-3.5">
-            {[
-              ['07:30 · KLASSİK', 'Bir tapşırıq, addım-addım', 'from-[#142057] to-[#1B2A6B]'],
-              ['13:00 · VİZUAL İSBAT', 'Düsturu şəkildə gör', 'from-[#1E1B4B] to-[#4C1D95]'],
-              ['18:30 · ÇAĞIRIŞ', 'Cavabı şərhdə yaz', 'from-[#0F172A] to-[#0E7490]'],
-            ].map(([a, b, g]) => (
-              <div key={a} className={`flex aspect-[9/16] flex-col justify-between rounded-2xl bg-gradient-to-b ${g} p-3 text-white sm:p-4`}>
-                <span className="text-[10px] font-extrabold text-[#FACC15] sm:text-xs">{a}</span>
-                <span className="text-xs font-bold sm:text-[15px]">{b}</span>
-              </div>
-            ))}
+          <div className="min-w-0 flex-[1_1_300px]">
+            <LatestVideo />
           </div>
         </div>
       </section>
@@ -318,5 +351,9 @@ function HomePage() {
 
 export default function App() {
   const path = typeof window !== 'undefined' ? window.location.pathname.replace(/\/+$/, '') : ''
-  return path === '/bugun' ? <TodayPage /> : <HomePage />
+  if (path === '/bugun') return <TodayPage />
+  if (path === '/sinaq') return <DailyTestPage />
+  const m = path.match(/^\/bolme\/(\w+)$/)
+  if (m && FRAMES[m[1]]) return <FramePage title={FRAMES[m[1]].title} src={FRAMES[m[1]].src} />
+  return <HomePage />
 }

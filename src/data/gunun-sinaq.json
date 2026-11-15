@@ -1,0 +1,554 @@
+[
+ {
+  "p": "p1-s01-t1.html",
+  "t": "Natural ədədlərin onluq say sistemındə yazılışı"
+ },
+ {
+  "p": "p1-s01-t2.html",
+  "t": "Natural ədədlərin toplanması, çıxılması, vurulması və bölünməsi"
+ },
+ {
+  "p": "p1-s01-t3.html",
+  "t": "Natural ədədlərin bölünmə əlamətləri. Qalıqlı bölmə"
+ },
+ {
+  "p": "p1-s01-t4.html",
+  "t": "Natural ədədlərin sadə vuruqlara ayrılışı. ƏBOB. ƏKOB"
+ },
+ {
+  "p": "p1-s02-t1.html",
+  "t": "Adi və onluq kəsrlər üzərində əməllər"
+ },
+ {
+  "p": "p1-s02-t2.html",
+  "t": "Düzgün/naməlum kəsrlər. Sonsuz dövri onluq kəsrlər (I)"
+ },
+ {
+  "p": "p1-s02-t3.html",
+  "t": "Adi kəsrin onluq kəsrə çevrilməsi (və əksi)"
+ },
+ {
+  "p": "p1-s02-t4.html",
+  "t": "Kəsrlərin müqayisəsi"
+ },
+ {
+  "p": "p1-s02-t5.html",
+  "t": "Ədədin hissəsinin və hissəsinə görə ədədin tapılması"
+ },
+ {
+  "p": "p1-s03-t1.html",
+  "t": "Nisbət"
+ },
+ {
+  "p": "p1-s03-t2.html",
+  "t": "Tənasüb"
+ },
+ {
+  "p": "p1-s03-t3.html",
+  "t": "Faiz"
+ },
+ {
+  "p": "p1-s03-t4.html",
+  "t": "Nisbət · Tənasüb · Faiz — Yekun"
+ },
+ {
+  "p": "p1-s04-t1.html",
+  "t": "Rasional ədədlər. Rasional ədədlər üzərində əməllər"
+ },
+ {
+  "p": "p1-s04-t2.html",
+  "t": "İrrasional ədədlər"
+ },
+ {
+  "p": "p1-s04-t3.html",
+  "t": "Ədədin modulu. Modul daxil olan ifadələrin çevrilməsi"
+ },
+ {
+  "p": "p1-s04-t4.html",
+  "t": "Ədədi orta. Həqiqi ədədlərin müqayisəsi"
+ },
+ {
+  "p": "p1-s04-t5.html",
+  "t": "Ədədin tam və kəsr hissəsi. Ədədin standart şəkli"
+ },
+ {
+  "p": "p1-s05-t1.html",
+  "t": "Birhədli. Natural üstlü qüvvət"
+ },
+ {
+  "p": "p1-s05-t2.html",
+  "t": "Çoxhədlilər və onlar üzərində əməllər"
+ },
+ {
+  "p": "p1-s05-t3.html",
+  "t": "Müxtəsar vurma düsturları"
+ },
+ {
+  "p": "p1-s05-t4.html",
+  "t": "İfadələrin ədədi qiymətlərinin hesablanması"
+ },
+ {
+  "p": "p1-s05-t5.html",
+  "t": "İfadələrin ən kiçik və ən böyük qiymətlərinin tapılması"
+ },
+ {
+  "p": "p1-s06-t1.html",
+  "t": "Müxtəsar vurma düsturlarının köməyi ilə vuruqlara ayırma"
+ },
+ {
+  "p": "p1-s06-t2.html",
+  "t": "Müxtəlif üsulların köməyi ilə vuruqlara ayırma"
+ },
+ {
+  "p": "p1-s06-t3.html",
+  "t": "Vuruqlara ayırma üsulu ilə ifadələrin ədədi qiymətinin hesablanması"
+ },
+ {
+  "p": "p1-s07-t1.html",
+  "t": "Kəsrlərin ixtisarı. DMQ çoxluğu"
+ },
+ {
+  "p": "p1-s07-t2.html",
+  "t": "İfadələrin sadələşdirilməsi"
+ },
+ {
+  "p": "p1-s07-t3.html",
+  "t": "İfadələrin ədədi qiymətlərinin tapılması"
+ },
+ {
+  "p": "p1-s08-t1.html",
+  "t": "Hesabi kvadrat kök və onun xassələri"
+ },
+ {
+  "p": "p1-s08-t2.html",
+  "t": "n-ci dərəcədən kök. Həqiqi üstlü qüvvət. Ədədlərin müqayisəsi"
+ },
+ {
+  "p": "p1-s08-t3.html",
+  "t": "Kəsrlərin ixtisarı. İfadələrin sadələşdirilməsi və ədədi qiymətinin tapılması"
+ },
+ {
+  "p": "p1-s09-t1.html",
+  "t": "Xətti tənliklər"
+ },
+ {
+  "p": "p1-s09-t2.html",
+  "t": "Kvadrat tənliklər və onların araşdırılması"
+ },
+ {
+  "p": "p1-s09-t3.html",
+  "t": "Viyet teoremi və onun tərsi olan teorem"
+ },
+ {
+  "p": "p1-s09-t4.html",
+  "t": "Rasional tənliklər"
+ },
+ {
+  "p": "p1-s09-t5.html",
+  "t": "Modul işarəsi daxilində dəyişəni olan tənliklər. İrrasional tənliklər"
+ },
+ {
+  "p": "p1-s09-t6.html",
+  "t": "Tənlik qurmaqla məsələlər həlli"
+ },
+ {
+  "p": "p1-s10-t1.html",
+  "t": "Xətti tənliklər sistemi"
+ },
+ {
+  "p": "p1-s10-t2.html",
+  "t": "Xətti tənliklər sisteminin həllinin araşdırılması"
+ },
+ {
+  "p": "p1-s10-t3.html",
+  "t": "Biri birdərəcəli, digəri ikidərəcəli və daha yüksək dərəcəli olan tənliklər sistemi"
+ },
+ {
+  "p": "p1-s10-t4.html",
+  "t": "Hər iki tənliyi ikidərəcəli və daha yüksək dərəcəli olan tənliklər sistemi"
+ },
+ {
+  "p": "p1-s10-t5.html",
+  "t": "Tənliklər sistemi qurmaqla məsələlər həlli"
+ },
+ {
+  "p": "p1-s13-t1.html",
+  "t": "Çoxluqlar. Çoxluqların birləşməsi, kəsişməsi, fərqi"
+ },
+ {
+  "p": "p1-s13-t2.html",
+  "t": "Çoxluqların birləşməsi, kəsişməsi və fərqinin elementlərinin sayı"
+ },
+ {
+  "p": "p1-s14-t1.html",
+  "t": "Həndəsənin əsas anlayışları - Düz xətt, şüa, parça"
+ },
+ {
+  "p": "p1-s14-t2.html",
+  "t": "Bucaq. Bucaqların ölçülməsi. Bucağın tənböləni"
+ },
+ {
+  "p": "p1-s14-t3.html",
+  "t": "Qonşu və qarşılıqlı bucaqlar"
+ },
+ {
+  "p": "p1-s14-t4.html",
+  "t": "İki paralel düz xəttin üçüncü ilə kəsişməsindən alınan bucaqlar"
+ },
+ {
+  "p": "p1-s14-t5.html",
+  "t": "Uyğun tərəfləri paralel və perpendikulyar olan bucaqlar"
+ },
+ {
+  "p": "p1-s15-t1.html",
+  "t": "Üçbucaqlar - Üçbucaq bərabərsizliyi. Perimetr"
+ },
+ {
+  "p": "p1-s15-t2.html",
+  "t": "Üçbucaqlar - Median, tənbölən, hündürlük. Xassələr"
+ },
+ {
+  "p": "p1-s15-t3.html",
+  "t": "Üçbucaqlar - Daxili bucaqların cəmi. Xarici bucaq xassəsi"
+ },
+ {
+  "p": "p1-s15-t4.html",
+  "t": "Üçbucaqlar - Konqruyentlik əlaməti. Tales. Orta xətt"
+ },
+ {
+  "p": "p1-s15-t5.html",
+  "t": "Bərabəryanlı və bərabərtərəfli üçbucaqlar"
+ },
+ {
+  "p": "p1-s15-t6.html",
+  "t": "Düzbucaqlı üçbucaq. Pifaqor teoremi. Münasibətlər"
+ },
+ {
+  "p": "p1-s15-t7.html",
+  "t": "Sinuslar teoremi. Kosinuslar teoremi"
+ },
+ {
+  "p": "p1-s16-t1.html",
+  "t": "Qabarıq çoxbucaqlı. Daxili və xarici bucaqların cəmi. Düzgün çoxbucaqlı"
+ },
+ {
+  "p": "p1-s16-t2.html",
+  "t": "Paraleloqram, onun xassələri və əlamətləri"
+ },
+ {
+  "p": "p1-s16-t3.html",
+  "t": "Düzbucaqlı, kvadrat, romb və onların xassələri"
+ },
+ {
+  "p": "p1-s16-t4.html",
+  "t": "Trapesiya və onun orta xətti"
+ },
+ {
+  "p": "p1-s19-t1.html",
+  "t": "Fiqurların sahəsi — Kvadratın və düzbucaqlının sahəsi"
+ },
+ {
+  "p": "p1-s19-t2.html",
+  "t": "Fiqurların sahəsi — Üçbucağın sahəsi"
+ },
+ {
+  "p": "p1-s19-t3.html",
+  "t": "Fiqurların sahəsi — Paraleloqram və rombun sahəsi"
+ },
+ {
+  "p": "p1-s19-t4.html",
+  "t": "Fiqurların sahəsi — Trapesiyanın sahəsi"
+ },
+ {
+  "p": "p1-s19-t5.html",
+  "t": "Fiqurların sahəsi — Dairənin sahəsi"
+ },
+ {
+  "p": "p1-s19-t6.html",
+  "t": "Fiqurların sahəsi — Bəzi çoxbucaqlıların sahəsi"
+ },
+ {
+  "p": "p1-s20-t1.html",
+  "t": "Ardıcıllıqlar. Silsilələr — Ədədi ardıcıllıq"
+ },
+ {
+  "p": "p1-s20-t2.html",
+  "t": "Ardıcıllıqlar. Silsilələr — Ədədi silsilə"
+ },
+ {
+  "p": "p1-s20-t3.html",
+  "t": "Ardıcıllıqlar. Silsilələr — Həndəsi silsilə"
+ },
+ {
+  "p": "p1-s20-t4.html",
+  "t": "Ardıcıllıqlar. Silsilələr — Ədədi və həndəsi silsiləyə aid məsələlər"
+ },
+ {
+  "p": "p1-s21-t1.html",
+  "t": "Bərabərsizliklər — Ədədi bərabərsizliklər və onların əsas xassələri"
+ },
+ {
+  "p": "p1-s21-t2.html",
+  "t": "Bərabərsizliklər — Birdəyişənli xətti bərabərsizliklər"
+ },
+ {
+  "p": "p1-s21-t3.html",
+  "t": "Bərabərsizliklər — İkidərəcəli və yüksək dərəcəli bərabərsizliklər"
+ },
+ {
+  "p": "p1-s21-t4.html",
+  "t": "Bərabərsizliklər — Rasional bərabərsizliklər"
+ },
+ {
+  "p": "p1-s21-t5.html",
+  "t": "Bərabərsizliklər — Kvadrat bərabərsizliklər sistemi. İrrasional bərabərsizliklər"
+ },
+ {
+  "p": "p1-s21-t6.html",
+  "t": "Bərabərsizliklər — Modul işarəsi daxilində dəyişəni olan bərabərsizliklər"
+ },
+ {
+  "p": "p1-s22-t1.html",
+  "t": "Çevrə. Dairə. Radius, diametr, vətər"
+ },
+ {
+  "p": "p1-s22-t2.html",
+  "t": "Mərkəzi bucaq. Daxilə çəkilmiş bucaq. Toxunan-vətər"
+ },
+ {
+  "p": "p1-s22-t3.html",
+  "t": "Çevrədə mütənasib parçalar. Toxunan və kəsənin xassələri"
+ },
+ {
+  "p": "p1-s22-t4.html",
+  "t": "Çevrənin daxilinə və xaricinə çəkilmiş üçbucaqlar"
+ },
+ {
+  "p": "p1-s22-t5.html",
+  "t": "Çevrənin daxilinə və xaricinə çəkilmiş çoxbucaqlılar"
+ },
+ {
+  "p": "p1-s23-t1.html",
+  "t": "Simmetriya çevrilmələri. Paralel köçürmə"
+ },
+ {
+  "p": "p1-s23-t2.html",
+  "t": "Oxşarlıq. Homotetiya. Oxşar çoxbucaqlılar"
+ },
+ {
+  "p": "p1-s23-t3.html",
+  "t": "Oxşar üçbucaqlar. Tales teoremi tətbiqləri"
+ },
+ {
+  "p": "p1-s24-t1.html",
+  "t": "Nöqtənin koordinatları. İki nöqtə arasındakı məsafə"
+ },
+ {
+  "p": "p1-s24-t2.html",
+  "t": "Düz xəttin tənliyi və düz xətlərin qarşılıqlı vəziyyəti"
+ },
+ {
+  "p": "p1-s24-t3.html",
+  "t": "Çevrənin tənliyi"
+ },
+ {
+  "p": "p1-s24-t4.html",
+  "t": "Vektorun koordinatları, uzunluğu, cəmi, fərqi və ədədə vurulması"
+ },
+ {
+  "p": "p1-s24-t5.html",
+  "t": "Vektorların skalyar hasili. İki vektor arasındakı bucaq. Perpendikulyar və kollinear vektorlar"
+ },
+ {
+  "p": "p1-s25-t1.html",
+  "t": "Mail, perpendikulyar və proyeksiya"
+ },
+ {
+  "p": "p1-s25-t2.html",
+  "t": "Düz xətt və müstəvinin qarşılıqlı vəziyyəti. Çarpaz düz xətlər"
+ },
+ {
+  "p": "p1-s25-t3.html",
+  "t": "İki müstəvinin qarşılıqlı vəziyyəti. İkiüzlü bucaqlar"
+ },
+ {
+  "p": "p1-s26-t1.html",
+  "t": "Prizma və onun elementləri"
+ },
+ {
+  "p": "p1-s26-t2.html",
+  "t": "Prizmanın səthinin sahəsi. Prizmanın müstəvi kəsikləri"
+ },
+ {
+  "p": "p1-s26-t3.html",
+  "t": "Prizmanın və piramidanın həcmi. Kəsik piramidanın həcmi"
+ },
+ {
+  "p": "p1-s26-t4.html",
+  "t": "Piramida və onun elementləri"
+ },
+ {
+  "p": "p1-s26-t5.html",
+  "t": "Piramidanın səthinin sahəsi. Kəsik piramida"
+ },
+ {
+  "p": "p1-s27-t1.html",
+  "t": "Silindr və onun müstəvi kəsikləri. Silindrin səthinin sahəsi və həcmi"
+ },
+ {
+  "p": "p1-s27-t2.html",
+  "t": "Konus və onun müstəvi kəsikləri. Kəsik konus. Konusun və kəsik konusun səthi və həcmi"
+ },
+ {
+  "p": "p1-s27-t3.html",
+  "t": "Kürə və onun həcmi. Sfera və onun səthinin sahəsi"
+ },
+ {
+  "p": "p1-s27-t4.html",
+  "t": "Fəza fiqurlarının kombinasiyaları"
+ },
+ {
+  "p": "p1-s28-t1.html",
+  "t": "Bucağın radian və dərəcə ölçüsü. İstənilən bucağın triqonometrik funksiyaları"
+ },
+ {
+  "p": "p1-s28-t2.html",
+  "t": "Əsas triqonometrik eyniliklər"
+ },
+ {
+  "p": "p1-s28-t3.html",
+  "t": "y=sinx və y=cosx funksiyaları və onların xassələri"
+ },
+ {
+  "p": "p1-s28-t4.html",
+  "t": "y=tanx və y=cotx funksiyaları və onların xassələri"
+ },
+ {
+  "p": "p1-s28-t5.html",
+  "t": "Çevirmə düsturları"
+ },
+ {
+  "p": "p1-s28-t6.html",
+  "t": "Triqonometrik funksiyaların ən böyük və ən kiçik qiymətləri"
+ },
+ {
+  "p": "p1-s28-t7.html",
+  "t": "Tərs triqonometrik funksiyalar"
+ },
+ {
+  "p": "p1-s29-t1.html",
+  "t": "y=kx+b, y=k/x funksiyaları, onların qrafikləri və qrafiklərinin çevrilmələri"
+ },
+ {
+  "p": "p1-s29-t2.html",
+  "t": "y=x², y=xⁿ (n>2) funksiyaları, kvadratik funksiya, onların qrafikləri və qrafiklərinin çevrilmələri"
+ },
+ {
+  "p": "p1-s29-t3.html",
+  "t": "y=|x|, y=√x funksiyaları, onların qrafikləri və qrafiklərinin çevrilmələri"
+ },
+ {
+  "p": "p1-s29-t4.html",
+  "t": "Tək və cüt funksiyalar. Artan və azalan funksiyalar. Dövri funksiya"
+ },
+ {
+  "p": "p1-s29-t5.html",
+  "t": "Mürəkkəb funksiyalar. Tərs funksiya. Bəzi funksiyaların təyin oblastı və qiymətlər çoxluğu"
+ },
+ {
+  "p": "p1-s29-t6.html",
+  "t": "Funksiyaların qrafiklərinin qarşılıqlı vəziyyəti"
+ },
+ {
+  "p": "p1-s30-t1.html",
+  "t": "Birləşmələr nəzəriyyəsi"
+ },
+ {
+  "p": "p1-s30-t2.html",
+  "t": "Ehtimal nəzəriyyəsi və statistika"
+ },
+ {
+  "p": "p1-s31-t1.html",
+  "t": "İki bucağın cəmi və fərqinin triqonometrik funksiyaları"
+ },
+ {
+  "p": "p1-s31-t2.html",
+  "t": "İkiqat və yarım arqumentin triqonometrik funksiyaları"
+ },
+ {
+  "p": "p1-s31-t3.html",
+  "t": "Triqonometrik funksiyaların cəminin və fərqinin hasilə çevrilməsi. Hasili cəmə çevirmə düsturları"
+ },
+ {
+  "p": "p1-s32-t1.html",
+  "t": "Sadə triqonometrik tənliklər"
+ },
+ {
+  "p": "p1-s32-t2.html",
+  "t": "Triqonometrik tənliklərin müxtəlif üsullarla həlli"
+ },
+ {
+  "p": "p1-s33-t1.html",
+  "t": "Üstlü funksiya və onun xassələri"
+ },
+ {
+  "p": "p1-s33-t2.html",
+  "t": "Ədədin loqarifmi. Loqarifmin xassələri"
+ },
+ {
+  "p": "p1-s33-t3.html",
+  "t": "Loqarifmik funksiya və onun xassələri"
+ },
+ {
+  "p": "p1-s34-t1.html",
+  "t": "Üstlü və loqarifmik tənliklər"
+ },
+ {
+  "p": "p1-s34-t2.html",
+  "t": "Üstlü və loqarifmik bərabərsizliklər"
+ },
+ {
+  "p": "p1-s34-t3.html",
+  "t": "Üstlü və loqarifmik tənliklər sistemi"
+ },
+ {
+  "p": "p1-s35-t1.html",
+  "t": "Ədədi ardıcıllığın limiti"
+ },
+ {
+  "p": "p1-s35-t2.html",
+  "t": "Funksiyanın limiti"
+ },
+ {
+  "p": "p1-s36-t1.html",
+  "t": "Funksiyaların törəməsi"
+ },
+ {
+  "p": "p1-s36-t2.html",
+  "t": "Törəmənin həndəsi mənası. Toxunanın tənliyi"
+ },
+ {
+  "p": "p1-s36-t3.html",
+  "t": "Funksiyanın böhran nöqtəsi. Artma və azalma aralıqları, ekstremum nöqtələri, ən böyük və ən kiçik qiymətləri"
+ },
+ {
+  "p": "p1-s36-t4.html",
+  "t": "Törəmənin tətbiqi ilə məsələ həlli"
+ },
+ {
+  "p": "p1-s37-t1.html",
+  "t": "İbtidai funksiya. Qeyri-müəyyən inteqral"
+ },
+ {
+  "p": "p1-s37-t2.html",
+  "t": "Müəyyən inteqral. Nyuton-Leybnis düsturu"
+ },
+ {
+  "p": "p1-s37-t3.html",
+  "t": "Əyrilərlə hüdudlanmış fiqurun sahəsi"
+ },
+ {
+  "p": "p1-s38-t1.html",
+  "t": "Kompleks ədədlər"
+ }
+]
