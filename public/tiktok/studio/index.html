@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Fizmatix Studio – post to TikTok</title>
+<style>
+:root{--bg:#fff;--fg:#1b1b1f;--mut:#666;--line:#e3e3e8;--acc:#fe2c55;--card:#fafafa}
+@media (prefers-color-scheme:dark){:root{--bg:#121214;--fg:#eee;--mut:#aaa;--line:#2c2c31;--card:#1b1b1f}}
+body{font:16px/1.5 system-ui,sans-serif;max-width:900px;margin:0 auto;padding:20px 16px;background:var(--bg);color:var(--fg)}
+h1{font-size:24px;margin:0 0 4px}.mut{color:var(--mut);font-size:14px}a{color:var(--acc)}
+.card{border:1px solid var(--line);border-radius:12px;padding:16px;margin:16px 0;background:var(--card)}
+.row{display:flex;gap:20px;flex-wrap:wrap}.row>div{flex:1 1 300px}
+button{font:inherit;border:0;border-radius:8px;padding:10px 18px;cursor:pointer;background:var(--acc);color:#fff;margin:6px 6px 0 0}
+button.sec{background:transparent;color:var(--fg);border:1px solid var(--line)}button:disabled{opacity:.45;cursor:not-allowed}
+video{width:100%;max-width:300px;border-radius:10px;background:#000}
+label{display:block;margin:12px 0 4px;font-weight:600}
+select,textarea{width:100%;font:inherit;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg);box-sizing:border-box}
+.chk{font-weight:400;display:flex;gap:8px;align-items:center}.av{width:44px;height:44px;border-radius:50%;vertical-align:middle;margin-right:10px}
+#msg{white-space:pre-wrap}.ok{color:#1a8f4d}.err{color:#c62828}
+</style></head><body>
+<nav class="mut"><a href="/tiktok/index.html">Fizmatix Riyaziyyat</a> · <a href="/tiktok/terms/index.html">Terms</a> · <a href="/tiktok/privacy/index.html">Privacy</a></nav>
+<h1>Fizmatix Studio</h1>
+<p class="mut">Publish the latest Fizmatix math video to your TikTok account.</p>
+
+<div class="card" id="login"><p>Step 1. Connect your TikTok account.</p><button onclick="location.href='/tiktok/api/login'">Connect TikTok</button></div>
+
+<div id="app" hidden>
+ <div class="card"><img id="av" class="av" alt=""><b id="nick"></b> <span class="mut" id="uname"></span>
+  <button class="sec" style="float:right" onclick="logout()">Disconnect</button></div>
+ <div class="card row">
+  <div><label>Video</label><video id="vid" controls playsinline></video><p class="mut" id="vinfo"></p></div>
+  <div>
+   <label for="title">Caption</label><textarea id="title" rows="6" maxlength="2200"></textarea>
+   <label for="priv">Who can view this video</label>
+   <select id="priv"><option value="" selected disabled>Select privacy</option></select>
+   <label>Allow users to</label>
+   <span class="chk"><input type="checkbox" id="c_comment"> Comment</span>
+   <span class="chk"><input type="checkbox" id="c_duet"> Duet</span>
+   <span class="chk"><input type="checkbox" id="c_stitch"> Stitch</span>
+   <label>Content disclosure</label>
+   <span class="chk"><input type="checkbox" id="disc"> This video promotes a brand, product or service</span>
+   <div id="discbox" hidden style="margin-left:24px">
+    <span class="chk"><input type="checkbox" id="b_org"> Your brand</span>
+    <span class="chk"><input type="checkbox" id="b_brand"> Branded content (paid partnership)</span>
+   </div>
+   <p class="mut" id="consent"></p>
+   <button id="post" disabled>Post to TikTok</button>
+   <button class="sec" id="draftbtn">Send to TikTok drafts</button>
+   <p id="msg"></p>
+  </div>
+ </div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+let creator = null;
+const MUSIC = 'https://www.tiktok.com/legal/page/global/music-usage-confirmation/en';
+const BC = 'https://www.tiktok.com/legal/page/global/bc-policy/en';
+async function j(u, o) { const r = await fetch(u, o); let b = {}; try { b = await r.json(); } catch (e) {} b._s = r.status; return b; }
+function upd() {
+  $('discbox').hidden = !$('disc').checked;
+  const brand = $('b_brand').checked, org = $('b_org').checked;
+  for (const o of $('priv').options) {
+    if (o.value === 'SELF_ONLY') { o.disabled = brand; if (brand && o.selected) $('priv').value = ''; }
+  }
+  $('consent').innerHTML = brand
+    ? 'By posting, you agree to TikTok&rsquo;s <a target="_blank" href="' + BC + '">Branded Content Policy</a> and <a target="_blank" href="' + MUSIC + '">Music Usage Confirmation</a>.'
+    : 'By posting, you agree to TikTok&rsquo;s <a target="_blank" href="' + MUSIC + '">Music Usage Confirmation</a>.';
+  $('post').disabled = !$('priv').value || ($('disc').checked && !brand && !org);
+}
+async function init() {
+  ['disc', 'b_org', 'b_brand', 'priv'].forEach(id => $(id).addEventListener('change', upd));
+  $('post').onclick = () => publish('direct');
+  $('draftbtn').onclick = () => publish('draft');
+  upd();
+  const me = await j('/tiktok/api/me');
+  if (me._s !== 200) return;
+  $('login').hidden = true; $('app').hidden = false; creator = me.creator;
+  $('av').src = creator.creator_avatar_url || '';
+  $('nick').textContent = creator.creator_nickname;
+  $('uname').textContent = '@' + creator.creator_username;
+  const names = { PUBLIC_TO_EVERYONE: 'Everyone', MUTUAL_FOLLOW_FRIENDS: 'Friends', FOLLOWER_OF_CREATOR: 'Followers', SELF_ONLY: 'Only me' };
+  (creator.privacy_level_options || []).forEach(p => { const o = document.createElement('option'); o.value = p; o.textContent = names[p] || p; $('priv').appendChild(o); });
+  [['c_comment', 'comment_disabled'], ['c_duet', 'duet_disabled'], ['c_stitch', 'stitch_disabled']].forEach(([id, k]) => {
+    if (creator[k]) { $(id).disabled = true; $(id).parentElement.title = 'Disabled in your TikTok settings'; }
+  });
+  const v = await j('/tiktok/api/video');
+  if (v._s === 200) { $('vid').src = v.url; $('title').value = v.caption || ''; $('vinfo').textContent = 'Fizmatix #' + v.id + (v.topic ? ' · ' + v.topic : ''); }
+  $('vid').onloadedmetadata = () => {
+    const max = creator.max_video_post_duration_sec || 600;
+    if ($('vid').duration > max) { $('msg').innerHTML = '<span class="err">Video is longer than your account allows (' + max + ' s).</span>'; $('post').disabled = true; }
+  };
+}
+async function publish(mode) {
+  $('msg').textContent = 'Uploading… it may take a few minutes for the post to appear on your profile.';
+  const b = { mode, title: $('title').value, privacy: $('priv').value,
+    disable_comment: !$('c_comment').checked, disable_duet: !$('c_duet').checked, disable_stitch: !$('c_stitch').checked,
+    brand_content_toggle: $('b_brand').checked, brand_organic_toggle: $('b_org').checked };
+  const r = await j('/tiktok/api/publish', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(b) });
+  if (r._s !== 200) { $('msg').innerHTML = '<span class="err">' + (r.error || 'Error') + '</span>'; return; }
+  poll(r.publish_id, 0);
+}
+async function poll(id, n) {
+  const s = await j('/tiktok/api/status?id=' + encodeURIComponent(id));
+  const st = s.status || '';
+  if (st === 'PUBLISH_COMPLETE') { $('msg').innerHTML = '<span class="ok">Posted ✓ It may take a few minutes to appear on your profile.</span>'; return; }
+  if (st === 'SEND_TO_USER_INBOX') { $('msg').innerHTML = '<span class="ok">Sent to your TikTok inbox ✓ Open TikTok to edit and post.</span>'; return; }
+  if (st === 'FAILED') { $('msg').innerHTML = '<span class="err">Failed: ' + (s.fail_reason || '') + '</span>'; return; }
+  $('msg').textContent = 'Processing… (' + (st || 'waiting') + ')';
+  if (n < 40) setTimeout(() => poll(id, n + 1), 5000);
+}
+async function logout() { await j('/tiktok/api/logout', { method: 'POST' }); location.reload(); }
+init();
+</script></body></html>
