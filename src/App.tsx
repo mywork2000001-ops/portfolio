@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import DAILY_TESTS from './data/gunun-sinaq.json'
 
 const NAVY = '#0B1026'
@@ -180,9 +180,25 @@ function FramePage({ title, sub, src }: { title: string; sub?: string; src: stri
   )
 }
 
+// Günün sınağı: serverdə hər gün 10 fərqli mövzudan qarışıq test (viktorina); server cavab verməsə – Test bankından test
 function DailyTestPage() {
-  const d = dailyTest()
-  return <FramePage title={`Günün sınağı: ${d.t}`} sub="Hər gün yeni test · hamı üçün eyni" src={BANK_BASE + d.p} />
+  const fallback = dailyTest()
+  const [quiz, setQuiz] = useState<{ title: string; url: string } | null>(null)
+  const [failed, setFailed] = useState(false)
+  useEffect(() => {
+    fetch('/tiktok/api/sinaq')
+      .then((r) => (r.ok ? r.json() : Promise.reject()))
+      .then((d) => (d && d.url ? setQuiz({ title: d.title, url: d.url }) : setFailed(true)))
+      .catch(() => setFailed(true))
+  }, [])
+  if (quiz) return <FramePage title={quiz.title} sub="10 sual · 10 fərqli mövzu · hər sualın həlli var" src={quiz.url} />
+  if (failed) return <FramePage title={`Günün sınağı: ${fallback.t}`} sub="Hər gün yeni test" src={BANK_BASE + fallback.p} />
+  return (
+    <div className="min-h-screen bg-[#F6F7FB]">
+      <Header />
+      <p className="p-8 text-center font-semibold text-[#475569]">Günün sınağı hazırlanır…</p>
+    </div>
+  )
 }
 
 // Video və tapşırıq yan-yana (kompüter), telefonda video yuxarıda, tapşırıq altında
