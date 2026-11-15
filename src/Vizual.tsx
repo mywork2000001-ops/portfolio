@@ -4,7 +4,7 @@
 import { useEffect, useState } from 'react'
 import ISBAT from './data/isbat.json'
 
-type Video = { id: string; author: string; url: string; topic: string; title: string }
+type Video = { id: string; author: string; url: string; topic: string | null; title: string; own?: boolean; isbat?: string }
 type Isbat = { title: string; formula: string; about: string; topic: string; own?: string; geogebra?: string; tiktok: string[] }
 const LIST = ISBAT as Record<string, Isbat>
 
@@ -109,7 +109,7 @@ function useVideos() {
 
 export function VizualPage() {
   const videos = useVideos()
-  const topics = Object.keys(TOPIC_AZ).filter((t) => videos.some((v) => v.topic === t))
+  const ours = videos.filter((v) => v.own).sort((x, y) => (BigInt(y.id) > BigInt(x.id) ? 1 : -1))
   return (
     <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <h1 className="text-3xl font-black tracking-tight sm:text-4xl">Vizual izahlar</h1>
@@ -124,14 +124,14 @@ export function VizualPage() {
           </a>
         ))}
       </div>
-      {topics.map((t) => (
-        <section key={t} className="mt-10">
-          <h2 className="mb-3 text-xl font-black">{TOPIC_AZ[t]}</h2>
+      {ours.length > 0 && (
+        <section className="mt-10">
+          <h2 className="mb-3 text-xl font-black">TikTok videolarımız</h2>
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-            {videos.filter((v) => v.topic === t).map((v) => <TikTokCard key={v.id} v={v} />)}
+            {ours.map((v) => <TikTokCard key={v.id} v={v} />)}
           </div>
         </section>
-      ))}
+      )}
     </main>
   )
 }
@@ -145,8 +145,9 @@ export function IsbatPage({ slug }: { slug: string }) {
     fetch('/tiktok/api/viz').then((r) => (r.ok ? r.json() : { viz: [] })).then((d) => setOwn((d.viz || []).includes(it.own))).catch(() => {})
   }, [it])
   if (!it) return <main className="p-8 text-center font-semibold">Belə teorem tapılmadı. <a href="/vizual" className="text-[#1D4ED8]">Vizual izahlar →</a></main>
-  const tt = videos.filter((v) => it.tiktok.includes(v.id))
-  const parts = [own, !!it.geogebra && !!GGB[it.geogebra], tt.length > 0].filter(Boolean).length
+  const tt = videos.filter((v) => v.own && v.isbat === slug)
+  const showOwnMp4 = own && tt.length === 0
+  const parts = [tt.length > 0 || own, !!it.geogebra && !!GGB[it.geogebra]].filter(Boolean).length
   return (
     <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <a href="/vizual" className="text-sm font-bold text-[#1D4ED8]">← Vizual izahlar</a>
@@ -155,22 +156,22 @@ export function IsbatPage({ slug }: { slug: string }) {
       <p className="mt-3 max-w-2xl text-[17px] leading-relaxed text-[#475569]">{it.about}</p>
       <p className="mt-1 text-sm font-semibold text-[#475569]">{parts} fərqli baxış</p>
       <div className="mt-6 grid gap-5 md:grid-cols-3">
-        {own && (
+        {tt.length > 0 && (
           <section>
             <h2 className="mb-2 font-black">1. Fizmatix videosu</h2>
-            <video src={`/tiktok/api/viz/${it.own}.mp4`} controls playsInline preload="metadata" className="aspect-[9/16] w-full rounded-2xl bg-black" />
+            <div className="grid gap-3">{tt.map((v) => <TikTokCard key={v.id} v={v} />)}</div>
+          </section>
+        )}
+        {showOwnMp4 && (
+          <section>
+            <h2 className="mb-2 font-black">1. Fizmatix videosu</h2>
+            <video src={`/tiktok/api/viz/${it.own}.mp4`} controls muted playsInline preload="metadata" className="aspect-[9/16] w-full rounded-2xl bg-black" />
           </section>
         )}
         {it.geogebra && GGB[it.geogebra] && (
           <section>
-            <h2 className="mb-2 font-black">{own ? 2 : 1}. Özün yoxla</h2>
+            <h2 className="mb-2 font-black">{tt.length > 0 || own ? 2 : 1}. Özün yoxla</h2>
             <GeoGebraBox name={it.geogebra} />
-          </section>
-        )}
-        {tt.length > 0 && (
-          <section>
-            <h2 className="mb-2 font-black">{parts}. Video izah</h2>
-            <div className="grid gap-3">{tt.map((v) => <TikTokCard key={v.id} v={v} />)}</div>
           </section>
         )}
       </div>

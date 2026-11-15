@@ -32,5 +32,13 @@
   "topic": "PRO",
   "own": "000e-natural-cem-2-isbat",
   "tiktok": []
+ },
+ "daxili-cevre": {
+  "title": "Daxilə çəkilmiş çevrənin radiusu",
+  "formula": "r = S / p",
+  "about": "Üçbucağın sahəsi yarımperimetrlə daxilə çəkilmiş çevrənin radiusunun hasilinə bərabərdir: S = p · r.",
+  "topic": "PLA",
+  "own": "000-incircle",
+  "tiktok": []
  }
 }
