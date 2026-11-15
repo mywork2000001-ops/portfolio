@@ -185,13 +185,39 @@ function DailyTestPage() {
   return <FramePage title={`Günün sınağı: ${d.t}`} sub="Hər gün yeni test · hamı üçün eyni" src={BANK_BASE + d.p} />
 }
 
+// Video və tapşırıq yan-yana (kompüter), telefonda video yuxarıda, tapşırıq altında
 function TodayPage() {
   return (
-    <FramePage
-      title="Günün tapşırığı"
-      sub="Son videodakı tapşırıq – özün həll et"
-      src="https://sual.fizmatix.com/"
-    />
+    <div className="min-h-screen bg-[#F6F7FB]">
+      <Header />
+      <div className="border-b border-[#E2E8F0] bg-white px-4 py-3 sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2">
+          <h1 className="text-lg font-black sm:text-xl">Günün tapşırığı</h1>
+          <span className="text-sm font-semibold text-[#475569]">Videoya bax və eyni tapşırığı özün həll et</span>
+        </div>
+      </div>
+      <main className="mx-auto flex max-w-6xl flex-wrap items-start gap-5 px-4 py-5 sm:px-6">
+        <div className="min-w-0 flex-[1_1_260px] lg:max-w-[320px]">
+          <video
+            src="/tiktok/api/video.mp4"
+            controls
+            playsInline
+            preload="metadata"
+            className="mx-auto aspect-[9/16] max-h-[70dvh] w-full max-w-[320px] rounded-2xl bg-black"
+            aria-label="Tapşırığın video izahı"
+          />
+          <a href={TIKTOK} className="mx-auto mt-3 flex min-h-[44px] max-w-[320px] items-center justify-center rounded-xl border border-[#E2E8F0] bg-white text-sm font-extrabold text-[#0B1026]">
+            TikTok-da izlə →
+          </a>
+        </div>
+        <iframe
+          title="Günün tapşırığı"
+          src="https://sual.fizmatix.com/"
+          className="min-w-0 flex-[999_1_480px] rounded-2xl border border-[#E2E8F0] bg-white"
+          style={{ minHeight: '75dvh' }}
+        />
+      </main>
+    </div>
   )
 }
 
