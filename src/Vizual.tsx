@@ -1,5 +1,6 @@
 // PF-23 /vizual və PF-29 /isbat/<ad> – vizual izahlar (VIZUAL_ISBAT_PROMPT.md D-35…D-46)
 // TikTok pleyeri və GeoGebra yalnız kliklə yüklənir (uşaqlar üçün kənar izləyici yoxdur – D-12, D-36).
+// «Müəllif» yazısı istifadəçinin qərarı ilə çıxarılıb (15.11.2026); TikTok pleyeri müəllifi özü göstərir.
 import { useEffect, useState } from 'react'
 import ISBAT from './data/isbat.json'
 
@@ -94,7 +95,6 @@ export function TikTokCard({ v }: { v: Video }) {
           <span className="text-xs text-[#CBD5E1]">Kliklə – TikTok pleyeri açılır</span>
         </button>
       )}
-      <a href={`https://www.tiktok.com/@${v.author}`} className="text-xs font-semibold text-[#475569] hover:text-[#1D4ED8]">Müəllif: @{v.author}</a>
     </div>
   )
 }
@@ -169,7 +169,7 @@ export function IsbatPage({ slug }: { slug: string }) {
         )}
         {tt.length > 0 && (
           <section>
-            <h2 className="mb-2 font-black">{parts}. Başqa müəllimin izahı</h2>
+            <h2 className="mb-2 font-black">{parts}. Video izah</h2>
             <div className="grid gap-3">{tt.map((v) => <TikTokCard key={v.id} v={v} />)}</div>
           </section>
         )}
