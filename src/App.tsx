@@ -48,7 +48,7 @@ function DailyTask() {
     <div id="gunun" className="w-full rounded-3xl bg-white p-6 text-[#0F172A] shadow-[0_30px_60px_rgba(0,0,0,.35)] sm:p-7">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <span className="rounded-full bg-[#FEF3C7] px-3 py-1.5 text-[13px] font-extrabold text-[#92400E]">
-          Günün tapşırığı · {TASK.grade}
+          Sınaq tapşırığı · {TASK.grade}
         </span>
         <span className="text-[13px] font-semibold text-[#475569]">qeydiyyatsız</span>
       </div>
@@ -155,7 +155,12 @@ function TodayPage() {
       <BetaBar />
       <Header />
       <main className="mx-auto max-w-xl px-4 pb-16 pt-8">
-        <h1 className="mb-5 text-3xl font-black tracking-tight text-white">Bu günün tapşırığı</h1>
+        <h1 className="mb-3 text-3xl font-black tracking-tight text-white">Bu günün tapşırığı</h1>
+        <p className="mb-5 text-[15px] text-[#CBD5E1]">Son TikTok videosundakı tapşırığı aç və özün həll et.</p>
+        <a href="https://sual.fizmatix.com/" className="mb-8 flex min-h-[56px] items-center justify-center rounded-2xl text-[17px] font-extrabold text-[#0B1026]" style={{ background: GOLD }}>
+          Videodakı tapşırığı aç →
+        </a>
+        <p className="mb-3 text-sm font-bold uppercase tracking-wide text-[#94A3B8]">Və ya bu tapşırığı yoxla</p>
         <DailyTask />
         <p className="mt-6 text-center text-[15px] text-[#CBD5E1]">
           Hər gün yeni tapşırıq – videoda izah:{' '}
