@@ -91,7 +91,7 @@ export function TikTokCard({ v }: { v: Video }) {
       ) : (
         <button type="button" onClick={() => setOn(true)} className="flex aspect-[9/16] w-full flex-col items-center justify-center gap-2 rounded-xl bg-[#0B1026] p-4 text-center text-white">
           <svg aria-hidden="true" width="44" height="44" viewBox="0 0 24 24" fill="#FACC15"><path d="M7 4l13 8-13 8z" /></svg>
-          <span className="text-[15px] font-extrabold leading-snug">{v.title || 'Vizual izah'}</span>
+          <span className="text-[15px] font-extrabold leading-snug">{v.title || 'Fizmatix videosu'}</span>
           <span className="text-xs text-[#CBD5E1]">Kliklə – TikTok pleyeri açılır</span>
         </button>
       )}

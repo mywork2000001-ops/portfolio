@@ -4,6 +4,11 @@ import { IsbatPage, TikTokCard, VizualPage } from './Vizual'
 
 const NAVY = '#0B1026'
 const BANK_BASE = 'https://bank.fizmatix.com/P0010_Riyaziyyat_Test_Bank/app/public/lessons/tests/'
+const SUBS: Record<string, string> = {
+  dim5: 'DİM 5-ci sinif', dim9: 'DİM 9-cu sinif', dim11: 'DİM 11 – sınaqlar', bank: 'Test bankı', buraxilis: 'Buraxılış sınaqları',
+  sinif: 'Sinif testləri', sinaq: 'Sınaqlar', nezeri: 'Nəzəri testlər', sual: 'Günün tapşırığı', derslik5: 'Riyaziyyat 5 – dərslik',
+  derslik6: 'Riyaziyyat 6 – dərslik', ingilis: 'İngilis dili',
+}
 const FRAMES: Record<string, { title: string; src: string }> = {
   dim9: { title: 'DİM 9-cu sinif', src: 'https://dim9.fizmatix.com/' },
   bank: { title: 'Test bankı', src: 'https://bank.fizmatix.com/' },
@@ -423,5 +428,11 @@ export default function App() {
     )
   const m = path.match(/^\/bolme\/(\w+)$/)
   if (m && FRAMES[m[1]]) return <FramePage title={FRAMES[m[1]].title} src={FRAMES[m[1]].src} />
+  // PROBLEMLER P-3: /bolme/<alt>/<yol> – birbaşa açılan alt sayt səhifəsi brend daxilində (Caddy bura yönləndirir)
+  const g = window.location.pathname.match(/^\/bolme\/([a-z0-9]+)(\/.*)?$/)
+  if (g && SUBS[g[1]]) {
+    const rest = (g[2] || '/').replace(/\/\/+/g, '/')
+    return <FramePage title={SUBS[g[1]]} src={`https://${g[1]}.fizmatix.com${rest}${window.location.search}${window.location.hash}`} />
+  }
   return <HomePage />
 }
