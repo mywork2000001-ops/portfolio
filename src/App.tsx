@@ -203,6 +203,14 @@ function DailyTestPage() {
 
 // Video və tapşırıq yan-yana (kompüter), telefonda video yuxarıda, tapşırıq altında
 function TodayPage() {
+  // son videonun tapşırığı: /tiktok/api/video -> task (/Sinaqlar/...html?q=N); yoxdursa – sual.fizmatix.com
+  const [task, setTask] = useState('https://sual.fizmatix.com/')
+  useEffect(() => {
+    fetch('/tiktok/api/video')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => { if (d && typeof d.task === 'string' && d.task.startsWith('/Sinaqlar/')) setTask('https://hub.fizmatix.com' + d.task) })
+      .catch(() => {})
+  }, [])
   return (
     <div className="min-h-screen bg-[#F6F7FB]">
       <Header />
@@ -228,7 +236,7 @@ function TodayPage() {
         </div>
         <iframe
           title="Günün tapşırığı"
-          src="https://sual.fizmatix.com/"
+          src={task}
           className="min-w-0 flex-[999_1_480px] rounded-2xl border border-[#E2E8F0] bg-white"
           style={{ minHeight: '75dvh' }}
         />
