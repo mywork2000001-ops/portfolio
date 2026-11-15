@@ -13,7 +13,7 @@ export default {
         brand: { DEFAULT: '#1a66ff', 600: '#1446d6' },
       },
       fontFamily: {
-        sans: ['Manrope', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       boxShadow: {

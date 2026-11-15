@@ -1,346 +1,318 @@
-import { useEffect, useState } from 'react'
-import {
-  ArrowRight, ArrowUpRight, Check, Mail, Moon, Sun, Menu, X,
-  GraduationCap, WifiOff, Languages, ShieldCheck, Layout, Server, Cloud, Wrench,
-} from 'lucide-react'
-import photo from './assets/foto.png'
-import { useLanguage } from './context/LanguageContext'
-import { useTheme } from './context/ThemeContext'
-import { languageNames, type Lang } from './i18n/translations'
-import { contacts, projects, stackGroups, stats } from './data/portfolio'
+import { useState } from 'react'
 
-const SECTIONS = ['projects', 'approach', 'stack', 'about', 'contact'] as const
+const NAVY = '#0B1026'
+const GOLD = '#FACC15'
+const BETA_END = '15 fevral 2027'
+const TIKTOK = 'https://www.tiktok.com/@fizmatix.riyaziyyat'
 
-/** Логотип: ∑ в квадрате — «fizmatix» = физика + математика. */
-function Logo() {
+type Option = { key: string; text: string }
+const TASK = {
+  grade: '9-cu sinif',
+  question: 'Bərabərsizliyin neçə natural həlli var?',
+  num: '2x − 8',
+  den: 'x + 2',
+  rel: '< 0',
+  options: [
+    { key: 'A', text: '2' },
+    { key: 'B', text: '3' },
+    { key: 'C', text: '4' },
+    { key: 'D', text: '5' },
+  ] as Option[],
+  correct: 'B',
+  solution: '2x − 8 < 0 və x + 2 > 0 ⇒ −2 < x < 4. Natural ədədlər: 1, 2, 3 – cəmi 3.',
+}
+
+const SECTIONS = [
+  {
+    href: 'https://dim9.fizmatix.com/',
+    tag: '9-cu sinif',
+    title: 'DİM 9-cu sinif',
+    text: 'Buraxılış imtahanı formatında testlər: vaxt, nəticə və hər sualın həlli.',
+  },
+  {
+    href: 'https://bank.fizmatix.com/',
+    tag: 'Bütün siniflər',
+    title: 'Test bankı',
+    text: 'Mövzular üzrə testlər – I və II hissə. Zəif mövzunu seç, məşq et.',
+  },
+]
+
+function Logo({ size = 44 }: { size?: number }) {
+  return <img src="/logo.png" alt="" width={size} height={size} className="rounded-full" />
+}
+
+function DailyTask() {
+  const [picked, setPicked] = useState<string | null>(null)
+  const ok = picked === TASK.correct
   return (
-    <a href="#top" className="flex items-center gap-2 font-extrabold tracking-tight text-ink dark:text-white">
-      <span className="grid h-9 w-9 place-items-center rounded-xl bg-brand text-lg text-white shadow-glow">∑</span>
-      <span className="text-lg">
-        fizmatix<span className="text-brand">.</span>
-      </span>
-    </a>
+    <div id="gunun" className="w-full rounded-3xl bg-white p-6 text-[#0F172A] shadow-[0_30px_60px_rgba(0,0,0,.35)] sm:p-7">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <span className="rounded-full bg-[#FEF3C7] px-3 py-1.5 text-[13px] font-extrabold text-[#92400E]">
+          Günün tapşırığı · {TASK.grade}
+        </span>
+        <span className="text-[13px] font-semibold text-[#475569]">qeydiyyatsız</span>
+      </div>
+      <p className="mb-2.5 mt-4 text-lg font-semibold leading-relaxed">{TASK.question}</p>
+      <div className="mb-4 flex items-center justify-center gap-3 rounded-2xl bg-[#F1F5F9] p-4 text-2xl font-bold">
+        <span className="inline-flex flex-col items-center">
+          <span className="border-b-2 border-[#0F172A] px-1.5 pb-1">{TASK.num}</span>
+          <span className="pt-1">{TASK.den}</span>
+        </span>
+        <span>{TASK.rel}</span>
+      </div>
+      <div className="grid grid-cols-2 gap-2.5">
+        {TASK.options.map((o) => {
+          let cls = 'border-[#E2E8F0] bg-white hover:border-[#FACC15]'
+          if (picked) {
+            if (o.key === TASK.correct) cls = 'border-[#16A34A] bg-[#DCFCE7] text-[#14532D]'
+            else if (o.key === picked) cls = 'border-[#DC2626] bg-[#FEE2E2] text-[#7F1D1D]'
+          }
+          return (
+            <button
+              key={o.key}
+              type="button"
+              disabled={!!picked}
+              onClick={() => setPicked(o.key)}
+              className={`min-h-[52px] rounded-2xl border-2 px-4 text-left text-[17px] font-bold transition ${cls}`}
+            >
+              {o.key}) {o.text}
+            </button>
+          )
+        })}
+      </div>
+      {picked && (
+        <div className={`mt-4 rounded-2xl p-4 ${ok ? 'bg-[#F0FDF4] text-[#14532D]' : 'bg-[#FFF7ED] text-[#7C2D12]'}`} role="status">
+          <div className="font-extrabold">{ok ? 'Düzdür! Cavab: 3' : 'Az qaldı! Düzgün cavab: 3'}</div>
+          <div className="mt-1.5 text-[15px] leading-relaxed">{TASK.solution}</div>
+          <a href="#bolmeler" className="mt-3 inline-block rounded-xl px-4 py-3 text-[15px] font-bold text-white" style={{ background: NAVY }}>
+            Daha çox tapşırıq →
+          </a>
+        </div>
+      )}
+    </div>
   )
 }
 
 function Header() {
-  const { t, lang, setLang } = useLanguage()
-  const { theme, toggleTheme } = useTheme()
-  const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  useEffect(() => {
-    const on = () => setScrolled(window.scrollY > 8)
-    on()
-    window.addEventListener('scroll', on, { passive: true })
-    return () => window.removeEventListener('scroll', on)
-  }, [])
-
-  const langs = (
-    <div className="flex rounded-full border border-line bg-white/70 p-0.5 dark:border-white/10 dark:bg-white/5">
-      {(Object.keys(languageNames) as Lang[]).map((l) => (
-        <button
-          key={l}
-          onClick={() => setLang(l)}
-          aria-pressed={lang === l}
-          className={`rounded-full px-2.5 py-1 text-xs font-bold transition ${lang === l ? 'bg-ink text-white dark:bg-white dark:text-ink' : 'text-muted hover:text-ink dark:hover:text-white'}`}
-        >
-          {languageNames[l]}
-        </button>
-      ))}
-    </div>
-  )
-
+  const links = [
+    ['#bolmeler', 'Bölmələr'],
+    ['/bugun', 'Günün tapşırığı'],
+    ['#video', 'Video izahlar'],
+    ['#valideyn', 'Valideynlər üçün'],
+  ]
   return (
-    <header className={`sticky top-0 z-40 transition ${scrolled ? 'border-b border-line/70 bg-paper/80 backdrop-blur-xl dark:border-white/10 dark:bg-night/80' : ''}`}>
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Logo />
-        <nav className="hidden items-center gap-1 md:flex">
-          {SECTIONS.map((s) => (
-            <a key={s} href={`#${s}`} className="rounded-full px-3 py-2 text-sm font-semibold text-muted transition hover:bg-ink/5 hover:text-ink dark:hover:bg-white/10 dark:hover:text-white">
-              {t.nav[s]}
+    <header className="px-4 sm:px-6" style={{ background: NAVY }}>
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 py-3.5">
+        <a href="/" className="flex items-center gap-2.5">
+          <Logo />
+          <span className="text-[22px] font-black tracking-tight text-white">Fizmatix</span>
+        </a>
+        <nav className="order-3 flex w-full flex-wrap gap-1 sm:order-none sm:ml-6 sm:w-auto sm:flex-1" aria-label="Əsas menyu">
+          {links.map(([h, t]) => (
+            <a key={h} href={h} className="px-3 py-2.5 text-[15px] font-semibold text-[#CBD5E1] hover:text-white">
+              {t}
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
-          <div className="hidden sm:block">{langs}</div>
-          <button onClick={toggleTheme} aria-label={t.theme} className="grid h-9 w-9 place-items-center rounded-full border border-line bg-white/70 text-ink transition hover:bg-white dark:border-white/10 dark:bg-white/5 dark:text-white">
-            {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
-          </button>
-          <button onClick={() => setOpen((o) => !o)} aria-label={t.menu} aria-expanded={open} className="grid h-9 w-9 place-items-center rounded-full border border-line bg-white/70 text-ink md:hidden dark:border-white/10 dark:bg-white/5 dark:text-white">
-            {open ? <X size={18} /> : <Menu size={18} />}
-          </button>
-        </div>
+        <a href="#bolmeler" className="ml-auto rounded-xl px-4 py-3 text-[15px] font-extrabold text-[#0B1026] sm:ml-0" style={{ background: GOLD }}>
+          Pulsuz başla
+        </a>
       </div>
-      {open && (
-        <div className="border-t border-line bg-paper px-4 pb-5 pt-2 md:hidden dark:border-white/10 dark:bg-night">
-          {SECTIONS.map((s) => (
-            <a key={s} href={`#${s}`} onClick={() => setOpen(false)} className="block rounded-xl px-3 py-3 text-base font-semibold text-ink dark:text-white">
-              {t.nav[s]}
-            </a>
-          ))}
-          <div className="mt-3 px-3">{langs}</div>
-        </div>
-      )}
     </header>
   )
 }
 
-function BrowserFrame({ src, alt, className = '' }: { src: string; alt: string; className?: string }) {
+function BetaBar() {
   return (
-    <div className={`overflow-hidden rounded-2xl border border-line bg-white shadow-card dark:border-white/10 dark:bg-night-card ${className}`}>
-      <div className="flex items-center gap-1.5 border-b border-line px-3 py-2 dark:border-white/10">
-        <span className="h-2.5 w-2.5 rounded-full bg-rose-400" />
-        <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-        <span className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-      </div>
-      <img src={src} alt={alt} className="block aspect-[16/10] w-full object-cover object-top" />
+    <div className="px-4 py-2.5 text-center text-sm font-bold text-[#0B1026]" style={{ background: GOLD }}>
+      Pulsuz beta: {BETA_END}-yə qədər bütün testlər və həllər pulsuzdur
     </div>
   )
 }
 
-function Hero() {
-  const { t } = useLanguage()
+function Footer() {
   return (
-    <section id="top" className="relative overflow-hidden">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pb-20 pt-10 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:pb-28 lg:pt-16">
-        <div>
-          <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white/80 px-3 py-1.5 text-xs font-bold text-muted dark:border-white/10 dark:bg-white/5">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-500" /> {t.hero.badge}
-          </p>
-          <p className="mt-6 font-mono text-sm font-semibold text-brand">Fərid Həsənov</p>
-          <h1 className="mt-2 text-4xl font-extrabold leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-6xl dark:text-white">{t.hero.title}</h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">{t.hero.text}</p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3.5 font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-brand-600">
-              {t.hero.cta} <ArrowRight size={18} />
-            </a>
-            <a href="#contact" className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-6 py-3.5 font-bold text-ink transition hover:-translate-y-0.5 dark:border-white/15 dark:bg-white/5 dark:text-white">
-              {t.hero.contact}
-            </a>
+    <footer className="px-4 py-10 text-[#94A3B8] sm:px-6" style={{ background: NAVY }}>
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-6">
+        <div className="flex flex-wrap items-center gap-2.5">
+          <Logo size={32} />
+          <span className="font-extrabold text-white">Fizmatix</span>
+          <span>· Riyaziyyatı düşünərək öyrən</span>
+        </div>
+        <div className="flex flex-wrap gap-5 text-sm">
+          <a href="https://dim9.fizmatix.com/" className="text-[#CBD5E1] hover:text-white">DİM 9</a>
+          <a href="https://bank.fizmatix.com/" className="text-[#CBD5E1] hover:text-white">Test bankı</a>
+          <a href={TIKTOK} className="text-[#CBD5E1] hover:text-white">TikTok</a>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+function TodayPage() {
+  return (
+    <div className="min-h-screen" style={{ background: NAVY }}>
+      <BetaBar />
+      <Header />
+      <main className="mx-auto max-w-xl px-4 pb-16 pt-8">
+        <h1 className="mb-5 text-3xl font-black tracking-tight text-white">Bu günün tapşırığı</h1>
+        <DailyTask />
+        <p className="mt-6 text-center text-[15px] text-[#CBD5E1]">
+          Hər gün yeni tapşırıq – videoda izah:{' '}
+          <a href={TIKTOK} className="font-bold text-[#FACC15]">@fizmatix.riyaziyyat</a>
+        </p>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
+function HomePage() {
+  return (
+    <div className="min-h-screen bg-[#F6F7FB] text-[#0F172A]">
+      <BetaBar />
+      <Header />
+
+      <section className="px-4 pb-20 pt-12 sm:px-6" style={{ background: NAVY }}>
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-12">
+          <div className="min-w-0 flex-[1_1_440px]">
+            <div className="inline-flex rounded-full bg-[#1B2A6B] px-3.5 py-2 text-[13px] font-bold text-[#FDE68A]">
+              5–11-ci siniflər · Buraxılış · DİM qəbul
+            </div>
+            <h1 className="mb-4 mt-5 text-[40px] font-black leading-[1.05] tracking-tight text-white sm:text-[56px]">
+              Riyaziyyatı <span className="text-[#FACC15]">düşünərək</span> öyrən.
+            </h1>
+            <p className="mb-7 max-w-[520px] text-lg leading-relaxed text-[#CBD5E1]">
+              Hər gün 10 dəqiqə: tapşırığı özün həll et, səhvini gör, addım-addım izahı oxu.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <a href="#bolmeler" className="rounded-2xl px-6 py-4 text-[17px] font-extrabold text-[#0B1026]" style={{ background: GOLD }}>
+                Pulsuz başla
+              </a>
+              <a href="#gunun" className="rounded-2xl border border-[#334155] px-5 py-4 text-[17px] font-bold text-white">
+                Qeydiyyatsız yoxla
+              </a>
+            </div>
+            <p className="mt-7 text-sm text-[#94A3B8]">Kart tələb olunmur · beta müddətində pulsuz</p>
+          </div>
+          <div className="min-w-0 flex-[1_1_380px]">
+            <DailyTask />
           </div>
         </div>
-        <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
-          <BrowserFrame src={projects[2].image} alt={projects[2].title} className="w-[88%] -rotate-2" />
-          <BrowserFrame src={projects[1].image} alt={projects[1].title} className="absolute -bottom-10 right-0 w-[62%] rotate-3" />
-          {t.hero.chips.map((c, i) => (
-            <span
-              key={c}
-              className={`absolute flex items-center gap-1.5 rounded-full bg-white px-3 py-2 text-xs font-bold text-ink shadow-card dark:bg-night-card dark:text-white ${['left-2 -top-5 sm:-left-4', 'right-1 top-[38%]', '-bottom-6 left-2 sm:-left-6'][i]}`}
-            >
-              <Check size={14} className="text-emerald-500" /> {c}
-            </span>
+      </section>
+
+      <section id="bolmeler" className="scroll-mt-4 px-4 pb-6 pt-16 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-2 text-center text-3xl font-black tracking-tight sm:text-4xl">Haradan başlayaq?</h2>
+          <p className="mb-9 text-center text-[17px] text-[#475569]">Bölməni seç – testlər dərhal açılır.</p>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {SECTIONS.map((s) => (
+              <a
+                key={s.href}
+                href={s.href}
+                className="group flex flex-col gap-3 rounded-3xl border border-[#E2E8F0] bg-white p-7 transition hover:-translate-y-1 hover:shadow-[0_14px_30px_rgba(11,16,38,.12)]"
+              >
+                <span className="w-fit rounded-full bg-[#E0F2FE] px-3 py-1 text-xs font-extrabold text-[#075985]">{s.tag}</span>
+                <span className="text-2xl font-black">{s.title}</span>
+                <span className="leading-relaxed text-[#475569]">{s.text}</span>
+                <span className="mt-auto pt-2 font-extrabold text-[#1D4ED8] group-hover:underline">Aç →</span>
+              </a>
+            ))}
+            <div className="flex flex-col gap-3 rounded-3xl border border-dashed border-[#94A3B8] bg-white p-7">
+              <span className="w-fit rounded-full bg-[#F1F5F9] px-3 py-1 text-xs font-extrabold text-[#475569]">Tezliklə</span>
+              <span className="text-2xl font-black">Şəxsi yol</span>
+              <span className="leading-relaxed text-[#475569]">
+                Qeydiyyat, səviyyə testi və hər gün sənə uyğun yeni addım. Yeni bölmələr tədricən açılacaq.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 py-16 sm:px-6">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-9 text-center text-3xl font-black tracking-tight sm:text-4xl">3 addım – hər gün</h2>
+          <div className="grid gap-5 md:grid-cols-3">
+            {[
+              ['Özün həll et', 'Əvvəl düşün, sonra cavab ver. Tələsmə – vaxt səninlədir.'],
+              ['Səhvini başa düş', 'Hər sualın addım-addım həlli var, TikTok-da isə qısa video izah.'],
+              ['Təkrar et', 'Səhv etdiyin mövzuya qayıt – ikinci dəfə daha asan olacaq.'],
+            ].map(([t, d], i) => (
+              <div key={t} className="rounded-3xl border border-[#E2E8F0] bg-white p-7">
+                <div className="flex h-12 w-12 items-center justify-center rounded-2xl text-xl font-black text-[#FACC15]" style={{ background: NAVY }}>
+                  {i + 1}
+                </div>
+                <h3 className="mb-2 mt-4 text-xl font-bold">{t}</h3>
+                <p className="leading-relaxed text-[#475569]">{d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="video" className="px-4 py-16 sm:px-6" style={{ background: NAVY }}>
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-10">
+          <div className="min-w-0 flex-[1_1_340px]">
+            <h2 className="mb-3 text-3xl font-black tracking-tight text-white sm:text-4xl">Hər gün 3 video izah</h2>
+            <p className="mb-6 text-[17px] leading-relaxed text-[#CBD5E1]">
+              Səhər – klassik tapşırıq, günorta – vizual isbat, axşam – çağırış. TikTok-da izlə, burada həll et.
+            </p>
+            <a href={TIKTOK} className="inline-block rounded-2xl bg-white px-5 py-3.5 font-extrabold text-[#0B1026]">
+              @fizmatix.riyaziyyat
+            </a>
+          </div>
+          <div className="grid min-w-0 flex-[2_1_480px] grid-cols-3 gap-3.5">
+            {[
+              ['07:30 · KLASSİK', 'Bir tapşırıq, addım-addım', 'from-[#142057] to-[#1B2A6B]'],
+              ['13:00 · VİZUAL İSBAT', 'Düsturu şəkildə gör', 'from-[#1E1B4B] to-[#4C1D95]'],
+              ['18:30 · ÇAĞIRIŞ', 'Cavabı şərhdə yaz', 'from-[#0F172A] to-[#0E7490]'],
+            ].map(([a, b, g]) => (
+              <div key={a} className={`flex aspect-[9/16] flex-col justify-between rounded-2xl bg-gradient-to-b ${g} p-3 text-white sm:p-4`}>
+                <span className="text-[10px] font-extrabold text-[#FACC15] sm:text-xs">{a}</span>
+                <span className="text-xs font-bold sm:text-[15px]">{b}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="valideyn" className="px-4 py-16 sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-8 rounded-3xl border border-[#E2E8F0] bg-white p-8 sm:p-10">
+          <div className="min-w-0 flex-[1_1_420px]">
+            <h2 className="mb-2.5 text-3xl font-black">Valideynlər üçün</h2>
+            <p className="text-[17px] leading-relaxed text-[#475569]">
+              Reklam yoxdur, uşağın məlumatları üçüncü tərəfə verilmir. Tezliklə – hər bazar qısa hesabat: neçə tapşırıq
+              həll olundu və hansı mövzunu təkrar etmək lazımdır.
+            </p>
+          </div>
+          <a href="#bolmeler" className="rounded-2xl px-6 py-4 font-extrabold text-white" style={{ background: NAVY }}>
+            Testlərə bax
+          </a>
+        </div>
+      </section>
+
+      <section className="px-4 pb-16 sm:px-6">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="mb-5 text-center text-3xl font-black">Tez-tez verilən suallar</h2>
+          {[
+            ['Doğrudan pulsuzdur?', `Bəli. Beta ${BETA_END}-yə qədər davam edir, bu müddətdə hər şey pulsuzdur. Kart məlumatı istənmir.`],
+            ['Beta bitəndə nə olacaq?', 'Günün tapşırığı pulsuz qalacaq. Dəyişiklik barədə 2 həftə əvvəl xəbər verəcəyik.'],
+            ['Testlər imtahan formatındadır?', 'Bəli, buraxılış və DİM formatında; hər sualın həlli var.'],
+          ].map(([q, a]) => (
+            <details key={q} className="mb-2.5 rounded-2xl border border-[#E2E8F0] bg-white px-5 py-4">
+              <summary className="cursor-pointer font-bold">{q}</summary>
+              <p className="mt-2 leading-relaxed text-[#475569]">{a}</p>
+            </details>
           ))}
         </div>
-      </div>
-    </section>
-  )
-}
+      </section>
 
-function Stats() {
-  const { t } = useLanguage()
-  return (
-    <section className="mx-auto max-w-6xl px-4 sm:px-6">
-      <div className="grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-line bg-line md:grid-cols-4 dark:border-white/10 dark:bg-white/10">
-        {stats.map((v, i) => (
-          <div key={i} className="bg-white p-6 dark:bg-night-card">
-            <p className="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl dark:text-white">{v}</p>
-            <p className="mt-1 text-sm font-medium text-muted">{t.stats[i]}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-function SectionHead({ id, title, lead }: { id: string; title: string; lead: string }) {
-  return (
-    <div id={id} className="scroll-mt-24">
-      <h2 className="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl dark:text-white">{title}</h2>
-      <p className="mt-3 max-w-2xl text-lg text-muted">{lead}</p>
+      <Footer />
     </div>
-  )
-}
-
-function Projects() {
-  const { t } = useLanguage()
-  return (
-    <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-      <SectionHead id="projects" title={t.projects.title} lead={t.projects.lead} />
-      <div className="mt-10 grid gap-6 md:grid-cols-2">
-        {projects.map((p, i) => {
-          const txt = t.projectText[p.key]
-          return (
-            <article
-              key={p.key}
-              className={`group flex flex-col overflow-hidden rounded-3xl border border-line bg-white transition hover:-translate-y-1 hover:shadow-card dark:border-white/10 dark:bg-night-card ${i === 0 ? 'md:col-span-2 lg:grid lg:grid-cols-[1.25fr_1fr]' : ''}`}
-            >
-              <a href={p.url} target="_blank" rel="noreferrer" className="block overflow-hidden bg-paper p-4 pb-0 dark:bg-white/5">
-                <img src={p.image} alt={p.title} loading="lazy" className="aspect-[16/10] w-full rounded-t-xl border border-b-0 border-line object-cover object-top transition duration-500 group-hover:scale-[1.02] dark:border-white/10" />
-              </a>
-              <div className="flex flex-1 flex-col p-6 sm:p-7">
-                <div className="flex items-center justify-between gap-3">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-bold text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-400">
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" /> {t.projects.live}
-                  </span>
-                  <span className="truncate font-mono text-xs text-muted">{p.url.replace('https://', '')}</span>
-                </div>
-                <h3 className="mt-4 text-2xl font-extrabold tracking-tight text-ink dark:text-white">{p.title}</h3>
-                <p className="mt-2 text-muted">{txt.desc}</p>
-                <ul className="mt-4 space-y-2">
-                  {txt.points.map((pt) => (
-                    <li key={pt} className="flex gap-2 text-sm text-ink/80 dark:text-white/80">
-                      <Check size={16} className="mt-0.5 shrink-0" style={{ color: p.accent }} /> {pt}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-5 flex flex-wrap gap-1.5">
-                  {p.stack.map((s) => (
-                    <span key={s} className="rounded-full border border-line px-2.5 py-1 font-mono text-[11px] font-semibold text-muted dark:border-white/10">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-                <a href={p.url} target="_blank" rel="noreferrer" className="mt-6 inline-flex w-fit items-center gap-1.5 font-bold text-brand hover:underline">
-                  {t.projects.open} <ArrowUpRight size={18} />
-                </a>
-              </div>
-            </article>
-          )
-        })}
-      </div>
-
-    </section>
-  )
-}
-
-function Approach() {
-  const { t } = useLanguage()
-  const icons = [GraduationCap, WifiOff, Languages, ShieldCheck]
-  return (
-    <section className="border-y border-line bg-white py-24 dark:border-white/10 dark:bg-night-card/40">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHead id="approach" title={t.approach.title} lead={t.approach.lead} />
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {t.approach.items.map((it, i) => {
-            const Icon = icons[i]
-            return (
-              <div key={it.title} className="rounded-3xl border border-line bg-paper p-6 dark:border-white/10 dark:bg-night">
-                <span className="grid h-11 w-11 place-items-center rounded-2xl bg-brand/10 text-brand">
-                  <Icon size={22} />
-                </span>
-                <h3 className="mt-5 text-lg font-extrabold text-ink dark:text-white">{it.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{it.text}</p>
-              </div>
-            )
-          })}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function Stack() {
-  const { t } = useLanguage()
-  const icons = [Layout, Server, Cloud, Wrench]
-  return (
-    <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6">
-      <SectionHead id="stack" title={t.stack.title} lead={t.stack.lead} />
-      <div className="mt-10 grid gap-5 md:grid-cols-2">
-        {stackGroups.map((g, i) => {
-          const Icon = icons[i]
-          return (
-            <div key={i} className="rounded-3xl border border-line bg-white p-6 dark:border-white/10 dark:bg-night-card">
-              <p className="flex items-center gap-2 font-bold text-ink dark:text-white">
-                <Icon size={18} className="text-brand" /> {t.stack.groups[i]}
-              </p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {g.map((s) => (
-                  <span key={s} className="rounded-xl bg-paper px-3 py-2 font-mono text-sm font-semibold text-ink dark:bg-white/5 dark:text-white">
-                    {s}
-                  </span>
-                ))}
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </section>
-  )
-}
-
-function About() {
-  const { t } = useLanguage()
-  return (
-    <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6">
-      <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr]">
-        <div id="about" className="scroll-mt-24">
-          <div className="flex items-center gap-4">
-            <img src={photo} alt="Fərid Həsənov" className="h-20 w-20 rounded-2xl object-cover ring-4 ring-white dark:ring-night-card" />
-            <div>
-              <h2 className="text-3xl font-extrabold tracking-tight text-ink sm:text-4xl dark:text-white">{t.about.title}</h2>
-              <p className="font-mono text-sm text-brand">Fərid Həsənov</p>
-            </div>
-          </div>
-          <p className="mt-6 text-lg leading-relaxed text-muted">{t.about.text}</p>
-        </div>
-        <div className="rounded-3xl border border-line bg-white p-6 sm:p-8 dark:border-white/10 dark:bg-night-card">
-          <p className="font-bold text-ink dark:text-white">{t.about.timelineTitle}</p>
-          <ol className="mt-6 space-y-6 border-l-2 border-line pl-6 dark:border-white/10">
-            {t.about.timeline.map((it) => (
-              <li key={it.title} className="relative">
-                <span className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-brand dark:border-night-card" />
-                <p className="font-bold text-ink dark:text-white">{it.title}</p>
-                <p className="text-sm text-muted">{it.place}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function Contact() {
-  const { t } = useLanguage()
-  return (
-    <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
-      <div id="contact" className="relative scroll-mt-24 overflow-hidden rounded-[2rem] bg-ink px-6 py-14 text-center text-white sm:px-12 dark:bg-night-card">
-        <div className="bg-grid-dark pointer-events-none absolute inset-0 opacity-60" />
-        <div className="relative">
-          <h2 className="text-3xl font-extrabold tracking-tight sm:text-5xl">{t.contact.title}</h2>
-          <p className="mx-auto mt-4 max-w-xl text-lg text-white/70">{t.contact.text}</p>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href={`mailto:${contacts.email}`} className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 font-bold text-ink transition hover:-translate-y-0.5">
-              <Mail size={18} /> {t.contact.email}
-            </a>
-          </div>
-          <p className="mt-6 font-mono text-sm text-white/60">{contacts.email}</p>
-        </div>
-      </div>
-    </section>
   )
 }
 
 export default function App() {
-  const { t } = useLanguage()
-  return (
-    <div className="bg-grid dark:bg-grid-dark min-h-screen overflow-x-clip">
-      <Header />
-      <main>
-        <Hero />
-        <Stats />
-        <Projects />
-        <Approach />
-        <Stack />
-        <About />
-        <Contact />
-      </main>
-      <footer className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 pb-10 text-sm text-muted sm:px-6">
-        <Logo />
-        <p>
-          © {new Date().getFullYear()} Fərid Həsənov · fizmatix.com · {t.footer}
-        </p>
-      </footer>
-    </div>
-  )
+  const path = typeof window !== 'undefined' ? window.location.pathname.replace(/\/+$/, '') : ''
+  return path === '/bugun' ? <TodayPage /> : <HomePage />
 }
