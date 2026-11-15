@@ -2,7 +2,6 @@ import { useState } from 'react'
 
 const NAVY = '#0B1026'
 const GOLD = '#FACC15'
-const BETA_END = '15 fevral 2027'
 const TIKTOK = 'https://www.tiktok.com/@fizmatix.riyaziyyat'
 
 type Option = { key: string; text: string }
@@ -115,7 +114,7 @@ function Header() {
           ))}
         </nav>
         <a href="#bolmeler" className="ml-auto rounded-xl px-4 py-3 text-[15px] font-extrabold text-[#0B1026] sm:ml-0" style={{ background: GOLD }}>
-          Pulsuz başla
+          Başla
         </a>
       </div>
     </header>
@@ -125,7 +124,7 @@ function Header() {
 function BetaBar() {
   return (
     <div className="px-4 py-2.5 text-center text-sm font-bold text-[#0B1026]" style={{ background: GOLD }}>
-      Pulsuz beta: {BETA_END}-yə qədər bütün testlər və həllər pulsuzdur
+      Beta versiya: sayt yenilənir, yeni bölmələr tədricən açılır
     </div>
   )
 }
@@ -192,13 +191,13 @@ function HomePage() {
             </p>
             <div className="flex flex-wrap gap-3">
               <a href="#bolmeler" className="rounded-2xl px-6 py-4 text-[17px] font-extrabold text-[#0B1026]" style={{ background: GOLD }}>
-                Pulsuz başla
+                Başla
               </a>
               <a href="#gunun" className="rounded-2xl border border-[#334155] px-5 py-4 text-[17px] font-bold text-white">
                 Qeydiyyatsız yoxla
               </a>
             </div>
-            <p className="mt-7 text-sm text-[#94A3B8]">Kart tələb olunmur · beta müddətində pulsuz</p>
+            <p className="mt-7 text-sm text-[#94A3B8]">Qeydiyyat tələb olunmur · beta versiya</p>
           </div>
           <div className="min-w-0 flex-[1_1_380px]">
             <DailyTask />
@@ -300,8 +299,8 @@ function HomePage() {
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-5 text-center text-3xl font-black">Tez-tez verilən suallar</h2>
           {[
-            ['Doğrudan pulsuzdur?', `Bəli. Beta ${BETA_END}-yə qədər davam edir, bu müddətdə hər şey pulsuzdur. Kart məlumatı istənmir.`],
-            ['Beta bitəndə nə olacaq?', 'Günün tapşırığı pulsuz qalacaq. Dəyişiklik barədə 2 həftə əvvəl xəbər verəcəyik.'],
+            ['Beta nədir?', 'Sayt sınaq mərhələsindədir: bölmələr tədricən əlavə olunur, rəyiniz bizə kömək edir.'],
+            ['Beta bitəndə nə olacaq?', 'Nəticələriniz qalacaq. Dəyişikliklər barədə əvvəlcədən xəbər verəcəyik.'],
             ['Testlər imtahan formatındadır?', 'Bəli, buraxılış və DİM formatında; hər sualın həlli var.'],
           ].map(([q, a]) => (
             <details key={q} className="mb-2.5 rounded-2xl border border-[#E2E8F0] bg-white px-5 py-4">
