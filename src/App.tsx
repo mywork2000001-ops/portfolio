@@ -378,6 +378,30 @@ function HomePage() {
         </div>
       </section>
 
+      <section id="muellim" className="px-4 py-16 sm:px-6">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-10">
+          <div className="min-w-0 flex-[1_1_340px]">
+            <h2 className="mb-3 text-3xl font-black tracking-tight sm:text-4xl">Müəllimlər üçün: Smart Test Studio</h2>
+            <p className="mb-6 text-[17px] leading-relaxed text-[#475569]">
+              Kitabdan şəkil çək – test hazırdır. Blankı çap et, şagirdin cavablarını proqram özü oxusun. 30 saniyəlik videoda necə işlədiyinə bax.
+            </p>
+            <a href="https://test.fizmatix.com" className="inline-block rounded-2xl px-5 py-3.5 font-extrabold text-white" style={{ background: NAVY }}>
+              test.fizmatix.com · Beta
+            </a>
+          </div>
+          <div className="min-w-0 flex-[1_1_260px]">
+            <video
+              src="/video/smart-test-studio.mp4"
+              poster="/video/smart-test-studio.jpg"
+              controls
+              playsInline
+              preload="none"
+              className="mx-auto w-full max-w-[300px] rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,.25)]"
+            />
+          </div>
+        </div>
+      </section>
+
       <section id="valideyn" className="px-4 py-16 sm:px-6">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-8 rounded-3xl border border-[#E2E8F0] bg-white p-8 sm:p-10">
           <div className="min-w-0 flex-[1_1_420px]">
