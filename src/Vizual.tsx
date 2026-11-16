@@ -126,9 +126,9 @@ export function TikTokCard({ v }: { v: Video }) {
     <div className="flex flex-col gap-2 rounded-2xl border border-[#E2E8F0] bg-white p-3">
       {on ? (
         <>
-          <iframe title={v.title || 'TikTok'} src={`https://www.tiktok.com/player/v1/${v.id}?music_info=0&description=0&embed_from=oembed&autoplay=1`}
+          <iframe title={v.title || 'TikTok'} src={`https://www.tiktok.com/player/v1/${v.id}?music_info=1&description=0&embed_from=oembed`}
             className="aspect-[9/16] w-full rounded-xl border-0 bg-black" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" />
-          {/* 16.11: bəzi brauzerlərdə TikTok pleyeri açılmır («Player authentication failed») – birbaşa keçid */}
+          {/* 16.11: avtostart YOX – brauzer avtostartda səsi söndürür («səs yoxdur»); ▶ TikTok pleyerində basılır – səsli. Bəzi brauzerlərdə (TikTok-a daxil olunmuş Chrome) pleyer açılmır – birbaşa keçid */}
           <a href={v.url} target="_blank" rel="noopener" className="flex min-h-[44px] items-center justify-center rounded-xl bg-[#0B1026] px-2 text-center text-[13px] font-bold text-white">
             Açılmırsa – TikTok-da bax →
           </a>
