@@ -125,8 +125,14 @@ export function TikTokCard({ v }: { v: Video }) {
   return (
     <div className="flex flex-col gap-2 rounded-2xl border border-[#E2E8F0] bg-white p-3">
       {on ? (
-        <iframe title={v.title || 'TikTok'} src={`https://www.tiktok.com/player/v1/${v.id}?music_info=0&description=0`}
-          className="aspect-[9/16] w-full rounded-xl border-0 bg-black" allow="fullscreen; encrypted-media" />
+        <>
+          <iframe title={v.title || 'TikTok'} src={`https://www.tiktok.com/player/v1/${v.id}?music_info=0&description=0&embed_from=oembed&autoplay=1`}
+            className="aspect-[9/16] w-full rounded-xl border-0 bg-black" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" />
+          {/* 16.11: bəzi brauzerlərdə TikTok pleyeri açılmır («Player authentication failed») – birbaşa keçid */}
+          <a href={v.url} target="_blank" rel="noopener" className="flex min-h-[44px] items-center justify-center rounded-xl bg-[#0B1026] px-2 text-center text-[13px] font-bold text-white">
+            Açılmırsa – TikTok-da bax →
+          </a>
+        </>
       ) : (
         <button type="button" onClick={() => setOn(true)} className="flex aspect-[9/16] w-full flex-col items-center justify-center gap-2 rounded-xl bg-[#0B1026] p-4 text-center text-white">
           <svg aria-hidden="true" width="44" height="44" viewBox="0 0 24 24" fill="#FACC15"><path d="M7 4l13 8-13 8z" /></svg>

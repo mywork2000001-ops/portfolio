@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import DAILY_TESTS from './data/gunun-sinaq.json'
-import { IsbatPage, TikTokCard, VizualPage } from './Vizual'
+import { IsbatPage, VizualPage } from './Vizual'
 
 const NAVY = '#0B1026'
 const BANK_BASE = 'https://bank.fizmatix.com/P0010_Riyaziyyat_Test_Bank/app/public/lessons/tests/'
@@ -348,25 +348,19 @@ function TodayPage() {
 }
 
 // Son video: TikTok-dakı öz videomuz (müəllimin seçdiyi musiqi ilə); yoxdursa – serverdəki fayl səssiz
+// 16.11.2026 (istifadəçi: «pleyerdən video yüklənmir» – Chrome-da TikTok «Player authentication failed»):
+// ana səhifədə öz serverimizdəki günün videosu (TikTok pleyerindən asılı deyil)
 function LatestVideo() {
-  const [v, setV] = useState<{ id: string; author: string; url: string; topic: string | null; title: string } | null>(null)
-  useEffect(() => {
-    fetch('/tiktok/api/videolar')
-      .then((r) => (r.ok ? r.json() : { videos: [] }))
-      .then((d) => {
-        const own = (d.videos || []).filter((x: { own?: boolean }) => x.own)
-        own.sort((x: { id: string }, y: { id: string }) => (BigInt(y.id) > BigInt(x.id) ? 1 : -1))
-        if (own[0]) setV(own[0])
-      })
-      .catch(() => {})
-  }, [])
   return (
     <div className="mx-auto w-full max-w-[300px]">
-      {v ? (
-        <TikTokCard v={v} />
-      ) : (
-        <video src="/tiktok/api/video.mp4" controls muted playsInline preload="metadata" className="aspect-[9/16] w-full rounded-2xl bg-black" aria-label="Son video izah" />
-      )}
+      <video
+        src="/tiktok/api/video.mp4"
+        controls
+        playsInline
+        preload="metadata"
+        className="aspect-[9/16] w-full rounded-2xl bg-black"
+        aria-label="Günün video izahı"
+      />
       <a href={TIKTOK} className="mt-3 flex min-h-[48px] items-center justify-center rounded-xl bg-white font-extrabold text-[#0B1026]">
         TikTok-da bütün videolar →
       </a>
