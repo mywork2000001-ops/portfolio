@@ -109,6 +109,17 @@ function GeoGebraBox({ name }: { name: string }) {
   return <div className="ggb-wrap w-full overflow-hidden rounded-2xl border border-[#E2E8F0] bg-white"><div id={id} /></div>
 }
 
+// Audit 16.11: TikTok bəzi videolara ad vermir → ID-dən yükləmə tarixi (ID >> 32 = unix vaxtı), kartlar fərqlənsin
+const AY = ['yanvar', 'fevral', 'mart', 'aprel', 'may', 'iyun', 'iyul', 'avqust', 'sentyabr', 'oktyabr', 'noyabr', 'dekabr']
+function videoDate(id: string) {
+  try {
+    const d = new Date(Number(BigInt(id) >> 32n) * 1000 + 4 * 3600000)
+    return `Tapşırıq videosu · ${d.getUTCDate()} ${AY[d.getUTCMonth()]}`
+  } catch {
+    return 'Fizmatix videosu'
+  }
+}
+
 export function TikTokCard({ v }: { v: Video }) {
   const [on, setOn] = useState(false)
   return (
@@ -119,7 +130,7 @@ export function TikTokCard({ v }: { v: Video }) {
       ) : (
         <button type="button" onClick={() => setOn(true)} className="flex aspect-[9/16] w-full flex-col items-center justify-center gap-2 rounded-xl bg-[#0B1026] p-4 text-center text-white">
           <svg aria-hidden="true" width="44" height="44" viewBox="0 0 24 24" fill="#FACC15"><path d="M7 4l13 8-13 8z" /></svg>
-          <span className="text-[15px] font-extrabold leading-snug">{v.title || 'Fizmatix videosu'}</span>
+          <span className="text-[15px] font-extrabold leading-snug">{v.title || videoDate(v.id)}</span>
           <span className="text-xs text-[#CBD5E1]">Kliklə – TikTok pleyeri açılır</span>
         </button>
       )}
