@@ -120,6 +120,13 @@ function videoDate(id: string) {
   }
 }
 
+// 16.11.2026 (istifadəçi): saytda videolar YALNIZ TikTok-dan – öz serverimizdəki mp4 göstərilmir.
+// Ən yeni öz TikTok videomuz (şərtə görə, məs. adında «Smart Test»)
+export function useLatestTikTok(match?: (v: Video) => boolean) {
+  const videos = useVideos()
+  return videos.filter((v) => v.own && (!match || match(v))).sort((x, y) => (BigInt(y.id) > BigInt(x.id) ? 1 : -1))[0] ?? null
+}
+
 export function TikTokCard({ v }: { v: Video }) {
   const [on, setOn] = useState(false)
   return (
@@ -144,7 +151,7 @@ export function TikTokCard({ v }: { v: Video }) {
   )
 }
 
-function useVideos() {
+export function useVideos() {
   const [videos, setVideos] = useState<Video[]>([])
   useEffect(() => {
     fetch('/tiktok/api/videolar').then((r) => (r.ok ? r.json() : { videos: [] })).then((d) => setVideos(d.videos || [])).catch(() => {})
@@ -184,15 +191,9 @@ export function VizualPage() {
 export function IsbatPage({ slug }: { slug: string }) {
   const it = LIST[slug]
   const videos = useVideos()
-  const [own, setOwn] = useState(false)
-  useEffect(() => {
-    if (!it?.own) return
-    fetch('/tiktok/api/viz').then((r) => (r.ok ? r.json() : { viz: [] })).then((d) => setOwn((d.viz || []).includes(it.own))).catch(() => {})
-  }, [it])
   if (!it) return <main className="p-8 text-center font-semibold">Belə teorem tapılmadı. <a href="/vizual" className="text-[#1D4ED8]">Vizual izahlar →</a></main>
   const tt = videos.filter((v) => v.own && v.isbat === slug)
-  const showOwnMp4 = own && tt.length === 0
-  const parts = [tt.length > 0 || own, !!it.geogebra && !!GGB[it.geogebra]].filter(Boolean).length
+  const parts = [tt.length > 0, !!it.geogebra && !!GGB[it.geogebra]].filter(Boolean).length
   return (
     <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
       <a href="/vizual" className="text-sm font-bold text-[#1D4ED8]">← Vizual izahlar</a>
@@ -207,15 +208,9 @@ export function IsbatPage({ slug }: { slug: string }) {
             <div className="grid gap-3">{tt.map((v) => <TikTokCard key={v.id} v={v} />)}</div>
           </section>
         )}
-        {showOwnMp4 && (
-          <section>
-            <h2 className="mb-2 font-black">1. Fizmatix videosu</h2>
-            <video src={`/tiktok/api/viz/${it.own}.mp4`} controls muted playsInline preload="metadata" className="aspect-[9/16] w-full rounded-2xl bg-black" />
-          </section>
-        )}
         {it.geogebra && GGB[it.geogebra] && (
           <section>
-            <h2 className="mb-2 font-black">{tt.length > 0 || own ? 2 : 1}. Özün yoxla</h2>
+            <h2 className="mb-2 font-black">{tt.length > 0 ? 2 : 1}. Özün yoxla</h2>
             <GeoGebraBox name={it.geogebra} />
           </section>
         )}

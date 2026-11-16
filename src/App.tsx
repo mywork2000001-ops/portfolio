@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import DAILY_TESTS from './data/gunun-sinaq.json'
-import { IsbatPage, VizualPage } from './Vizual'
+import { IsbatPage, TikTokCard, VizualPage, useLatestTikTok } from './Vizual'
 
 const NAVY = '#0B1026'
 const BANK_BASE = 'https://bank.fizmatix.com/P0010_Riyaziyyat_Test_Bank/app/public/lessons/tests/'
@@ -303,6 +303,23 @@ function DailyTestPage() {
   )
 }
 
+function TodayTikTok() {
+  const v = useLatestTikTok()
+  return v ? <TikTokCard v={v} /> : null
+}
+
+function StsTikTok() {
+  const v = useLatestTikTok((x) => /smart\s*test/i.test(x.title || ''))
+  return v ? (
+    <TikTokCard v={v} />
+  ) : (
+    <a href={TIKTOK} className="mx-auto flex aspect-[9/16] w-full max-w-[300px] flex-col items-center justify-center gap-2 rounded-3xl bg-[#0B1026] p-6 text-center text-white">
+      <span className="text-lg font-extrabold">Video tezliklə TikTok-da</span>
+      <span className="text-sm text-[#CBD5E1]">@fizmatix.riyaziyyat →</span>
+    </a>
+  )
+}
+
 // Video və tapşırıq yan-yana (kompüter), telefonda video yuxarıda, tapşırıq altında
 function TodayPage() {
   // son videonun tapşırığı: /tiktok/api/video -> task (/Sinaqlar/...html?q=N); yoxdursa – sual.fizmatix.com
@@ -324,14 +341,9 @@ function TodayPage() {
       </div>
       <main className="mx-auto flex max-w-6xl flex-wrap items-start gap-5 px-4 py-5 sm:px-6">
         <div className="min-w-0 flex-[1_1_260px] lg:max-w-[320px]">
-          <video
-            src="/tiktok/api/video.mp4"
-            controls
-            playsInline
-            preload="metadata"
-            className="mx-auto aspect-[9/16] max-h-[70dvh] w-full max-w-[320px] rounded-2xl bg-black"
-            aria-label="Tapşırığın video izahı"
-          />
+          <div className="mx-auto max-w-[320px]">
+            <TodayTikTok />
+          </div>
           <a href={TIKTOK} className="mx-auto mt-3 flex min-h-[44px] max-w-[320px] items-center justify-center rounded-xl border border-[#E2E8F0] bg-white text-sm font-extrabold text-[#0B1026]">
             TikTok-da izlə →
           </a>
@@ -348,19 +360,12 @@ function TodayPage() {
 }
 
 // Son video: TikTok-dakı öz videomuz (müəllimin seçdiyi musiqi ilə); yoxdursa – serverdəki fayl səssiz
-// 16.11.2026 (istifadəçi: «pleyerdən video yüklənmir» – Chrome-da TikTok «Player authentication failed»):
-// ana səhifədə öz serverimizdəki günün videosu (TikTok pleyerindən asılı deyil)
+// 16.11.2026 (istifadəçi): saytda videolar yalnız TikTok-dan – ən yeni öz TikTok videomuz
 function LatestVideo() {
+  const v = useLatestTikTok()
   return (
     <div className="mx-auto w-full max-w-[300px]">
-      <video
-        src="/tiktok/api/video.mp4"
-        controls
-        playsInline
-        preload="metadata"
-        className="aspect-[9/16] w-full rounded-2xl bg-black"
-        aria-label="Günün video izahı"
-      />
+      {v && <TikTokCard v={v} />}
       <a href={TIKTOK} className="mt-3 flex min-h-[48px] items-center justify-center rounded-xl bg-white font-extrabold text-[#0B1026]">
         TikTok-da bütün videolar →
       </a>
@@ -480,14 +485,9 @@ function HomePage() {
             </a>
           </div>
           <div className="min-w-0 flex-[1_1_260px]">
-            <video
-              src="/video/smart-test-studio.mp4"
-              poster="/video/smart-test-studio.jpg"
-              controls
-              playsInline
-              preload="none"
-              className="mx-auto w-full max-w-[300px] rounded-3xl shadow-[0_20px_40px_rgba(0,0,0,.25)]"
-            />
+            <div className="mx-auto max-w-[300px]">
+              <StsTikTok />
+            </div>
           </div>
         </div>
       </section>
