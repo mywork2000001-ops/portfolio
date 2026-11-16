@@ -1,0 +1,1 @@
+{"q": "Aşağıdakı ədədlərdən hansı həm $3$-ə, həm də $5$-ə qalıqsız bölünür?", "o": ["125", "230", "345", "452", "515"], "a": 2, "e": "$3$ və $5$ qarşılıqlı sadədir ⇒ ədəd $15$-ə bölünməlidir: $345=15\\cdot23$.", "test": "Güvən — Sınaq 3, X sinif (25.10.2026)", "topic": "NAT"}

@@ -1,0 +1,1 @@
+{"q": "Rəqəmləri müxtəlif olan beşrəqəmli $\\overline{4312a}$ ədədi $4$-ə tam bölünürsə, $a$-nın ala biləcəyi rəqəmlərin cəmini tapın.", "o": ["0", "6", "8", "12", "14"], "a": 2, "e": "$\\overline{2a}$ $4$-ə bölünür: $a\\in\\{0,4,8\\}$; $4$ artıq var ⇒ $a=0$ və ya $8$; cəm $8$.", "test": "Güvən — Blok sınağı 3, XI sinif, Qrup 1 (25.10.2026)", "topic": "NAT"}

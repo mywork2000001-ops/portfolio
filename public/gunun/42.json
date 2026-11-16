@@ -1,0 +1,1 @@
+{"q": "Bir ədədin 40%-i digərinin 60%-nə bərabərdir. Bu ədədlərin cəmi 75 olarsa, kiçik ədədi tapın.", "o": ["25", "30", "35", "40", "45"], "a": 1, "e": "$0{,}4x=0{,}6y\\Rightarrow x:y=3:2$. $x+y=75$ ⇒ $x=45,\\ y=30$. Kiçik ədəd $30$. Yoxlama: $0{,}4\\cdot45=18=0{,}6\\cdot30$.", "test": "Eyler Math — «1 Noyabr» Buraxılış sınağı 2, IX sinif (02.11.2026)", "topic": "FAI"}

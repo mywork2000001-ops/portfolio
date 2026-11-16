@@ -1,0 +1,1 @@
+{"q": "Müqayisə edin: $a=\\frac{2}{11},\\quad b=\\frac{3}{20},\\quad c=\\frac{4}{21}$", "o": ["$c\\gt b\\gt a$", "$c\\gt a\\gt b$", "$b\\gt a\\gt c$", "$b\\gt c\\gt a$", "$a\\gt b\\gt c$"], "a": 1, "e": "$a\\approx0{,}182,\\ b=0{,}15,\\ c\\approx0{,}190\\Rightarrow c\\gt a\\gt b$.", "test": "Mustafayev — Yay sınağı №3 (X–XI sinif)", "topic": "CEB"}

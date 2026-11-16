@@ -1,0 +1,1 @@
+{"q": "$c$ parametrinin hansı qiymətində $P(x)=x^4+cx^2+5x-3c$ çoxhədlisi $x+2$ ikihədlisinə qalıqsız bölünür?", "o": ["$6$", "$3$", "$-6$", "$-3$", "$-8$"], "a": 2, "e": "Bezu: $P(-2)=16+4c-10-3c=6+c=0\\Rightarrow c=-6$.", "test": "Eyler Math — «1 Noyabr» Sınaq 4, X sinif (02.11.2026)", "topic": "CEB"}

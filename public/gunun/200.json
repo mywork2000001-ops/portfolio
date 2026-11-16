@@ -1,0 +1,1 @@
+{"q": "$n(A)=2\\cdot n(B)$ və $n(A\\cup B)=18$ və $n(A\\cap B)=3$ olarsa, $n(B)=\\ ?$", "o": ["4", "5", "6", "7", "8"], "a": 3, "e": "$n(A\\cup B)=n(A)+n(B)-n(A\\cap B)$: $2b+b-3=18\\Rightarrow 3b=21\\Rightarrow b=7$.", "test": "OBM — Çoxluqlar – 1", "topic": "COX"}

@@ -1,0 +1,1 @@
+{"q": "Bir düz xətt üzərində yerləşən $n$ müxtəlif nöqtədən $36$ müxtəlif parça qurmaq mümkündür. $n$-i tapın.", "o": ["7", "8", "9", "10", "12"], "a": 2, "e": "Parçaların sayı $\\frac{n(n-1)}{2}=36\\Rightarrow n(n-1)=72\\Rightarrow n=9$.", "test": "Həndəsənin əsas anlayışları — mövzu sınağı (Variant A)", "topic": "PLA"}

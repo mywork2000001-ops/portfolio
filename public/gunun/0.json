@@ -1,0 +1,1 @@
+{"q": "Qonşu bucaqlardan biri digərinin $4$ mislindən $20^\\circ$ böyükdür. Bu bucaqlardan kiçiyini tapın.", "o": ["$28^\\circ$", "$32^\\circ$", "$36^\\circ$", "$40^\\circ$", "$42^\\circ$"], "a": 1, "e": "$x+4x+20^\\circ=180^\\circ\\Rightarrow x=32^\\circ$.", "test": "Buraxılış MS3 (Variant A) — Riyaziyyat", "topic": "PLA"}

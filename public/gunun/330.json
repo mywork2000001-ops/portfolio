@@ -1,0 +1,1 @@
+{"q": "$\\overline{ab}$ ikirəqəmli ədədi üçün $\\overline{ab}=3a+4b$ olarsa, $a+b$ cəmini tapın.", "o": ["10", "11", "14", "12", "15"], "a": 0, "e": "$10a+b=3a+4b\\Rightarrow 7a=3b$. Rəqəmlər üçün yeganə həll: $a=3$, $b=7$ ($\\overline{ab}=37=9+28$). $a+b=10$.", "test": "Buraxılış sınaq imtahanı №1 — Riyaziyyat, X sinif (20.09.2026)", "topic": "NAT"}

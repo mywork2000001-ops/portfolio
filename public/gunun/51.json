@@ -1,0 +1,1 @@
+{"q": "Rəqəmlərinin cəmi $20$ olan natural ədədi $9$-a böldükdə alınan qalığı tapın.", "o": ["1", "2", "3", "4", "5"], "a": 1, "e": "Ədədin $9$-a bölünməsindən qalıq rəqəmləri cəminin $9$-a bölünməsindən qalığa bərabərdir: $20=2\\cdot9+2$. Qalıq $2$.", "test": "Güvən — Buraxılış sınağı 1, XI sinif (04.10.2026)", "topic": "NAT"}

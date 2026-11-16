@@ -1,0 +1,1 @@
+{"q": "$\\sin25^\\circ=a$ olarsa, $\\cos245^\\circ$-ni $a$ ilə ifadə edin.", "o": ["$-\\sqrt{1-a^2}$", "$a$", "$\\sqrt{1-a^2}$", "$-a$", "$0{,}25$"], "a": 3, "e": "$\\cos245^\\circ=\\cos(180^\\circ+65^\\circ)=-\\cos65^\\circ=-\\sin25^\\circ=-a$.", "test": "Triqonometrik funksiyalar — Quiz 2, XI sinif (buraxılış sınağı)", "topic": "TRQ"}

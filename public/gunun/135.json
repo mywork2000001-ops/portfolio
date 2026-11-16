@@ -1,0 +1,1 @@
+{"q": "$n(A\\setminus B)=4$, $n(B\\setminus A)=3$ və $n(A\\cap B)=2$ olarsa, $n(A\\cup B)$-ni tapın.", "o": ["5", "7", "9", "11", "14"], "a": 2, "e": "$A\\cup B$ üç ayrılmaz hissədən ibarətdir: $n(A\\cup B)=4+3+2=9$.", "test": "Güvən — 10-cu sinif sınağı (1 və 4-cü qrup), 11.10.2026", "topic": "COX"}

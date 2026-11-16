@@ -1,0 +1,1 @@
+{"q": "$\\frac{a}{x-4}+\\frac{b}{x+3}=\\frac{3x+16}{x^2-x-12}$ olarsa, $ab$ hasilini tapın ($a$ və $b$ parametrlərdir).", "o": ["12", "-1", "8", "-4", "9"], "a": 3, "e": "$a(x+3)+b(x-4)=3x+16\\Rightarrow a+b=3,\\ 3a-4b=16\\Rightarrow a=4,\\ b=-1$. $ab=-4$. Cavab: $-4$ (D).", "test": "OTK — 8 Noyabr Blok sınağı (XI sinif, 1–2-ci qrup)", "topic": "CEB"}

@@ -1,0 +1,1 @@
+{"q": "$(x+4)(y-5)=13$ tənliyini ödəyən natural $x$ və $y$ ədədlərinin hasilini tapın.", "o": ["20", "52", "65", "54", "40"], "a": 3, "e": "$13$ sadə ədəddir. $x\\ge1$ olduğundan $x+4\\ge5$, deməli $x+4=13$, $y-5=1$: $x=9,\\ y=6$. Hasil $9\\cdot6=54$.", "test": "Nicat Bağışzadə — MSİ-1 Abituriyent", "topic": "NAT"}

@@ -1,0 +1,1 @@
+{"q": "$(3x^7-x^6+1)^{301}\\cdot(x^{200}-x^{150}+3)^2$ çoxhədlisinin sərbəst həddini tapın.", "o": ["3", "9", "4", "2", "13"], "a": 1, "e": "Sərbəst hədd $P(0)=1^{301}\\cdot3^2=9$.", "test": "Buraxılış MS2 (Variant A) — Riyaziyyat", "topic": "CEB"}

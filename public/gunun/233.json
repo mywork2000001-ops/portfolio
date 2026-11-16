@@ -1,0 +1,1 @@
+{"q": "$P(x)=7x^9+6x^5$ çoxhədlisi verilmişdir. $P^3(x^2)$ çoxhədlisinin dərəcəsini tapın.", "o": ["54", "81", "18", "36", "30"], "a": 0, "e": "$P(x^2)$-nin dərəcəsi $18$, kubunun dərəcəsi $3\\cdot 18=54$.", "test": "Mövzu sınağı 4 — Riyaziyyat, XI sinif (04.01.2026)", "topic": "CEB"}

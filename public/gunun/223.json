@@ -1,0 +1,1 @@
+{"q": "$a=\\sqrt{11}$, $b=3{,}3$ və $c=\\frac{16}{5}$ ədədlərini artan sıra ilə düzün.", "o": ["$a&lt;b&lt;c$", "$b&lt;a&lt;c$", "$c&lt;a&lt;b$", "$c&lt;b&lt;a$", "$a&lt;c&lt;b$"], "a": 3, "e": "$c=3{,}2$; $b^2=10{,}89&lt;11=a^2$, deməli $b&lt;a$. Nəticə: $c&lt;b&lt;a$.", "test": "Güvən — Buraxılış sınağı 1, XI sinif (04.10.2026)", "topic": "LOQ"}

@@ -1,0 +1,1 @@
+{"q": "$x=1{,}5\\cdot 10^3$, $y=0{,}03\\cdot 10^m$, $xy$ hasilinin tərtibi $10$ olarsa, $m$-i tapın.", "o": ["7", "6", "4", "11", "9"], "a": 4, "e": "$xy=1{,}5\\cdot 0{,}03\\cdot 10^{3+m}=0{,}045\\cdot 10^{3+m}=4{,}5\\cdot 10^{m+1}$. Tərtib $m+1=10\\Rightarrow m=9$.", "test": "Buraxılış sınağı 1 — Riyaziyyat, XI sinif (27.09.2026)", "topic": "LOQ"}

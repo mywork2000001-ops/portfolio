@@ -1,0 +1,1 @@
+{"q": "Aşağıdakı ədədlərdən hansı $9$-a qalıqsız bölünür?", "o": ["987", "876", "765", "654", "543"], "a": 2, "e": "Rəqəmlər cəmi $9$-a bölünməlidir: $7+6+5=18$. Digərləri: $24, 21, 15, 12$.", "test": "Sınaq 1 (Variant B) — Riyaziyyat, IX sinif (05.10.2025)", "topic": "NAT"}

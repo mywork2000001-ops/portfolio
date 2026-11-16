@@ -1,0 +1,1 @@
+{"q": "$A=\\{a;b;c;d\\}$ və $B=\\{b;d;f;e\\}$ olarsa, $A\\setminus B$ çoxluğunun elementlərinin sayını tapın.", "o": ["0", "1", "2", "3", "4"], "a": 2, "e": "$A\\setminus B$ — $A$-da olub $B$-də olmayan elementlər: $\\{a;c\\}$. Say: $2$. Cavab: $2$ (C).", "test": "Dəyər — Sınaq 1, XI sinif (22.10.2023)", "topic": "COX"}

@@ -1,0 +1,1 @@
+{"q": "$\\overline{46a8b}$ ədədinin $18$-ə bölündüyünü bilərək, $a\\cdot b$ hasilinin ən böyük qiymətini tapın.", "o": ["18", "20", "8", "24", "30"], "a": 1, "e": "$b$ cüt, $18+a+b$ $9$-a bölünür: $a+b=9$ (və ya $0$). Cüt $b$ ilə: $(1;8),(3;6),(5;4),(7;2),(9;0)$ — ən böyük hasil $5\\cdot4=20$.", "test": "Mövzu sınağı-1 (MSİ-1) — Riyaziyyat, IX sinif (28.09.2025)", "topic": "NAT"}

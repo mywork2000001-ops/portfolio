@@ -1,0 +1,1 @@
+{"q": "Bir natural ədəd $17$-yə bölündükdə natamam qismət qalığın $2$ qatına bərabər olur. Bölünən $245$-dirsə, natamam qismətlə qalığın fərqini tapın.", "o": ["5", "7", "9", "12", "14"], "a": 1, "e": "$245=17\\cdot 2r+r=35r\\Rightarrow r=7$, qismət $14$. Fərq $14-7=7$.", "test": "Natural ədədlər — mövzu sınağı (Variant A)", "topic": "NAT"}

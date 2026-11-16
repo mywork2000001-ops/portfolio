@@ -1,0 +1,1 @@
+{"q": "$b$ ən kiçik sadə ədəd olmaqla, $\\dfrac{b}{9-a}$ kəsri düzgün kəsrdirsə, $a$ tam ədədi hansı şərti ödəməlidir?", "o": ["$a\\lt 2$", "$a\\gt 2$", "$a\\lt 7$", "$a\\gt 7$", "$a\\lt 9$"], "a": 2, "e": "$b=2$. Düzgün kəsr: $2\\lt 9-a\\Rightarrow a\\lt 7$.", "test": "İnnovativ Təhsil Mərkəzi — 1 Noyabr Buraxılış imtahanı, 8-9 sinif (01.11.2026)", "topic": "KES"}

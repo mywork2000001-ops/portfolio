@@ -1,0 +1,1 @@
+{"q": "Hesablayın: $\\dfrac{4^4+4^4+4^4+4^4}{16}$", "o": ["1", "4", "16", "64", "128"], "a": 3, "e": "$\\frac{4\\cdot4^4}{16}=\\frac{4^5}{4^2}=4^3=64$.", "test": "Mustafayev — Yay sınağı №3 (X–XI sinif)", "topic": "CEB"}

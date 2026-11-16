@@ -1,0 +1,1 @@
+{"q": "$m$ ədədinə $15$ əlavə etdikdə alınan cəm, $60$-dan $25$ vahid kiçik olarsa, $m$ ədədini tapın.", "o": ["20", "30", "10", "15", "40"], "a": 0, "e": "$m+15=60-25=35\\Rightarrow m=20$.", "test": "Mövzu sınağı-2 (MSİ-2) — Riyaziyyat, IX sinif (02.11.2025)", "topic": "NAT"}

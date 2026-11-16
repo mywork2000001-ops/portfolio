@@ -1,0 +1,1 @@
+{"q": "$60\\%$-li $40$ $l$ duz məhlulundan neçə litr su buxarlandırmaq lazımdır ki, yeni məhlulda suyun faizi $20\\%$ olsun?", "o": ["20", "10", "5", "15", "12"], "a": 1, "e": "Duz: $40\\cdot0{,}6=24$ $l$ (dəyişmir). Yeni məhlulda duz $80\\%$ ⇒ məhlul $24:0{,}8=30$ $l$. Buxarlanan su: $40-30=10$ $l$.", "test": "Eyler Academy — Buraxılış Sınaq 2, X sinif", "topic": "MES"}

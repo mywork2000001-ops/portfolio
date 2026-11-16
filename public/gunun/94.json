@@ -1,0 +1,1 @@
+{"q": "$a^5c&lt;0$, $a^2b&gt;0$, $bc&lt;0$ olduğuna görə $a, b, c$ ədədlərinin işarələrini sıra ilə yazın.", "o": ["$-,-,-$", "$+,+,-$", "$-,-,+$", "$-,+,-$", "$+,+,+$"], "a": 1, "e": "$a^2&gt;0\\Rightarrow b&gt;0$; $bc&lt;0\\Rightarrow c&lt;0$; $a^5c&lt;0\\Rightarrow a&gt;0$.", "test": "Buraxılış MS5 (Variant A) — Riyaziyyat", "topic": "BER"}

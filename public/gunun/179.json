@@ -1,0 +1,1 @@
+{"q": "$a^2+a=5$ olarsa, $\\dfrac{a^{-b}+a^{1-b}+a^{2-b}}{a^{-b}}=\\,?$", "o": ["4", "5", "6", "7", "8"], "a": 2, "e": "$\\dfrac{a^{-b}(1+a+a^2)}{a^{-b}}=1+a+a^2=1+5=6$.", "test": "RFO — Rayon mərhələsi, XI sinif (24.12.2023)", "topic": "CEB"}

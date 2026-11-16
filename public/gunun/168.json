@@ -1,0 +1,1 @@
+{"q": "$x\\lt1$ olarsa, $x+\\sqrt{x^2-x-1+\\sqrt{x^2-4x+4}}=\\,?$", "o": ["$x-1$", "$x+1$", "1", "$1-x$", "$x$"], "a": 2, "e": "$\\sqrt{x^2-4x+4}=|x-2|=2-x$; $x^2-x-1+2-x=(x-1)^2$, $\\sqrt{(x-1)^2}=1-x$ ($x\\lt1$); $x+(1-x)=1$.", "test": "RFO — Rayon mərhələsi, XI sinif (2026)", "topic": "CEB"}

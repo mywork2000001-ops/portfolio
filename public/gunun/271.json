@@ -1,0 +1,1 @@
+{"q": "$(1;5]\\cap[-3;4)$ çoxluğunu tapın.", "o": ["$(1;4]$", "$(-3;5]$", "$[1;4]$", "$(1;4)$", "$[-3;5]$"], "a": 3, "e": "Kəsişmə: $x>1$ və $x\\lt4$ (1 daxil deyil, 4 daxil deyil) — $(1;4)$.", "test": "OBM — Riyaziyyat A.S. – 6.1", "topic": "COX"}

@@ -1,0 +1,1 @@
+{"q": "Ədədi silsilənin $n$-ci hədd düsturu $a_n=2n+4$ ilə verilir. Silsilə fərqini tapın.", "o": ["$1$", "$2$", "$4$", "$6$", "$8$"], "a": 1, "e": "$d=a_{n+1}-a_n=2(n+1)+4-(2n+4)=2$.", "test": "Vahid Mustafayev — Buraxılış sınağı MSİ-12, XI sinif", "topic": "PRO"}

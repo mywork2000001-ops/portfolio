@@ -1,0 +1,1 @@
+{"q": "$ab=320$ və $\\text{ƏBOB}(a;b)=4$ olarsa, $\\text{ƏKOB}(a;b)$-ni tapın.", "o": ["160", "50", "80", "40", "20"], "a": 2, "e": "$a\\cdot b=\\text{ƏBOB}\\cdot\\text{ƏKOB}\\Rightarrow\\text{ƏKOB}=\\frac{320}{4}=80$.", "test": "OBM — Riyaziyyat A.S. – 6.1", "topic": "NAT"}

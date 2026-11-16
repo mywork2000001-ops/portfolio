@@ -1,0 +1,1 @@
+{"q": "$14^m\\cdot 5^{m+1}$ ədədinin natural bölənlərinin sayı $36$ olarsa, $m$-i tapın.", "o": ["1", "2", "3", "4", "5"], "a": 1, "e": "$14^m\\cdot 5^{m+1}=2^m\\cdot 7^m\\cdot 5^{m+1}$. Bölənlərin sayı $(m+1)^2(m+2)=36$. $m=2$: $9\\cdot 4=36$ (funksiya artandır, başqa həll yoxdur).", "test": "Buraxılış sınağı 1 — Riyaziyyat, IX sinif (27.09.2026)", "topic": "NAT"}

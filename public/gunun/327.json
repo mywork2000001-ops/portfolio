@@ -1,0 +1,1 @@
+{"q": "$A$ çoxluğu $5$ elementlidir. $p$ və $q$ onun müxtəlif elementləridir. $A$-nın $p$-ni daxil edən, $q$-nu isə daxil etməyən neçə alt çoxluğu var?", "o": ["4", "8", "16", "24", "32"], "a": 1, "e": "$p$ və $q$ üçün seçim müəyyəndir; qalan $3$ elementin hər biri daxil ola da, olmaya da bilər: $2^3=8$.", "test": "Çoxluqlar — mövzu sınağı (Variant A)", "topic": "COX"}

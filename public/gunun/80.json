@@ -1,0 +1,1 @@
+{"q": "$A$ və $B$ çoxluqları üçün $n(A\\cup B)=21$, $n(A\\cap B)=8$ və $n(A\\setminus B)=5$ olarsa, $n(B\\setminus A)$-nı tapın.", "o": ["13", "3", "9", "8", "16"], "a": 3, "e": "$21-8-5=8$.", "test": "OTK — Blok sınağı №1, IX–X sinif, I qrup (04.10.2026)", "topic": "COX"}

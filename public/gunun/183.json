@@ -1,0 +1,1 @@
+{"q": "$a=8\\cdot9\\cdot34$ ədədinin neçə müxtəlif sadə böləni var?", "o": ["3", "1", "2", "5", "6"], "a": 0, "e": "$a=2^3\\cdot3^2\\cdot2\\cdot17=2^4\\cdot3^2\\cdot17$. Sadə bölənlər: $2,\\ 3,\\ 17$ — 3 ədəd.", "test": "OBM — Riyaziyyat A.S. – 5.2", "topic": "NAT"}

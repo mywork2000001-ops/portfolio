@@ -1,0 +1,1 @@
+{"q": "$|4x-y+16|+|3y-12|=0$ olarsa, $xy$ hasilini tapın.", "o": ["$-14$", "$-12$", "$-6$", "$8$", "$12$"], "a": 1, "e": "Modulların cəmi $0$ olduqda hər biri $0$-dır: $3y-12=0\\Rightarrow y=4$; $4x-4+16=0\\Rightarrow x=-3$. $xy=-12$.", "test": "Eyler Math — «1 Noyabr» Buraxılış sınağı 2, IX sinif (02.11.2026)", "topic": "CEB"}

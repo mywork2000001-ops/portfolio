@@ -1,0 +1,1 @@
+{"q": "Sadələşdirin: $\\dfrac{(-a)^3\\cdot(-a^2)^5\\cdot(a^3)^6}{(-a)^{29}}$", "o": ["$-a^4$", "$a^2$", "$-a^3$", "$-a$", "$-a^2$"], "a": 4, "e": "Surət / числитель / numerator: $(-a^3)(-a^{10})(a^{18})=a^{31}$; məxrəc / знаменатель / denominator: $-a^{29}$ ⇒ $-a^2$.", "test": "RFO — Rayon mərhələsi, X sinif (24.12.2023)", "topic": "LOQ"}

@@ -1,0 +1,1 @@
+{"q": "Hesablayın: $\\left|7+\\left|-5+\\left|7-\\left|-5+|-7|\\right|\\right|\\right|\\right|$", "o": ["1", "0", "5", "7", "2"], "a": 3, "e": "$|-7|=7;\\ |-5+7|=2;\\ |7-2|=5;\\ |-5+5|=0;\\ |7+0|=7$.", "test": "RFO — Rayon mərhələsi, XI sinif (24.12.2023)", "topic": "CEB"}

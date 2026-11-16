@@ -1,0 +1,1 @@
+{"q": "Rəqəmləri fərqli ən kiçik dördrəqəmli natural ədədin yüzlüklər mərtəbəsində hansı rəqəm durur?", "o": ["0", "1", "2", "3", "4"], "a": 0, "e": "Ən kiçik belə ədəd $1023$-dür ⇒ yüzlüklər mərtəbəsində $0$.", "test": "Güvən — Sınaq 4, XI sinif (01.11.2026)", "topic": "NAT"}

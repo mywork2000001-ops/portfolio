@@ -1,0 +1,1 @@
+{"q": "$\\lg^2x-5\\lg x+6=0$ tənliyini həll edin.", "o": ["$1000$", "$1000;\\ 100$", "$100$", "$10;\\ 100$", "$10000$"], "a": 1, "e": "$t=\\lg x$: $t^2-5t+6=0\\Rightarrow t=2$ və ya $t=3$. $x=100$ və ya $x=1000$. Cavab: B.", "test": "Vahid Mustafayev — ÜSİ–25 Buraxılış (XI sinif)", "topic": "LOQ"}

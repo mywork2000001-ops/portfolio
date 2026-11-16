@@ -1,0 +1,1 @@
+{"q": "$n(A)=31$, $n(B)=22$ və $n(A\\cup B)=40$ olarsa, $n(A\\setminus B)$-ni tapın.", "o": ["9", "13", "18", "21", "31"], "a": 2, "e": "$n(A\\cap B)=31+22-40=13$; $n(A\\setminus B)=31-13=18$.", "test": "İnnovativ Təhsil Mərkəzi — 1 Noyabr Buraxılış imtahanı, 8-9 sinif (01.11.2026)", "topic": "COX"}

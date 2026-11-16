@@ -1,0 +1,1 @@
+{"q": "Üç müsbət ədəd üçün $A:B=3:5$, $B:C=10:7$ olduğu məlumdur. $A+C=52$ olarsa, $B$-ni tapın.", "o": ["32", "36", "40", "44", "48"], "a": 2, "e": "$A:B:C=6:10:7$. $A+C=13k=52\\Rightarrow k=4$, $B=40$.", "test": "Nisbət. Tənasüb. Faiz — mövzu sınağı (Variant A)", "topic": "FAI"}

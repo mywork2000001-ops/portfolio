@@ -1,0 +1,1 @@
+{"q": "Üç ardıcıl natural ədədin cəmi $36$-dır. Ən kiçik ədəd ilə ən böyük ədədin hasili neçədir?", "o": ["121", "132", "143", "156", "182"], "a": 2, "e": "Ədədlər $n-1,\\ n,\\ n+1$: $3n=36\\Rightarrow n=12$, yəni $11,\\ 12,\\ 13$. Hasil: $11\\cdot13=143$.", "test": "Nicat Bağışzadə — MSİ-1 Abituriyent", "topic": "NAT"}

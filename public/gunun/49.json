@@ -1,0 +1,1 @@
+{"q": "$A\\subset B$ və $n(B)=12$ olarsa, $n(A\\cap B)$ çoxluğunun elementlərinin sayı ən çox neçə olar?", "o": ["0", "1", "6", "12", "24"], "a": 3, "e": "$A\\subset B$ ⇒ $A\\cap B=A$, $n(A)\\le n(B)=12$; ən çoxu $12$.", "test": "Güvən — Blok sınağı 3, XI sinif, Qrup 1 (25.10.2026)", "topic": "COX"}

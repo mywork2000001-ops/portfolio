@@ -1,0 +1,1 @@
+{"q": "$126662\\cdot246664$ hasilinin $6$-ya bölünməsindən alınan qalıq hansıdır?", "o": ["1", "2", "3", "4", "5"], "a": 1, "e": "$126662=6\\cdot21110+2$, $246664=6\\cdot41110+4$. Qalıqların hasili: $2\\cdot4=8=6+2$. Cavab: $2$ (B).", "test": "Dəyər — Sınaq 1, X sinif (19.10.2025)", "topic": "NAT"}

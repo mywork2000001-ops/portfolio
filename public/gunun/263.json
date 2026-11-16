@@ -1,0 +1,1 @@
+{"q": "$\\sqrt{110+\\sqrt{110+\\sqrt{110+\\ldots}}}=?$", "o": ["12", "11", "10", "13", "{'az': '11,5', 'ru': '11,5', 'en': '11.5'}"], "a": 1, "e": "$y=\\sqrt{110+y}\\Rightarrow y^2-y-110=0\\Rightarrow y=11$ ($y&gt;0$).", "test": "Buraxılış MS3 (Variant A) — Riyaziyyat", "topic": "LOQ"}

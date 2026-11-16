@@ -1,0 +1,1 @@
+{"q": "Ədədi silsilədə $a_1=2$, $a_7=20$ olarsa, silsilənin ilk $20$ həddinin cəmini tapın.", "o": ["$620$", "$543$", "$540$", "$610$", "$630$"], "a": 3, "e": "$a_7=a_1+6d$: $20=2+6d$, $d=3$. $S_{20}=\\frac{2a_1+19d}{2}\\cdot20=(4+57)\\cdot10=610$. Yoxlama: $a_{20}=2+57=59$, $S_{20}=\\frac{2+59}{2}\\cdot20=610$ ✓.", "test": "Ümumi sınaq — Test 15", "topic": "PRO"}

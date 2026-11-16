@@ -1,0 +1,1 @@
+{"q": "$m$-in neçə natural qiymətində $\\frac{m^2+7m+18}{m}$ kəsrinin qiyməti natural ədəd olar?", "o": ["4", "7", "9", "8", "6"], "a": 4, "e": "$\\frac{m^2+7m+18}{m}=m+7+\\frac{18}{m}$ natural olar ⇔ $m\\mid18$: $m=1,2,3,6,9,18$ — $6$ qiymət.", "test": "Sınaq İmtahanı Mərkəzi — Buraxılış imtahanı 1, X sinif", "topic": "NAT"}

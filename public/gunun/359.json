@@ -1,0 +1,1 @@
+{"q": "$A=\\{a,b,c,d,e,f\\}$ və $B=\\{a,c,e,f,g,h,i\\}$ çoxluqlarının kəsişməsinin elementlərinin sayını tapın.", "o": ["6", "5", "4", "3", "2"], "a": 2, "e": "$A\\cap B=\\{a,c,e,f\\}$ — $4$ element.", "test": "Sınaq 1 (Variant B) — Riyaziyyat, IX sinif (05.10.2025)", "topic": "COX"}

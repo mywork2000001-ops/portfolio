@@ -1,0 +1,1 @@
+{"q": "$a-b=6$ və $b\\gt0$ olarsa, $|a-b|+|b-a|+|a|+|b|$ ifadəsini sadələşdirin.", "o": ["$a+b$", "$8-a-b$", "$12+a+b$", "$8+a-2b$", "$8+2a+b$"], "a": 2, "e": "$|a-b|=|b-a|=6$. $b\\gt0$ və $a=b+6\\gt0$ ⇒ $|a|=a,\\ |b|=b$. Cəmi $6+6+a+b=12+a+b$.", "test": "Eyler Math — «1 Noyabr» Sınaq 4, XI sinif (02.11.2026)", "topic": "CEB"}

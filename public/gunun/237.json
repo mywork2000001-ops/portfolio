@@ -1,0 +1,1 @@
+{"q": "$(b_n)$ həndəsi silsiləsində $b_6=96$ və $q=2$ olarsa, $S_5=?$", "o": ["$45$", "$93$", "$189$", "$190$", "$200$"], "a": 1, "e": "$b_1=\\frac{96}{2^5}=3$; $S_5=\\frac{3(2^5-1)}{2-1}=93$.", "test": "Vahid Mustafayev — Buraxılış sınağı MSİ-12, XI sinif", "topic": "PRO"}

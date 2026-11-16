@@ -1,0 +1,1 @@
+{"q": "$\\frac{3}{5+\\sqrt{24}}+\\frac{3}{5-\\sqrt{24}}$ ifadəsini sadələşdirin.", "o": ["15", "20", "30", "25", "35"], "a": 2, "e": "Ortaq məxrəc: $\\frac{3(5-\\sqrt{24})+3(5+\\sqrt{24})}{25-24}=\\frac{30}{1}=30$.", "test": "Eyler Math — «1 Noyabr» Sınaq 4, XI sinif (02.11.2026)", "topic": "CEB"}

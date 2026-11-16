@@ -1,0 +1,1 @@
+{"q": "$a$-ın neçə qiymətində $\\frac{a}{24}$ düzgün kəsrinin qiyməti sonlu onluq kəsrdir?", "o": ["6", "7", "5", "8", "9"], "a": 1, "e": "$24=2^3\\cdot3$: sonlu onluq üçün $3\\mid a$, $a\\lt24$ ⇒ $a=3,6,\\dots,21$ — $7$ qiymət.", "test": "Birlik — MSİ-1, XI sinif, I blok (Mövzu sınağı)", "topic": "NAT"}

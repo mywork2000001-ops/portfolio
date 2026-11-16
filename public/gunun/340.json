@@ -1,0 +1,1 @@
+{"q": "$\\arccos(3x+5)=\\pi$ olarsa, $x=?$", "o": ["$3$", "$2$", "$1$", "$-2$", "$-1$"], "a": 3, "e": "$\\arccos t=\\pi\\Leftrightarrow t=-1$: $3x+5=-1$, $x=-2$.", "test": "Triqonometrik funksiyalar — Quiz 2, XI sinif (buraxılış sınağı)", "topic": "TRQ"}

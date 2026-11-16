@@ -1,0 +1,1 @@
+{"q": "$M=\\{19;29;39;49\\}$, $N=\\{39;49;59;69\\}$, $K=\\{29;49\\}$ çoxluqları üçün doğru münasibəti göstərin.", "o": ["$M\\subset N$", "$N\\subset K$", "$K\\subset N$", "$K\\subset M$", "$M\\subset K$"], "a": 3, "e": "$29\\in M$ və $49\\in M$ $\\Rightarrow K\\subset M$ ($29\\notin N$).", "test": "Mövzu sınağı-5 (MSİ-5) — Riyaziyyat, IX sinif (08.02.2026)", "topic": "COX"}

@@ -1,0 +1,1 @@
+{"q": "$A=\\{a;\\ b;\\ c;\\ d\\}$ çoxluğunun alt çoxluqlarının neçəsində $a$ elementi iştirak <b>etmir</b>?", "o": ["6", "8", "9", "10", "12"], "a": 1, "e": "$a$ iştirak etmirsə, alt çoxluq $\\{b;c;d\\}$-nin alt çoxluğudur: $2^3=8$.", "test": "OBM — Riyaziyyat A.S. – 5.1", "topic": "COX"}

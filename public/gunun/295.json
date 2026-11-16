@@ -1,0 +1,1 @@
+{"q": "Aşağıdakı bərabərsizliklərdən hansının həlli yoxdur?", "o": ["$|x|\\ge-2$", "$|x|\\lt -1$", "$|x|\\le0$", "$|x|>1$", "$|x|\\ge2$"], "a": 1, "e": "Modul mənfi ola bilməz: $|x|\\lt -1$ həllsizdir.", "test": "Bərabərsizliklər və bərabərsizliklər sistemi — IX sinif (buraxılış sınağı)", "topic": "BER"}

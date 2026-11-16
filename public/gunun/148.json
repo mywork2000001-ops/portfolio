@@ -1,0 +1,1 @@
+{"q": "$3x-4$ ifadəsi tək ədəd olarsa, aşağıdakılardan hansı həmişə cüt ədəddir?", "o": ["$x+1$", "$x+2$", "$2x+1$", "$3x$", "$3x^2$"], "a": 0, "e": "$3x-4$ tək ⇒ $3x$ tək ⇒ $x$ tək ⇒ $x+1$ cüt.", "test": "Vahid Mustafayev — Buraxılış sınağı MSİ-1, XI sinif (2026-2027)", "topic": "NAT"}

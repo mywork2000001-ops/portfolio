@@ -1,0 +1,1 @@
+{"q": "$(3n-5)$, $(4m-1)$, $(2n+6)$ ədədləri yazıldığı ardıcıllıqla artan ardıcıl natural ədədlərdir. ƏKOB$(m,n)$-i tapın.", "o": ["12", "15", "18", "24", "36"], "a": 2, "e": "$2n+6=(3n-5)+2\\Rightarrow n=9$; ədədlər $22,\\ 23,\\ 24$. $4m-1=23\\Rightarrow m=6$. ƏKOB$(6,9)=18$.", "test": "Buraxılış sınağı 1 — Riyaziyyat, IX sinif (27.09.2026)", "topic": "NAT"}

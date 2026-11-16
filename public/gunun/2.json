@@ -1,0 +1,1 @@
+{"q": "Aşağıdakı ədədlərdən hansı $4$-ə tam bölünür?", "o": ["2345", "8430", "7792", "6854", "2454"], "a": 2, "e": "$4$-ə bölünmə: son iki rəqəmdən düzələn ədəd $4$-ə bölünməlidir. $45,30,92,54,54$ içindən yalnız $92=4\\cdot23$. Cavab: $7792$ (C).", "test": "Dəyər — Sınaq 1, XI sinif (22.10.2023)", "topic": "NAT"}

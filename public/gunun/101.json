@@ -1,0 +1,1 @@
+{"q": "ƏKOB $(a;b;c)=30$ və $a\\ne b\\ne c$ olarsa, $a+b+c$ cəminin ən böyük qiymətini tapın.", "o": ["35", "44", "45", "48", "55"], "a": 4, "e": "$a,b,c$ — $30$-un fərqli bölənləri / различные делители $30$: $30+15+10=55$, ƏKOB/НОК $=30$ ✓.", "test": "Mustafayev — Yay sınağı №3 (X–XI sinif)", "topic": "NAT"}

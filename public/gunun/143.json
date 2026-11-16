@@ -1,0 +1,1 @@
+{"q": "$7x+3$ ifadəsinin qiyməti tək ədəd olarsa ($x\\in N$), aşağıdakı ifadələrdən hansının qiyməti mütləq cüt ədəddir?", "o": ["$x^2+3$", "$3x+1$", "$2x^2+x$", "$3x^3+5$", "$5x+3$"], "a": 2, "e": "$7x+3$ tək ⇒ $7x$ cüt ⇒ $x$ cüt. $2x^2+x$ cütdür; qalanları təkdir.", "test": "Güvən — Sınaq 4, 8-9 sinif (01.11.2026)", "topic": "NAT"}

@@ -1,0 +1,1 @@
+{"q": "ƏKOB$(a;b)\\cdot$ƏBOB$(a;b)=300$, $a$ və $b$ ədədlərinin ortaq olmayan sadə vuruqlarının hasili $c=12$ olarsa, ƏBOB$(a;b)$-ni tapın.", "o": ["3", "4", "5", "6", "7"], "a": 2, "e": "Ortaq olmayan vuruqların hasili ƏKOB:ƏBOB-dur: ƏKOB$=12\\cdot$ƏBOB. $12\\cdot$ƏBOB$^2=300\\Rightarrow$ ƏBOB$=5$.", "test": "Mövzu sınağı 1 — Riyaziyyat, XI sinif (28.09.2025)", "topic": "NAT"}

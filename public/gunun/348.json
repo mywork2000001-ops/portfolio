@@ -1,0 +1,1 @@
+{"q": "$x^2+y^2=54$; $xy=25$ olarsa, $x-y=?$", "o": ["2", "4", "1", "8", "6"], "a": 0, "e": "$(x-y)^2=54-50=4\\Rightarrow x-y=\\pm2$; variantlarda $2$.", "test": "Buraxılış MS5 (Variant A) — Riyaziyyat", "topic": "CEB"}

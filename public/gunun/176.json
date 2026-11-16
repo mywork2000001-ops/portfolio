@@ -1,0 +1,1 @@
+{"q": "ƏKOB$(a;b)=9\\sqrt{ab}$ olarsa, $a$ və $b$ ədədlərinin ortaq olmayan sadə vuruqlarının hasilini tapın.", "o": ["81", "27", "18", "9", "3"], "a": 0, "e": "ƏKOB$^2=81ab=81\\cdot$ƏKOB$\\cdot$ƏBOB $\\Rightarrow$ ƏKOB:ƏBOB$=81$ — bu, ortaq olmayan vuruqların hasilidir.", "test": "Buraxılış MS4 (Variant A) — Riyaziyyat", "topic": "NAT"}

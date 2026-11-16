@@ -1,0 +1,1 @@
+{"q": "$44^2+33^2$ ədədinin müxtəlif sadə vuruqlarının sayını tapın.", "o": ["4", "2", "3", "1", "11"], "a": 1, "e": "$44^2+33^2=11^2(4^2+3^2)=121\\cdot25=5^2\\cdot11^2$. Müxtəlif sadə vuruqlar: $5$ və $11$ — $2$ ədəd.", "test": "Nicat Bağışzadə — MSİ-1 Abituriyent", "topic": "NAT"}

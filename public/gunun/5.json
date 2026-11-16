@@ -1,0 +1,1 @@
+{"q": "Bərabərsizliyi həll edin: $|3-2x|\\lt7$", "o": ["$(-2;5)$", "$\\varnothing$", "$(-2;0)$", "$(0;5)$", "$[-2;5]$"], "a": 0, "e": "$-7\\lt3-2x\\lt7\\Rightarrow-10\\lt-2x\\lt4\\Rightarrow-2\\lt x\\lt5$. Cavab: $(-2;5)$.", "test": "BLOK sınaq 1", "topic": "BER"}

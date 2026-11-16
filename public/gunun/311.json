@@ -1,0 +1,1 @@
+{"q": "Azalan, çıxılan və fərqin cəmi $240$-a bərabər olarsa, azalanı tapın.", "o": ["60", "80", "120", "160", "180"], "a": 2, "e": "Çıxılan $+$ fərq $=$ azalan. Onda $\\text{azalan}+\\text{azalan}=240$, azalan $=120$.", "test": "Güvən — 10-cu sinif sınağı (1 və 4-cü qrup), 11.10.2026", "topic": "NAT"}

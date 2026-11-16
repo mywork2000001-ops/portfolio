@@ -1,0 +1,1 @@
+{"q": "Sinifdəki $6$ qız və $8$ oğlan arasından biri qız digəri oğlan olmaqla iki nəfəri yarışma üçün neçə üsulla seçmək olar?", "o": ["48", "42", "50", "36", "40"], "a": 0, "e": "Qız $6$, oğlan $8$ üsulla seçilir: $6\\cdot8=48$.", "test": "OZAN — Buraxılış sınağı N1, XI sinif", "topic": "EHT"}

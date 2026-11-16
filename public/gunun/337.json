@@ -1,0 +1,1 @@
+{"q": "$a&lt;0$ olduqda, $2\\sqrt[4]{a^4}+\\sqrt[3]{a^3}-\\sqrt{a^2}$ ifadəsini sadələşdirin.", "o": ["$4a$", "$3a$", "$0$", "$a$", "$5a$"], "a": 2, "e": "$a&lt;0$ olduqda $\\sqrt[4]{a^4}=|a|=-a$, $\\sqrt[3]{a^3}=a$, $\\sqrt{a^2}=|a|=-a$. Onda $2(-a)+a-(-a)=-2a+a+a=0$. Yoxlama: $a=-1$: $2\\cdot1+(-1)-1=0$.", "test": "OZAN — Buraxılış N8, XI sinif", "topic": "CEB"}

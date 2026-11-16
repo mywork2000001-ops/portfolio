@@ -1,0 +1,1 @@
+{"q": "Aşağıdakı çoxluqlardan hansıları eynigüclüdür? I. $A=\\{a;b;c\\}$ II. $B=\\{1;2;3;4\\}$ III. $C=\\{X;Y\\}$ IV. $D=\\{0;2;4\\}$", "o": ["I, II", "I, III", "II, III", "I, IV", "II, IV"], "a": 3, "e": "Elementlərin sayı: $n(A)=3$, $n(B)=4$, $n(C)=2$, $n(D)=3$. Eyni sayda elementi olanlar: I və IV.", "test": "OBM — Riyaziyyat A.S. – 6.1", "topic": "COX"}

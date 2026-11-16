@@ -1,0 +1,1 @@
+{"q": "Aşağıdakılardan hansı birhədli <i>deyil</i>?", "o": ["$-5x^2$", "$xyz$", "$-4{,}25$", "$2x-3$", "$y$"], "a": 3, "e": "$2x-3$ iki həddin ($2x$ və $-3$) cəmidir, ona görə birhədli deyil; qalanları birhədlidir. Cavab: $2x-3$ (D).", "test": "Dəyər — Sınaq 1, XI sinif (22.10.2023)", "topic": "CEB"}

@@ -1,0 +1,1 @@
+{"q": "$|\\sqrt{17}-4|+|\\sqrt{17}-6|$ ifadəsinin qiymətini tapın.", "o": ["$2\\sqrt{17}$", "-10", "$2\\sqrt{17}-10$", "2", "3"], "a": 3, "e": "$4\\lt\\sqrt{17}\\lt6$: $(\\sqrt{17}-4)+(6-\\sqrt{17})=2$.", "test": "Birlik — MSİ-1, IX sinif, I blok (Mövzu sınağı)", "topic": "NAT"}

@@ -1,0 +1,1 @@
+{"q": "$|2a-b|=m^2-m$ və $|b-2a|=8-3m$ olarsa, $m$-in kiçik qiymətini tapın.", "o": ["-6", "4", "-4", "-2", "2"], "a": 2, "e": "$|2a-b|=|b-2a|\\Rightarrow m^2-m=8-3m\\Rightarrow m^2+2m-8=0\\Rightarrow m=2$ və $m=-4$ (hər ikisində $\\ge0$). Smallest: $-4$. Cavab: $-4$ (C).", "test": "OTK — 8 Noyabr Blok sınağı (XI sinif, 1–2-ci qrup)", "topic": "CEB"}

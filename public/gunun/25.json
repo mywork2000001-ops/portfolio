@@ -1,0 +1,1 @@
+{"q": "Məxrəci $217$ olan düzgün kəsrlərdən neçəsi ixtisar olunandır?", "o": ["32", "34", "36", "28", "26"], "a": 2, "e": "$217=7\\cdot31$. Surətlər $1\\ldots216$; $7$-nin misli $30$, $31$-in misli $6$ — ixtisar olunan $36$.", "test": "Mövzu sınağı 1 — Riyaziyyat, XI sinif (28.09.2025)", "topic": "KES"}

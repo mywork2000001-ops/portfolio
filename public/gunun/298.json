@@ -1,0 +1,1 @@
+{"q": "$n(A)=12$, $n(B)=15$, $n(A\\cap B)=3$ olarsa, yalnız $A$ çoxluğunda olan elementlərin sayı yalnız $B$ çoxluğunda olan elementlərin sayından neçə faiz azdır?", "o": ["25%", "12%", "20%", "15%", "28%"], "a": 0, "e": "Yalnız $A$: $12-3=9$; yalnız $B$: $15-3=12$ ⇒ $\\frac{12-9}{12}=25\\%$.", "test": "Birlik — MSİ-1, XI sinif, I blok (Mövzu sınağı)", "topic": "FAI"}

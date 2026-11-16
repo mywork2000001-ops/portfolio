@@ -1,0 +1,1 @@
+{"q": "$a$ həqiqi ədədi üçün $43-(a^2+2)^3$ ifadəsinin ən böyük qiymətini tapın.", "o": ["0", "43", "41", "35", "37"], "a": 3, "e": "$(a^2+2)^3\\ge2^3=8$ ($a=0$), buna görə $\\max=43-8=35$. Cavab: $35$ (D).", "test": "OTK/MQM — Blok sınağı №1 (XI sinif, 2-ci qrup, Variant B)", "topic": "CEB"}

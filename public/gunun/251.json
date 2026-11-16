@@ -1,0 +1,1 @@
+{"q": "İlk beş tək natural ədədin cəmini tapın.", "o": ["36", "35", "25", "21", "16"], "a": 2, "e": "$1+3+5+7+9=25$ (ilk $n$ tək ədədin cəmi $n^2=25$).", "test": "OTK — Sınaq №2, IX sinif (18.10.2026)", "topic": "NAT"}

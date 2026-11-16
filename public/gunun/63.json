@@ -1,0 +1,1 @@
+{"q": "$|x-4|+7$ ifadəsinin ən kiçik qiymətini tapın ($x$ həqiqi ədəddir).", "o": ["3", "4", "7", "11", "0"], "a": 2, "e": "$|x-4|\\ge0$, bərabərlik $x=4$-də ⇒ ən kiçik qiymət $0+7=7$.", "test": "Dahi Academy — MSİ-1, X sinif (01.11.2026)", "topic": "CEB"}

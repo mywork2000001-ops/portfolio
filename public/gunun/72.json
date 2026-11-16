@@ -1,0 +1,1 @@
+{"q": "İkirəqəmli $n$ natural ədədi $7$-yə bölündükdə qalıqda $4$, $5$-ə bölündükdə isə qalıqda $2$ alınır. Bu şərtləri ödəyən ən kiçik $n$ ədədini tapın.", "o": ["27", "30", "32", "37", "39"], "a": 2, "e": "$7k+4$ şəklində ikirəqəmlilər: $11, 18, 25, 32,\\ldots$ $5$-ə bölündükdə $2$ qalıq verən ilki $32$.", "test": "Ümumi Sınaq – 1 (Variant A)", "topic": "NAT"}

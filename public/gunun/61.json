@@ -1,0 +1,1 @@
+{"q": "Kvadratın tərəfini 30% artırdıqda sahəsi neçə faiz artar?", "o": ["60%", "39%", "69%", "9%", "90%"], "a": 2, "e": "Yeni tərəf $1{,}3a$, yeni sahə $(1{,}3a)^2=1{,}69a^2$ — sahə $69\\%$ artır.", "test": "Buraxılış sınaq imtahanı (BSİ-1) — Riyaziyyat, VIII–IX sinif (27.09.2026)", "topic": "FAI"}

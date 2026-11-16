@@ -1,0 +1,1 @@
+{"q": "$a$ və $b$ ardıcıl cüt ədədləri üçün ƏBOB$(a;b)+a+b=44$ olarsa, $ab$ hasilini tapın.", "o": ["140", "110", "560", "440", "220"], "a": 3, "e": "Ardıcıl cüt ədədlər: $a$ və $a+2$, ƏBOB $=2$. $2+a+(a+2)=44\\Rightarrow 2a=40\\Rightarrow a=20,\\ b=22$. $ab=20\\cdot22=440$. Yoxlama: $2+20+22=44$.", "test": "OZAN — Buraxılış sınağı N2, XI sinif", "topic": "NAT"}

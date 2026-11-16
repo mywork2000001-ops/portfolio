@@ -1,0 +1,1 @@
+{"q": "$n$-in neçə tam qiymətində $\\dfrac{2n^2+7n-10}{n}$ kəsrinin qiyməti tam ədəd olar?", "o": ["4", "6", "8", "10", "12"], "a": 2, "e": "$\\dfrac{2n^2+7n-10}{n}=2n+7-\\dfrac{10}{n}$. $n$ — $10$-un tam böləni: $\\pm1,\\ \\pm2,\\ \\pm5,\\ \\pm10$ — $8$ qiymət.", "test": "Buraxılış sınağı 1 — Riyaziyyat, IX sinif (27.09.2026)", "topic": "NAT"}

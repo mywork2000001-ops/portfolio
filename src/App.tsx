@@ -61,8 +61,104 @@ function Logo({ size = 44 }: { size?: number }) {
   return <img src="/logo.png" alt="" width={size} height={size} className="rounded-full" />
 }
 
+// 16.11.2026 (istifadəçi: «sual dəyişmir»): hər gün yeni sual – public/gunun/N.json (scripts/gunun-tapsiriq.py),
+// Bakı tarixinə görə hamı üçün eyni; yüklənməsə – köhnə sabit sual (TASK) göstərilir.
+type Daily = { q: string; o: string[]; a: number; e: string; test?: string }
+const KEYS = 'ABCDE'
+
+function esc(s: string) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+}
+// KaTeX yalnız sual yüklənəndə gəlir (audit: ana səhifə 181 → 451 KB olmasın)
+type KatexLib = { renderToString: (t: string, o: { throwOnError: boolean }) => string }
+let katex: KatexLib | null = null
+const loadKatex = () =>
+  Promise.all([import('katex'), import('katex/dist/katex.min.css')]).then(([k]) => {
+    katex = (k.default ?? k) as KatexLib
+  })
+function tex(s: string) {
+  return s
+    .split(/(\$[^$]+\$)/g)
+    .map((p) =>
+      p.length > 2 && p.startsWith('$') && p.endsWith('$')
+        ? katex
+          ? katex.renderToString(p.slice(1, -1), { throwOnError: false })
+          : esc(p.slice(1, -1))
+        : esc(p),
+    )
+    .join('')
+}
+const Tex = ({ s, className }: { s: string; className?: string }) => (
+  <span className={className} dangerouslySetInnerHTML={{ __html: tex(s) }} />
+)
+
+function useDailyQuestion(): Daily | null {
+  const [d, setD] = useState<Daily | null>(null)
+  useEffect(() => {
+    fetch('/gunun/say.json')
+      .then((r) => r.json())
+      .then(({ n }: { n: number }) => {
+        const day = (ms: number) => Math.floor(ms / 86400000)
+        const i = (((day(Date.now() + 4 * 3600000) - day(Date.UTC(2026, 10, 16))) % n) + n) % n
+        return Promise.all([fetch(`/gunun/${i}.json`).then((r) => r.json()), loadKatex()]).then(([q]) => q)
+      })
+      .then(setD)
+      .catch(() => setD(null))
+  }, [])
+  return d
+}
+
 function DailyTask() {
   const [picked, setPicked] = useState<string | null>(null)
+  const daily = useDailyQuestion()
+  if (daily) {
+    const correct = KEYS[daily.a]
+    const ok = picked === correct
+    return (
+      <div id="gunun" className="w-full rounded-3xl bg-white p-6 text-[#0F172A] shadow-[0_30px_60px_rgba(0,0,0,.35)] sm:p-7">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <span className="rounded-full bg-[#FEF3C7] px-3 py-1.5 text-[13px] font-extrabold text-[#92400E]">Günün tapşırığı</span>
+          <span className="text-[13px] font-semibold text-[#475569]">qeydiyyatsız</span>
+        </div>
+        <p className="mb-4 mt-4 text-lg font-semibold leading-relaxed">
+          <Tex s={daily.q} />
+        </p>
+        <div className="grid grid-cols-2 gap-2.5">
+          {daily.o.map((text, k) => {
+            const key = KEYS[k]
+            let cls = 'border-[#E2E8F0] bg-white hover:border-[#FACC15]'
+            if (picked) {
+              if (key === correct) cls = 'border-[#16A34A] bg-[#DCFCE7] text-[#14532D]'
+              else if (key === picked) cls = 'border-[#DC2626] bg-[#FEE2E2] text-[#7F1D1D]'
+            }
+            return (
+              <button
+                key={key}
+                type="button"
+                disabled={!!picked}
+                onClick={() => setPicked(key)}
+                className={`min-h-[52px] rounded-2xl border-2 px-4 text-left text-[17px] font-bold transition ${cls}`}
+              >
+                {key}) <Tex s={text} />
+              </button>
+            )
+          })}
+        </div>
+        {picked && (
+          <div className={`mt-4 rounded-2xl p-4 ${ok ? 'bg-[#F0FDF4] text-[#14532D]' : 'bg-[#FFF7ED] text-[#7C2D12]'}`} role="status">
+            <div className="font-extrabold">
+              {ok ? 'Düzdür!' : 'Az qaldı!'} Cavab: {correct}) <Tex s={daily.o[daily.a]} />
+            </div>
+            {daily.e && <Tex s={daily.e} className="mt-1.5 block text-[15px] leading-relaxed" />}
+            <div className="mt-2 text-[13px] opacity-80">Sabah – yeni tapşırıq.</div>
+            <a href="#bolmeler" className="mt-3 inline-block rounded-xl px-4 py-3 text-[15px] font-bold text-white" style={{ background: NAVY }}>
+              Daha çox tapşırıq →
+            </a>
+          </div>
+        )}
+      </div>
+    )
+  }
   const ok = picked === TASK.correct
   return (
     <div id="gunun" className="w-full rounded-3xl bg-white p-6 text-[#0F172A] shadow-[0_30px_60px_rgba(0,0,0,.35)] sm:p-7">
@@ -438,8 +534,44 @@ function HomePage() {
   )
 }
 
+// Audit 16.11: hər səhifənin öz başlığı (axtarış/paylaşım), naməlum ünvan – «tapılmadı» + noindex
+const BASE_TITLE = 'Fizmatix — riyaziyyatı düşünərək öyrən'
+function setMeta(title: string, noindex = false) {
+  document.title = title === BASE_TITLE ? title : `${title} · Fizmatix`
+  let m = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null
+  if (noindex) {
+    if (!m) {
+      m = document.createElement('meta')
+      m.name = 'robots'
+      document.head.appendChild(m)
+    }
+    m.content = 'noindex'
+  }
+}
+
+function NotFound() {
+  return (
+    <div className="min-h-screen bg-[#F6F7FB] text-[#0F172A]">
+      <Header />
+      <main className="mx-auto max-w-xl px-4 py-20 text-center">
+        <h1 className="text-3xl font-black">Səhifə tapılmadı</h1>
+        <p className="mt-3 text-[#475569]">Bu ünvanda səhifə yoxdur. Ana səhifədən davam edin.</p>
+        <a href="/" className="mt-6 inline-block rounded-2xl px-5 py-3.5 font-extrabold text-white" style={{ background: NAVY }}>
+          Ana səhifə →
+        </a>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
 export default function App() {
   const path = typeof window !== 'undefined' ? window.location.pathname.replace(/\/+$/, '') : ''
+  const titles: Record<string, string> = { '': BASE_TITLE, '/bugun': 'Günün tapşırığı', '/sinaq': 'Günün sınağı', '/vizual': 'Vizual izahlar' }
+  const sub = path.match(/^\/bolme\/([a-z0-9]+)/)
+  const known = path in titles || path.startsWith('/isbat/') || !!(sub && (SUBS[sub[1]] || FRAMES[sub[1]]))
+  setMeta(titles[path] ?? (path.startsWith('/isbat/') ? 'Vizual isbat' : sub ? (FRAMES[sub[1]]?.title ?? SUBS[sub[1]] ?? BASE_TITLE) : 'Səhifə tapılmadı'), !known)
+  if (!known) return <NotFound />
   if (path === '/bugun') return <TodayPage />
   if (path === '/sinaq') return <DailyTestPage />
   if (path === '/vizual' || path.startsWith('/isbat/'))

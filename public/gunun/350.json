@@ -1,0 +1,1 @@
+{"q": "$x_1$ və $x_2$ ədədləri $x^2-10x+m+6=0$ kvadrat tənliyinin kökləridir. $2x_1-x_2=2$ olarsa, $m=\\,?$", "o": ["12", "14", "16", "18", "20"], "a": 3, "e": "Vyet / Виета / Vieta: $x_1+x_2=10$; $2x_1-x_2=2\\Rightarrow3x_1=12,\\ x_1=4,\\ x_2=6$; $m+6=x_1x_2=24\\Rightarrow m=18$.", "test": "RFO — Rayon mərhələsi, X sinif (24.12.2023)", "topic": "TEN"}

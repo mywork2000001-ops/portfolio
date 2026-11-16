@@ -1,0 +1,1 @@
+{"q": "Dördrəqəmli $\\overline{38ab}$ ədədi $15$-ə tam bölünür. Belə ədədlərin sayını tapın.", "o": ["8", "4", "7", "5", "6"], "a": 4, "e": "$b\\in\\{0;5\\}$ və $3+8+a+b$ $3$-ə bölünməlidir. $b=0$: $a=1,4,7$; $b=5$: $a=2,5,8$ — cəmi $6$.", "test": "OTK — Blok sınağı №1, IX–X sinif, I qrup (04.10.2026)", "topic": "NAT"}

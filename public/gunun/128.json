@@ -1,0 +1,1 @@
+{"q": "$a=400$ olarsa, $\\sqrt{a^2-1596}+\\sqrt{a^2+1604}$ ifadəsinin qiymətini tapın.", "o": ["$400$", "$800$", "$200$", "$1200$", "$1600$"], "a": 1, "e": "$a^2=160000$. $160000-1596=158404=398^2$; $160000+1604=161604=402^2$. Cəm: $398+402=800$. Cavab: $800$ (B).", "test": "DİM — Tələbə qəbulu 2026: Riyaziyyat (II ixtisas qrupu), model", "topic": "LOQ"}

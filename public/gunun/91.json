@@ -1,0 +1,1 @@
+{"q": "$y=\\sqrt{1-x}\\cdot\\sqrt{x-1}$ funksiyasının təyin oblastını tapın.", "o": ["$(1;+\\infty)$", "$(-\\infty;1)$", "$(-\\infty;1]$", "$\\{1\\}$", "$[1;+\\infty)$"], "a": 3, "e": "$1-x\\ge0\\Rightarrow x\\le1$ və $x-1\\ge0\\Rightarrow x\\ge1$. Deməli $x=1$, təyin oblastı $\\{1\\}$. Cavab: D.", "test": "Vahid Mustafayev — ÜSİ–25 Buraxılış (XI sinif)", "topic": "FUN"}

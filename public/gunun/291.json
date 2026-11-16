@@ -1,0 +1,1 @@
+{"q": "$n(A)=11$ və $n(A\\setminus B)=5$ olarsa, $n(A\\cap B)=\\ ?$", "o": ["16", "11", "7", "6", "5"], "a": 3, "e": "$n(A)=n(A\\setminus B)+n(A\\cap B)\\Rightarrow n(A\\cap B)=11-5=6$.", "test": "OBM — Çoxluqlar – 1", "topic": "COX"}

@@ -1,0 +1,1 @@
+{"q": "$\\overline{a4b}$ üçrəqəmli ədədinin $11$-ə, $4$-ə və $5$-ə qalıqsız bölündüyünü bilərək $a$ ədədini tapın.", "o": ["7", "6", "5", "4", "3"], "a": 3, "e": "$4$ və $5$-ə bölünmə: $b=0$ ($40$ $4$-ə bölünür). $11$-ə bölünmə: $a-4+0=0\\Rightarrow a=4$ ($440=11\\cdot40$).", "test": "Buraxılış MS1 (Variant A) — Riyaziyyat", "topic": "NAT"}

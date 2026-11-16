@@ -1,0 +1,1 @@
+{"q": "$A=\\{1;2;3;4;5\\}$ və $B=\\{3;4;5;6;8\\}$ çoxluqları üçün $n(A\\cup B)$-ni tapın.", "o": ["1", "7", "3", "6", "2"], "a": 1, "e": "$A\\cup B=\\{1;2;3;4;5;6;8\\}$ — $7$ element. (Və ya: $5+5-3=7$, ortaq elementlər $3,4,5$.)", "test": "Buraxılış sınaq imtahanı №1 — Riyaziyyat, IX sinif (27.09.2026)", "topic": "COX"}

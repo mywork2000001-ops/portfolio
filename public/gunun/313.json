@@ -1,0 +1,1 @@
+{"q": "$a$ və $b$ natural ədədləri üçün $a:b=3:4$ və ƏKOB$(a,b)-$ƏBOB$(a,b)=33$ olarsa, $a+b$ cəmini tapın.", "o": ["14", "21", "28", "35", "42"], "a": 1, "e": "$a=3k$, $b=4k$: ƏBOB $=k$, ƏKOB $=12k$. $12k-k=11k=33\\Rightarrow k=3$. $a+b=7k=21$.", "test": "Güvən — Buraxılış sınağı 1, XI sinif (04.10.2026)", "topic": "NAT"}

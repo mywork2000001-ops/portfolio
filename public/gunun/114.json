@@ -1,0 +1,1 @@
+{"q": "$A, B, C$ və $D$ nöqtələri düz xətt üzərində ardıcıl yerləşmişdir. $B$ nöqtəsi $AD$ parçasının orta nöqtəsi, $AC:CD=2:1$ verilmişdir. $BC=6$ olarsa, $AD=?$", "o": ["18", "27", "36", "42", "30"], "a": 2, "e": "$AD=3k$, $AC=2k$, $AB=1{,}5k$: $BC=0{,}5k=6\\Rightarrow k=12$, $AD=36$.", "test": "Mövzu sınağı 2 — Riyaziyyat, XI sinif (02.11.2025)", "topic": "PLA"}

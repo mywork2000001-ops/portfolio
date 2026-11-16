@@ -1,0 +1,1 @@
+{"q": "$\\dfrac{3b}{mn}:\\dfrac{b^2}{6m^2n}$ ifadəsini sadələşdirin.", "o": ["$\\frac{2n}{bm}$", "$\\frac{2n}{3b}$", "$\\frac{18m}{b}$", "$\\frac{mn}{2b}$", "$\\frac{9b}{mn}$"], "a": 2, "e": "$\\frac{3b}{mn}\\cdot\\frac{6m^2n}{b^2}=\\frac{18m}{b}$.", "test": "Mövzu sınağı-4 (MSİ-4) — Riyaziyyat, IX sinif (04.01.2026)", "topic": "CEB"}

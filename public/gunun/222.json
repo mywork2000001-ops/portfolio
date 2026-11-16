@@ -1,0 +1,1 @@
+{"q": "$4;\\ 7;\\ 10;\\ \\dots$ ədədi silsilənin $100$-ə bərabər olan həddinin nömrəsini tapın.", "o": ["33", "32", "30", "27", "25"], "a": 0, "e": "$a_1=4$, $d=3$: $a_n=4+3(n-1)=3n+1=100$ ⇒ $n=33$. Yoxlama: $a_{33}=3\\cdot33+1=100$.", "test": "Güvən — Buraxılış sınağı 11, XI sinif (22.02.2026)", "topic": "PRO"}

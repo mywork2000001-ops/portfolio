@@ -1,0 +1,1 @@
+{"q": "Aşağıdakılardan hansı iki iti bucağın cəmi ola <b>bilməz</b>?", "o": ["$36^\\circ$", "$64^\\circ$", "$100^\\circ$", "$144^\\circ$", "$196^\\circ$"], "a": 4, "e": "İti bucaq $&lt;90^\\circ$, deməli iki iti bucağın cəmi $&lt;180^\\circ$. $196^\\circ&gt;180^\\circ$ ola bilməz.", "test": "Dəyər — Sınaq 1, X sinif (19.10.2025)", "topic": "PLA"}

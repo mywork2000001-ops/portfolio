@@ -1,0 +1,1 @@
+{"q": "Hansı ədəd 6-ya qalıqsız bölünür?", "o": ["8024", "5232", "4347", "6142", "5581"], "a": 1, "e": "6-ya bölünmə: ədəd cüt olmalı VƏ rəqəmləri cəmi 3-ə bölünməlidir. $8024$: $8+0+2+4=14$ — yox; $5232$: cüt, $5+2+3+2=12$ — bəli; $4347$ və $5581$ təkdir; $6142$: $13$ — yox.", "test": "Buraxılış sınaq imtahanı №1 — Riyaziyyat, X sinif (20.09.2026)", "topic": "NAT"}

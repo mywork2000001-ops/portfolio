@@ -1,0 +1,1 @@
+{"q": "$x$ və $y$ düz mütənasib kəmiyyətlərdir. $x=25$ olduqda $y=45$-dir. $x$ $20\\%$ artırıldıqda $y$ neçə olar?", "o": ["54", "50", "52", "56", "60"], "a": 0, "e": "$y$ də $20\\%$ artır: $45\\cdot 1{,}2=54$.", "test": "Nisbət. Tənasüb. Faiz — mövzu sınağı (Variant A)", "topic": "FAI"}

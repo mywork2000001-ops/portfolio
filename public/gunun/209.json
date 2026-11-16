@@ -1,0 +1,1 @@
+{"q": "$75$q qızıl və $25$q gümüş və $20$q misdən ibarət ərintinin kütləsinin neçə faizi qızıldır?", "o": ["40", "65", "52,5", "62,5", "25"], "a": 3, "e": "$\\frac{75}{75+25+20}=\\frac{75}{120}=62{,}5\\%$.", "test": "Buraxılış üçün aylıq mövzu sınağı 1, XI sinif (28.10.2026)", "topic": "FAI"}

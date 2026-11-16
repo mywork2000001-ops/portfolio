@@ -1,0 +1,1 @@
+{"q": "$1440$ ədədini $3$, $4$ və $5$ ədədləri ilə düz mütənasib hissələrə böldükdə alınan böyük ədədin üç mislini tapın.", "o": ["1200", "1800", "2400", "3600", "4500"], "a": 1, "e": "$1440:(3+4+5)=120$. Böyük hissə $5\\cdot 120=600$, üç misli $1800$.", "test": "IX–X sinif Buraxılış imtahanı — Sınaq 1 (Riyaziyyat, 2026)", "topic": "FAI"}

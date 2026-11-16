@@ -1,0 +1,1 @@
+{"q": "9-a böldükdə 4, 5-ə böldükdə 2 qalığını verən ən kiçik ikirəqəmli ədədi tapın.", "o": ["22", "13", "31", "49", "67"], "a": 0, "e": "9-a böldükdə qalıq 4 olan ikirəqəmli ədədlər: $13,22,31,\\dots$ 5-ə böldükdə qalıq: $13\\to3$, $22\\to2$ ✓. Cavab: $22$.", "test": "Buraxılış sınaq imtahanı (BSİ-1) — Riyaziyyat, VIII–IX sinif (27.09.2026)", "topic": "NAT"}

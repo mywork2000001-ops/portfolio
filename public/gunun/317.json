@@ -1,0 +1,1 @@
+{"q": "$101, 203, 221, 277, 301, 399$ ədədlərindən neçəsi sadədir?", "o": ["2", "3", "4", "5", "6"], "a": 0, "e": "$203=7\\cdot29$, $221=13\\cdot17$, $301=7\\cdot43$, $399=3\\cdot7\\cdot19$; sadələr $101$ və $277$ — $2$ ədəd.", "test": "Hədəf — Buraxılış imtahanı 1, XI sinif (04.10.2026)", "topic": "NAT"}

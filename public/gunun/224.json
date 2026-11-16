@@ -1,0 +1,1 @@
+{"q": "$\\dfrac{a^2-b^2-c^2+2bc}{a+b-c}$ ifadəsini sadələşdirin.", "o": ["$a-b+c$", "$a+b+c$", "$a-b-c$", "$a+b-c$", "$b+c-a$"], "a": 0, "e": "$a^2-(b-c)^2=(a-b+c)(a+b-c)$ ⇒ $\\dfrac{(a-b+c)(a+b-c)}{a+b-c}=a-b+c$.", "test": "Güvən — Sınaq 4, XI sinif (01.11.2026)", "topic": "CEB"}

@@ -1,0 +1,1 @@
+{"q": "Bütün tillərinin uzunluqları cəmi $24$ sm olan düzgün tetraedrin bir üzünün perimetrini tapın.", "o": ["$8$ sm", "$10$ sm", "$16$ sm", "$14$ sm", "$12$ sm"], "a": 4, "e": "Tetraedrin $6$ tili var: tilin uzunluğu $24:6=4$ sm. Üz — bərabərtərəfli üçbucaq: $3\\cdot4=12$ sm. Cavab: $12$ sm (E).", "test": "Vahid Mustafayev — ÜSİ–21 (XI sinif)", "topic": "STE"}

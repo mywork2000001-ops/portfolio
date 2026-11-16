@@ -1,0 +1,1 @@
+{"q": "$(m-4)^2+|3m+n|=0$ olarsa, $m+n$ cəmini tapın.", "o": ["16", "$-16$", "$-8$", "8", "12"], "a": 2, "e": "İki mənfi olmayan ədədin cəmi $0$-dır ⇒ hər ikisi $0$: $m=4$, $3m+n=0\\Rightarrow n=-12$. $m+n=4-12=-8$.", "test": "Eyler Academy — Buraxılış Sınaq 2, XI sinif", "topic": "TEN"}

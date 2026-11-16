@@ -1,0 +1,1 @@
+{"q": "$x$ tək natural ədəd olarsa, aşağıdakı ifadələrdən hansının qiyməti həmişə cüt ədəddir?", "o": ["$x+2$", "$3x+4$", "$x^2$", "$x^2+x$", "$2x+1$"], "a": 3, "e": "$x^2+x=x(x+1)$ — iki ardıcıl ədədin hasili həmişə cütdür. Digərləri tək olur.", "test": "Güvən — Buraxılış sınağı 1, VIII–IX sinif (04.10.2026)", "topic": "NAT"}

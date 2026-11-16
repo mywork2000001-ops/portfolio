@@ -1,0 +1,1 @@
+{"q": "$72$ ədədinin mürəkkəb bölən sayının, sadə bölən sayına nisbətini tapın.", "o": ["12", "5", "{'az': '4,5', 'ru': '4,5', 'en': '4.5'}", "1", "0"], "a": 2, "e": "$72=2^3\\cdot3^2$: $12$ bölən, sadələr $2$ və $3$; $1$ nə sadə, nə mürəkkəbdir. Mürəkkəb: $12-2-1=9$. $9:2=4{,}5$.", "test": "Mövzu sınağı 2 — Riyaziyyat, XI sinif (02.11.2025)", "topic": "NAT"}

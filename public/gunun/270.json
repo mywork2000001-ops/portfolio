@@ -1,0 +1,1 @@
+{"q": "Ədədi $10$ dəfə azaltdılar. Ədəd neçə faiz azaldı?", "o": ["$90\\%$", "$20\\%$", "$80\\%$", "$10\\%$", "$50\\%$"], "a": 0, "e": "Ədəd $x$ idi, oldu $\\frac{x}{10}$. Azalma: $x-\\frac{x}{10}=\\frac{9x}{10}$, yəni $90\\%$.", "test": "MSİ-1 — XI sinif, I blok (12.10.2024)", "topic": "FAI"}

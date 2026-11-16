@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /tiktok/
+Sitemap: https://fizmatix.com/sitemap.xml

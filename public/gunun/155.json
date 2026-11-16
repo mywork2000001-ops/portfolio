@@ -1,0 +1,1 @@
+{"q": "$(x+1)(x+3)-x(x+4)$ ifadəsini sadələşdirin.", "o": ["4", "$x^2-2$", "$x$", "$3x$", "3"], "a": 4, "e": "$x^2+4x+3-x^2-4x=3$. Cavab: $3$ (E).", "test": "OTK/MQM — Blok sınağı №2 (X sinif, 07.11.2026)", "topic": "CEB"}

@@ -1,0 +1,1 @@
+{"q": "Hər birində $7$ element olan iki çoxluğun birləşməsi $9$ elementli çoxluq olarsa, bu çoxluqların hər ikisinə daxil olan elementlərin sayını tapın.", "o": ["1", "2", "3", "4", "5"], "a": 4, "e": "$n(A\\cap B)=7+7-9=5$.", "test": "Dəyər — Sınaq 1, X sinif (19.10.2025)", "topic": "COX"}

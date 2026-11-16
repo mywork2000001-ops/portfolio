@@ -1,0 +1,1 @@
+{"q": "ƏKOB$(a;b)=60$ olarsa, $a+b$ cəminin ən böyük qiyməti neçə olar? $(a,b\\in N)$", "o": ["108", "120", "124", "130", "132"], "a": 1, "e": "$a$ və $b$ ədədləri $60$-ın bölənləridir ⇒ hər biri $\\le60$. $a=b=60$ olduqda ƏKOB$=60$ və $a+b=120$.", "test": "Vahid Mustafayev — Buraxılış sınağı MSİ-1, XI sinif (2026-2027)", "topic": "NAT"}

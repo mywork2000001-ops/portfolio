@@ -1,0 +1,1 @@
+{"q": "$ax^3+x^2+(b+3)x+1$ və $2x^3+2x+3$ çoxhədlilərinin cəmi $x^2+4$ ikihədlisi olarsa, $a$ və $b$ parametrlərinin hasilini tapın.", "o": ["10", "9", "8", "7", "6"], "a": 0, "e": "Cəm: $(a+2)x^3+x^2+(b+5)x+4=x^2+4$. $a+2=0\\Rightarrow a=-2$; $b+5=0\\Rightarrow b=-5$. $ab=(-2)(-5)=10$.", "test": "Güvən — Buraxılış sınağı 11, XI sinif (22.02.2026)", "topic": "COX"}

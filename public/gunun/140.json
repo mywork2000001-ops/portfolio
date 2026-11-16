@@ -1,0 +1,1 @@
+{"q": "$f(x)=3+4\\sin(5x-1)$ funksiyasının ən kiçik müsbət dövrünü tapın.", "o": ["$\\frac{\\pi}{5}$", "$\\frac{\\pi}{4}$", "$\\frac{2\\pi}{5}$", "$\\frac{\\pi}{2}$", "$\\frac{2\\pi}{3}$"], "a": 2, "e": "$y=A\\sin(kx+b)+c$ funksiyasının dövrü $T=\\frac{2\\pi}{|k|}$. Burada $k=5$: $T=\\frac{2\\pi}{5}$.", "test": "Güvən — Sınaq 10, Variant A (XI sinif)", "topic": "TRQ"}

@@ -1,0 +1,1 @@
+{"q": "$P(x)$ çoxhədlisi üçün $P(3x-2)=x^2+x^3$ olarsa, $P(4)$-ü tapın.", "o": ["18", "16", "12", "14", "10"], "a": 2, "e": "$3x-2=4\\Rightarrow x=2$. $P(4)=2^2+2^3=4+8=12$.", "test": "OZAN — Sınaq (XI sinif, 27.10.2024)", "topic": "CEB"}

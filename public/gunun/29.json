@@ -1,0 +1,1 @@
+{"q": "$\\frac{24}{n}$ və $\\frac{64}{n}$ kəsrlərinin qiyməti natural ədədlər olarsa, $n$-in ən böyük qiymətini tapın.", "o": ["12", "8", "16", "4", "6"], "a": 1, "e": "$n$ həm $24$-ü, həm $64$-ü bölür ⇒ $n\\mid ƏBOB(24,64)=8$; ən böyüyü $8$.", "test": "Birlik — MSİ-1, X sinif, I blok (Mövzu sınağı)", "topic": "NAT"}

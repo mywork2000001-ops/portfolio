@@ -1,0 +1,1 @@
+{"q": "$\\frac{5n+48}{n}$ kəsrinin qiyməti natural ədəd olarsa, $n$-in ən böyük qiymətini tapın.", "o": ["6", "12", "8", "64", "48"], "a": 4, "e": "$\\frac{5n+48}{n}=5+\\frac{48}{n}$ ⇒ $n\\mid48$, ən böyüyü $n=48$.", "test": "Birlik — MSİ-1, IX sinif, I blok (Mövzu sınağı)", "topic": "NAT"}

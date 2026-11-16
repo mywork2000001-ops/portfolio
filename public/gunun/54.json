@@ -1,0 +1,1 @@
+{"q": "Aşağıdakı ədədlərdən hansı həm $4$-ə, həm də $5$-ə qalıqsız bölünür?", "o": ["215", "320", "410", "525", "634"], "a": 1, "e": "$4$ və $5$ qarşılıqlı sadədir ⇒ ədəd $20$-yə bölünməlidir: $320=20\\cdot16$.", "test": "Güvən — Blok sınağı 3, IX sinif, Qrup 1 (25.10.2026)", "topic": "NAT"}

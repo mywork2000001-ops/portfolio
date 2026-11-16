@@ -1,0 +1,1 @@
+{"q": "Aşağıdakılardan hansı artan funksiyadır?", "o": ["$y=-x-4$", "$y=4-2x$", "$y=4-x$", "$y=-x+4$", "$y=3x-1$"], "a": 4, "e": "$y=kx+b$ xətti funksiyası $k&gt;0$ olduqda artandır. A, B, C, D variantlarında $k=-1,-2,-1,-1$ (azalan), E-də $k=3&gt;0$ — artan.", "test": "OZAN — Buraxılış sınağı N2, XI sinif", "topic": "FUN"}

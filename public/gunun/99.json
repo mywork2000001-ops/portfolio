@@ -1,0 +1,1 @@
+{"q": "$ab=3888$ və ortaq olmayan sadə vuruqlarının hasili $12$ olarsa, $\\text{ƏBOB}(a;b)=?$", "o": ["18", "90", "36", "24", "54"], "a": 0, "e": "$a=g a',\\ b=g b'$, $a'b'=12$. $ab=g^2\\cdot12=3888\\Rightarrow g^2=324\\Rightarrow g=18$. Qeyd: şərt belə təfsir edilib.", "test": "OBM — Riyaziyyat A.S. – 5.2", "topic": "NAT"}

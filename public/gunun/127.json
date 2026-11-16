@@ -1,0 +1,1 @@
+{"q": "Ardıcıl $100$ natural ədədlər sırasındakı ən kiçik və ən böyük ədədlərin cəmi $629$-a bərabərdir. Bu sıradakı ən kiçik ədəd neçədir?", "o": ["255", "325", "225", "265", "305"], "a": 3, "e": "Ən kiçik $m$, ən böyük $m+99$: $2m+99=629\\Rightarrow m=265$. Yoxlama: $265+364=629$.", "test": "DİM — Ötən ilin məzunları üçün imtahan (19.04.2026)", "topic": "NAT"}

@@ -1,0 +1,1 @@
+{"q": "$3\\lt x\\lt 4$ olduqda, $|x-3|+|x-4|$ ifadəsinin qiymətini tapın.", "o": ["$1$", "$2$", "$-1$", "$2x-7$", "$7-2x$"], "a": 0, "e": "$(x-3)+(4-x)=1$.", "test": "Güvən — Sınaq 4, 8-9 sinif (01.11.2026)", "topic": "CEB"}

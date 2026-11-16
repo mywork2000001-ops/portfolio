@@ -1,0 +1,1 @@
+{"q": "Aşağıdakı ədədlərdən hansı $4$-ə qalıqsız bölünür?", "o": ["518", "624", "714", "830", "942"], "a": 1, "e": "Ədəd $4$-ə bölünür ⇔ son iki rəqəmindən düzələn ədəd $4$-ə bölünür: $24$ — bəli; $18, 14, 30, 42$ — xeyr.", "test": "Güvən — Buraxılış sınağı 1, X sinif (04.10.2026)", "topic": "NAT"}

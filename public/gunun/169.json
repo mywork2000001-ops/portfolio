@@ -1,0 +1,1 @@
+{"q": "Qonşu bucaqlardan birinin $50\\%$-i digərinin $40\\%$-dən $27^\\circ$ çoxdur. Bu qonşu bucaqların fərqini tapın.", "o": ["$40^\\circ$", "$37^\\circ$", "$35^\\circ$", "$30^\\circ$", "$27^\\circ$"], "a": 0, "e": "$0{,}5x=0{,}4y+27,\\ x+y=180\\Rightarrow x=110^\\circ,\\ y=70^\\circ$; $x-y=40^\\circ$.", "test": "RFO — Rayon mərhələsi, IX sinif (2026)", "topic": "PLA"}

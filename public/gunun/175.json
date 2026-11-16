@@ -1,0 +1,1 @@
+{"q": "Cəmi $90^\\circ$ olan $2$ bucaqdan biri digərinin $4$ mislindən $15^\\circ$ kiçikdir. Bu bucaqlardan böyüyünü tapın.", "o": ["$46^\\circ$", "$49^\\circ$", "$51^\\circ$", "$63^\\circ$", "$69^\\circ$"], "a": 4, "e": "$x+4x-15^\\circ=90^\\circ\\Rightarrow x=21^\\circ$; digəri $69^\\circ$.", "test": "Buraxılış MS3 (Variant A) — Riyaziyyat", "topic": "PLA"}

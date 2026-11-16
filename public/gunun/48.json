@@ -1,0 +1,1 @@
+{"q": "Bölən $15$, natamam qismət $6$ olarsa, bölünənin ən böyük natural qiyməti neçədir?", "o": ["90", "96", "104", "105", "114"], "a": 2, "e": "Ən böyük qalıq $14$: $15\\cdot6+14=104$.", "test": "Güvən — Blok sınağı 2, XI sinif, I və II qrup (11.10.2026)", "topic": "NAT"}

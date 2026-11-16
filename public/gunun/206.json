@@ -1,0 +1,1 @@
+{"q": "$2x^2-5xy+3y^2=(x-y)\\cdot A$ olarsa, $A$ çoxhədlisinin əmsalları cəmini tapın.", "o": ["3", "-2", "-1", "4", "-5"], "a": 2, "e": "$2x^2-5xy+3y^2=(x-y)(2x-3y)$ ⇒ $A=2x-3y$, əmsallar cəmi $2-3=-1$.", "test": "Birlik — MSİ-1, XI sinif, I blok (Mövzu sınağı)", "topic": "CEB"}

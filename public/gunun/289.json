@@ -1,0 +1,1 @@
+{"q": "$(a-3)^{17}+(3-a)^{17}+(a^2-8)^2-64$ ifadəsini vuruqlara ayırın.", "o": ["$a(a-4)^2(a+4)^2$", "$a(a-4)^3$", "$a^2(a-4)(a+4)$", "$a(a-4)^4$", "$a^2(a-4)^2$"], "a": 2, "e": "Tək qüvvət: $(3-a)^{17}=-(a-3)^{17}$, ilk iki hədd yox olur. $(a^2-8)^2-64=(a^2-16)a^2=a^2(a-4)(a+4)$.", "test": "Mövzu sınağı 2 — Riyaziyyat, XI sinif (02.11.2025)", "topic": "CEB"}
