@@ -267,8 +267,30 @@ function Footer() {
   )
 }
 
+// 18.11.2026 (istifadəçi: «indekslərdə yalnız brend göstər — Günün sınağı, Günün tapşırığı, Bölmələr, Vizual izahlar lazım deyil»):
+// bölmə səhifələrində (/bolme/*) yuxarıda yalnız loqo + Fizmatix, menyu və başlıq zolağı yoxdur
+function BrandBar() {
+  return (
+    <header className="px-4 sm:px-6" style={{ background: NAVY }}>
+      <div className="mx-auto flex max-w-6xl items-center py-2.5">
+        <a href="/" className="flex items-center gap-2.5" aria-label="Fizmatix">
+          <Logo size={30} />
+          <span className="text-[20px] font-black tracking-tight text-white">Fizmatix</span>
+        </a>
+      </div>
+    </header>
+  )
+}
+
 // Bölmə səhifəsi: test sayt daxilində (iframe), şagird alt saytın ünvanını görmür
-function FramePage({ title, sub, src }: { title: string; sub?: string; src: string }) {
+function FramePage({ title, sub, src, brandOnly }: { title: string; sub?: string; src: string; brandOnly?: boolean }) {
+  if (brandOnly)
+    return (
+      <div className="flex min-h-screen flex-col bg-[#F6F7FB]">
+        <BrandBar />
+        <iframe title={title} src={src} className="w-full flex-1 border-0 bg-white" style={{ minHeight: 'calc(100dvh - 56px)' }} allow="fullscreen" />
+      </div>
+    )
   return (
     <div className="flex min-h-screen flex-col bg-[#F6F7FB]">
       <Header />
@@ -578,12 +600,12 @@ export default function App() {
       </div>
     )
   const m = path.match(/^\/bolme\/(\w+)$/)
-  if (m && FRAMES[m[1]]) return <FramePage title={FRAMES[m[1]].title} src={FRAMES[m[1]].src} />
+  if (m && FRAMES[m[1]]) return <FramePage title={FRAMES[m[1]].title} src={FRAMES[m[1]].src} brandOnly />
   // PROBLEMLER P-3: /bolme/<alt>/<yol> – birbaşa açılan alt sayt səhifəsi brend daxilində (Caddy bura yönləndirir)
   const g = window.location.pathname.match(/^\/bolme\/([a-z0-9]+)(\/.*)?$/)
   if (g && SUBS[g[1]]) {
     const rest = (g[2] || '/').replace(/\/\/+/g, '/')
-    return <FramePage title={SUBS[g[1]]} src={`https://${g[1]}.fizmatix.com${rest}${window.location.search}${window.location.hash}`} />
+    return <FramePage title={SUBS[g[1]]} src={`https://${g[1]}.fizmatix.com${rest}${window.location.search}${window.location.hash}`} brandOnly />
   }
   return <HomePage />
 }
