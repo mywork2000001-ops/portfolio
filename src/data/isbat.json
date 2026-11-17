@@ -6,7 +6,218 @@
   "topic": "PLA",
   "own": "000b-pifaqor-2-isbat",
   "geogebra": "pifaqor",
-  "tiktok": []
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Oxşar üçbucaqlarla", "steps": [
+    "$\\triangle ABC$-də $\\angle C = 90^\\circ$, $CH$ – hipotenuza endirilmiş hündürlük; $AH = x$, $HB = y$, $x + y = c$.",
+    "$\\triangle ACH \\sim \\triangle ABC$ (ortaq $\\angle A$ və düz bucaq) $\\Rightarrow \\dfrac{x}{b} = \\dfrac{b}{c}$, yəni $b^2 = c\\,x$.",
+    "$\\triangle CBH \\sim \\triangle ABC$ (ortaq $\\angle B$ və düz bucaq) $\\Rightarrow \\dfrac{y}{a} = \\dfrac{a}{c}$, yəni $a^2 = c\\,y$.",
+    "Toplayırıq: $a^2 + b^2 = c\\,(x + y) = c \\cdot c = c^2$. $\\blacksquare$"
+   ]},
+   {"ad": "Sahələrlə (tərəfi a + b olan kvadrat)", "steps": [
+    "Tərəfi $a + b$ olan kvadratın hər tərəfində $a$ və $b$ parçalarını növbə ilə ayırırıq və bölgü nöqtələrini birləşdiririk.",
+    "Künclərdə katetləri $a$, $b$ olan 4 bərabər düzbucaqlı üçbucaq alınır; ortada tərəfi $c$ olan dördbucaqlı qalır.",
+    "Ortadakı fiqurun hər bucağı $180^\\circ - (\\alpha + \\beta) = 90^\\circ$, çünki $\\alpha + \\beta = 90^\\circ$ – deməli, o, kvadratdır.",
+    "Sahələr: $(a + b)^2 = 4 \\cdot \\dfrac{ab}{2} + c^2 \\Rightarrow a^2 + 2ab + b^2 = 2ab + c^2 \\Rightarrow a^2 + b^2 = c^2$. $\\blacksquare$"
+   ]}
+  ]
+ },
+ "kosinuslar": {
+  "title": "Kosinuslar teoremi",
+  "formula": "c² = a² + b² − 2ab·cos γ",
+  "about": "Üçbucağın istənilən tərəfinin kvadratı digər iki tərəfin kvadratları cəmindən bu tərəflərlə aralarındakı bucağın kosinusu hasilinin iki mislini çıxmağa bərabərdir. Pifaqor teoremi – γ = 90° halıdır.",
+  "topic": "PLA",
+  "geogebra": "kosinuslar",
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Koordinatlarla", "steps": [
+    "$C$ təpəsini koordinat başlanğıcına, $CA$ tərəfini $Ox$ oxu üzrə qoyuruq: $C(0;0)$, $A(b;0)$.",
+    "$CB = a$ və $\\angle C = \\gamma$ olduğuna görə $B(a\\cos\\gamma;\\ a\\sin\\gamma)$.",
+    "$c^2 = AB^2 = (a\\cos\\gamma - b)^2 + (a\\sin\\gamma)^2 = a^2\\cos^2\\gamma - 2ab\\cos\\gamma + b^2 + a^2\\sin^2\\gamma$.",
+    "$\\cos^2\\gamma + \\sin^2\\gamma = 1 \\Rightarrow c^2 = a^2 + b^2 - 2ab\\cos\\gamma$. $\\blacksquare$ (Hesab $\\gamma$ kor bucaq olanda da eynidir.)"
+   ]},
+   {"ad": "Vektorlarla", "steps": [
+    "$\\vec{a} = \\overrightarrow{CB}$, $\\vec{b} = \\overrightarrow{CA}$ götürək. Onda $\\overrightarrow{AB} = \\vec{a} - \\vec{b}$.",
+    "$c^2 = |\\vec{a} - \\vec{b}|^2 = (\\vec{a} - \\vec{b})\\cdot(\\vec{a} - \\vec{b}) = |\\vec{a}|^2 - 2\\,\\vec{a}\\cdot\\vec{b} + |\\vec{b}|^2$.",
+    "Skalyar hasil: $\\vec{a}\\cdot\\vec{b} = ab\\cos\\gamma$.",
+    "Deməli, $c^2 = a^2 + b^2 - 2ab\\cos\\gamma$. $\\blacksquare$"
+   ]}
+  ]
+ },
+ "sinuslar": {
+  "title": "Sinuslar teoremi",
+  "formula": "a / sin α = b / sin β = c / sin γ = 2R",
+  "about": "Üçbucağın tərəfləri qarşısındakı bucaqların sinusları ilə mütənasibdir; nisbət xaricə çəkilmiş çevrənin diametrinə bərabərdir.",
+  "topic": "PLA",
+  "geogebra": "sinuslar",
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Xaricə çəkilmiş çevrənin diametri ilə", "steps": [
+    "$\\triangle ABC$-yə xaricdən çəkilmiş çevrədə $B$ nöqtəsindən $BD$ diametrini çəkirik: $BD = 2R$.",
+    "Diametrə söykənən bucaq düzdür: $\\angle BCD = 90^\\circ$.",
+    "$\\angle BDC$ və $\\angle A$ eyni $BC$ qövsünə söykənir: $\\alpha$ iti olanda $\\angle BDC = \\alpha$, kor olanda $\\angle BDC = 180^\\circ - \\alpha$; hər iki halda $\\sin\\angle BDC = \\sin\\alpha$.",
+    "Düzbucaqlı $\\triangle BCD$-də $a = BC = BD \\sin\\angle BDC = 2R\\sin\\alpha \\Rightarrow \\dfrac{a}{\\sin\\alpha} = 2R$. Eyni qayda ilə $b$ və $c$ üçün. $\\blacksquare$"
+   ]},
+   {"ad": "Sahə ilə", "steps": [
+    "Üçbucağın sahəsi üç cür yazılır: $S = \\tfrac12 bc\\sin\\alpha = \\tfrac12 ac\\sin\\beta = \\tfrac12 ab\\sin\\gamma$.",
+    "Hamısını $\\tfrac{abc}{2}$-yə bölürük: $\\dfrac{\\sin\\alpha}{a} = \\dfrac{\\sin\\beta}{b} = \\dfrac{\\sin\\gamma}{c} = \\dfrac{2S}{abc}$.",
+    "Tərsinə çeviririk: $\\dfrac{a}{\\sin\\alpha} = \\dfrac{b}{\\sin\\beta} = \\dfrac{c}{\\sin\\gamma}$. $\\blacksquare$ (Bu isbat nisbətlərin bərabərliyini verir; $2R$ – birinci isbatdan.)"
+   ]}
+  ]
+ },
+ "heron": {
+  "title": "Heron düsturu",
+  "formula": "S = √(p(p − a)(p − b)(p − c))",
+  "about": "Üçbucağın sahəsi yalnız üç tərəfi ilə hesablanır; p = (a + b + c)/2 – yarımperimetr.",
+  "topic": "PLA",
+  "geogebra": "heron",
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Kosinuslar teoremi ilə", "steps": [
+    "$S = \\tfrac12 ab\\sin\\gamma \\Rightarrow 16S^2 = 4a^2b^2\\sin^2\\gamma = 4a^2b^2 - (2ab\\cos\\gamma)^2$.",
+    "Kosinuslar teoremindən $2ab\\cos\\gamma = a^2 + b^2 - c^2$, deməli $16S^2 = (2ab)^2 - (a^2 + b^2 - c^2)^2$.",
+    "Kvadratlar fərqi: $16S^2 = (2ab - a^2 - b^2 + c^2)(2ab + a^2 + b^2 - c^2) = \\big(c^2 - (a - b)^2\\big)\\big((a + b)^2 - c^2\\big)$.",
+    "Yenə kvadratlar fərqi: $16S^2 = (c - a + b)(c + a - b)(a + b - c)(a + b + c)$.",
+    "$a + b + c = 2p$ olduğundan mötərizələr $2(p - a)$, $2(p - b)$, $2(p - c)$, $2p$-dir: $16S^2 = 16\\,p(p - a)(p - b)(p - c)$. $\\blacksquare$"
+   ]},
+   {"ad": "Daxilə çəkilmiş çevrə ilə", "steps": [
+    "Təpələrdən daxili çevrəyə toxunanların uzunluqları $x = p - a$, $y = p - b$, $z = p - c$-dir (çünki $y + z = a$, $z + x = b$, $x + y = c$) və $x + y + z = p$.",
+    "Mərkəz bucaqların tənböləni üzərindədir: $\\operatorname{tg}\\dfrac{\\alpha}{2} = \\dfrac{r}{x}$, $\\operatorname{tg}\\dfrac{\\beta}{2} = \\dfrac{r}{y}$, $\\operatorname{tg}\\dfrac{\\gamma}{2} = \\dfrac{r}{z}$.",
+    "$\\dfrac{\\alpha}{2} + \\dfrac{\\beta}{2} + \\dfrac{\\gamma}{2} = 90^\\circ$ olanda $\\operatorname{tg}\\tfrac{\\alpha}{2}\\operatorname{tg}\\tfrac{\\beta}{2} + \\operatorname{tg}\\tfrac{\\beta}{2}\\operatorname{tg}\\tfrac{\\gamma}{2} + \\operatorname{tg}\\tfrac{\\gamma}{2}\\operatorname{tg}\\tfrac{\\alpha}{2} = 1$ (bu, $\\operatorname{tg}\\big(\\tfrac{\\alpha}{2} + \\tfrac{\\beta}{2}\\big) = \\operatorname{ctg}\\tfrac{\\gamma}{2}$ bərabərliyindən çıxır).",
+    "Yerinə yazırıq: $r^2\\Big(\\dfrac{1}{xy} + \\dfrac{1}{yz} + \\dfrac{1}{zx}\\Big) = 1 \\Rightarrow r^2\\,\\dfrac{x + y + z}{xyz} = 1 \\Rightarrow r^2 = \\dfrac{xyz}{p}$.",
+    "$S = p\\,r \\Rightarrow S^2 = p^2 r^2 = p\\,xyz = p(p - a)(p - b)(p - c)$. $\\blacksquare$"
+   ]}
+  ]
+ },
+ "ptolemey": {
+  "title": "Ptolemey teoremi",
+  "formula": "AC · BD = AB · CD + BC · AD",
+  "about": "Çevrəyə daxil edilmiş dördbucaqlıda diaqonalların hasili qarşı tərəflərin hasilləri cəminə bərabərdir.",
+  "topic": "PLA",
+  "geogebra": "ptolemey",
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Oxşar üçbucaqlarla", "steps": [
+    "$BD$ diaqonalı üzərində elə $K$ nöqtəsi götürürük ki, $\\angle BAK = \\angle CAD$ olsun.",
+    "$\\triangle ABK \\sim \\triangle ACD$: $\\angle BAK = \\angle CAD$, $\\angle ABK = \\angle ABD = \\angle ACD$ (eyni $AD$ qövsünə söykənən daxili bucaqlar). Deməli $\\dfrac{AB}{AC} = \\dfrac{BK}{CD}$, yəni $AB \\cdot CD = AC \\cdot BK$.",
+    "$\\angle BAK = \\angle CAD$ bərabərliyinə $\\angle KAC$ əlavə etsək, $\\angle BAC = \\angle KAD$ alınır.",
+    "$\\triangle ABC \\sim \\triangle AKD$: $\\angle BAC = \\angle KAD$, $\\angle ACB = \\angle ADB = \\angle ADK$ (eyni $AB$ qövsü). Deməli $\\dfrac{BC}{KD} = \\dfrac{AC}{AD}$, yəni $BC \\cdot AD = AC \\cdot KD$.",
+    "Toplayırıq: $AB \\cdot CD + BC \\cdot AD = AC\\,(BK + KD) = AC \\cdot BD$. $\\blacksquare$"
+   ]},
+   {"ad": "Triqonometriya ilə", "steps": [
+    "Qövslər: $\\smile AB = 2\\alpha$, $\\smile BC = 2\\beta$, $\\smile CD = 2\\gamma$, $\\smile DA = 2\\delta$, $\\alpha + \\beta + \\gamma + \\delta = 180^\\circ$.",
+    "Vətər qövsə söykənən daxili bucaqla: $AB = 2R\\sin\\alpha$, $BC = 2R\\sin\\beta$, $CD = 2R\\sin\\gamma$, $DA = 2R\\sin\\delta$, $AC = 2R\\sin(\\alpha + \\beta)$, $BD = 2R\\sin(\\beta + \\gamma)$.",
+    "Göstərmək lazımdır: $\\sin(\\alpha + \\beta)\\sin(\\beta + \\gamma) = \\sin\\alpha\\sin\\gamma + \\sin\\beta\\sin\\delta$, burada $\\sin\\delta = \\sin(\\alpha + \\beta + \\gamma)$.",
+    "Hasili cəmə çeviririk: sol tərəf $= \\tfrac12\\big[\\cos(\\alpha - \\gamma) - \\cos(\\alpha + 2\\beta + \\gamma)\\big]$.",
+    "Sağ tərəf $= \\tfrac12\\big[\\cos(\\alpha - \\gamma) - \\cos(\\alpha + \\gamma)\\big] + \\tfrac12\\big[\\cos(\\alpha + \\gamma) - \\cos(\\alpha + 2\\beta + \\gamma)\\big]$ – eynidir. Hər iki tərəfi $4R^2$-ə vurub teoremi alırıq. $\\blacksquare$"
+   ]}
+  ]
+ },
+ "menelay": {
+  "title": "Menelay teoremi",
+  "formula": "(AC₁/C₁B) · (BA₁/A₁C) · (CB₁/B₁A) = 1",
+  "about": "Düz xətt üçbucağın BC, CA, AB tərəflərini (və ya uzantılarını) A₁, B₁, C₁ nöqtələrində kəsirsə, bu üç nisbətin hasili 1-dir.",
+  "topic": "PLA",
+  "geogebra": "menelay",
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Paralel xətt ilə", "steps": [
+    "$C$ nöqtəsindən $AB$-yə paralel xətt çəkirik; o, kəsən xətti $T$ nöqtəsində kəsir.",
+    "$\\triangle A_1CT \\sim \\triangle A_1BC_1$ ($CT \\parallel BC_1$): $\\dfrac{BA_1}{A_1C} = \\dfrac{BC_1}{CT}$.",
+    "$\\triangle B_1CT \\sim \\triangle B_1AC_1$ ($CT \\parallel AC_1$): $\\dfrac{CB_1}{B_1A} = \\dfrac{CT}{AC_1}$.",
+    "Hasil: $\\dfrac{AC_1}{C_1B}\\cdot\\dfrac{BC_1}{CT}\\cdot\\dfrac{CT}{AC_1} = 1$. $\\blacksquare$"
+   ]},
+   {"ad": "Perpendikulyarlarla", "steps": [
+    "$A$, $B$, $C$ nöqtələrindən kəsən xəttə perpendikulyarlar endiririk: uzunluqları $h_A$, $h_B$, $h_C$.",
+    "$C_1$ nöqtəsində təpəli düzbucaqlı üçbucaqlar oxşardır: $\\dfrac{AC_1}{C_1B} = \\dfrac{h_A}{h_B}$. Eyni qayda ilə $\\dfrac{BA_1}{A_1C} = \\dfrac{h_B}{h_C}$, $\\dfrac{CB_1}{B_1A} = \\dfrac{h_C}{h_A}$.",
+    "Hasil: $\\dfrac{h_A}{h_B}\\cdot\\dfrac{h_B}{h_C}\\cdot\\dfrac{h_C}{h_A} = 1$. $\\blacksquare$"
+   ]}
+  ]
+ },
+ "ceva": {
+  "title": "Çeva teoremi",
+  "formula": "(AC₁/C₁B) · (BA₁/A₁C) · (CB₁/B₁A) = 1",
+  "about": "AA₁, BB₁, CC₁ parçaları (A₁ ∈ BC, B₁ ∈ CA, C₁ ∈ AB) bir nöqtədə kəsişirsə, nisbətlərin hasili 1-dir; tərsinə, hasil 1-dirsə, parçalar bir nöqtədə kəsişir.",
+  "topic": "PLA",
+  "geogebra": "ceva",
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Sahələrlə", "steps": [
+    "$O$ – kəsişmə nöqtəsi. Hündürlüyü ortaq olan üçbucaqların sahələri oturacaqlar kimi nisbətdədir: $\\dfrac{BA_1}{A_1C} = \\dfrac{S_{ABA_1}}{S_{ACA_1}} = \\dfrac{S_{OBA_1}}{S_{OCA_1}}$.",
+    "Bərabər nisbətlərin surət və məxrəclərini çıxırıq: $\\dfrac{BA_1}{A_1C} = \\dfrac{S_{ABA_1} - S_{OBA_1}}{S_{ACA_1} - S_{OCA_1}} = \\dfrac{S_{AOB}}{S_{AOC}}$.",
+    "Eyni qayda ilə: $\\dfrac{CB_1}{B_1A} = \\dfrac{S_{BOC}}{S_{BOA}}$, $\\dfrac{AC_1}{C_1B} = \\dfrac{S_{COA}}{S_{COB}}$.",
+    "Hasil: $\\dfrac{S_{COA}}{S_{COB}}\\cdot\\dfrac{S_{AOB}}{S_{AOC}}\\cdot\\dfrac{S_{BOC}}{S_{BOA}} = 1$. $\\blacksquare$"
+   ]},
+   {"ad": "Menelay teoremi ilə (və tərs teorem)", "steps": [
+    "$\\triangle ABA_1$ və $C$–$O$–$C_1$ xətti üçün Menelay: $\\dfrac{AC_1}{C_1B}\\cdot\\dfrac{BC}{CA_1}\\cdot\\dfrac{A_1O}{OA} = 1$.",
+    "$\\triangle AA_1C$ və $B$–$O$–$B_1$ xətti üçün Menelay: $\\dfrac{AO}{OA_1}\\cdot\\dfrac{A_1B}{BC}\\cdot\\dfrac{CB_1}{B_1A} = 1$.",
+    "Vururuq: $BC$, $AO$, $OA_1$ ixtisar olunur və $\\dfrac{AC_1}{C_1B}\\cdot\\dfrac{BA_1}{A_1C}\\cdot\\dfrac{CB_1}{B_1A} = 1$ qalır. $\\blacksquare$",
+    "Tərs teorem: hasil 1 olsun. $AA_1$ və $BB_1$-in kəsişməsindən keçən $CC'$ çəksək, isbat olunana görə $\\dfrac{AC'}{C'B} = \\dfrac{AC_1}{C_1B}$; $AB$ parçasını bu nisbətdə bölən yalnız bir nöqtə var, deməli $C' = C_1$."
+   ]}
+  ]
+ },
+ "paraleloqram": {
+  "title": "Paraleloqramın diaqonalları",
+  "formula": "d₁² + d₂² = 2(a² + b²)",
+  "about": "Paraleloqramın diaqonallarının kvadratları cəmi tərəflərinin kvadratları cəminə bərabərdir. Nəticə – medianın uzunluğu.",
+  "topic": "PLA",
+  "geogebra": "paraleloqram",
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Kosinuslar teoremi ilə", "steps": [
+    "$ABCD$ paraleloqramında $AB = a$, $AD = b$, $\\angle A = \\alpha$; onda $\\angle B = 180^\\circ - \\alpha$.",
+    "$\\triangle ABD$: $d_2^2 = BD^2 = a^2 + b^2 - 2ab\\cos\\alpha$.",
+    "$\\triangle ABC$ ($BC = b$): $d_1^2 = AC^2 = a^2 + b^2 - 2ab\\cos(180^\\circ - \\alpha) = a^2 + b^2 + 2ab\\cos\\alpha$.",
+    "Toplayırıq: $d_1^2 + d_2^2 = 2(a^2 + b^2)$. $\\blacksquare$"
+   ]},
+   {"ad": "Vektorlarla", "steps": [
+    "$\\vec{a} = \\overrightarrow{AB}$, $\\vec{b} = \\overrightarrow{AD}$. Onda $\\overrightarrow{AC} = \\vec{a} + \\vec{b}$, $\\overrightarrow{DB} = \\vec{a} - \\vec{b}$.",
+    "$|\\vec{a} + \\vec{b}|^2 + |\\vec{a} - \\vec{b}|^2 = (a^2 + 2\\,\\vec{a}\\cdot\\vec{b} + b^2) + (a^2 - 2\\,\\vec{a}\\cdot\\vec{b} + b^2) = 2a^2 + 2b^2$. $\\blacksquare$",
+    "Nəticə (median): $\\triangle ABC$-də $BM$ medianını özü qədər uzatsaq, tərəfləri $a$, $c$ və diaqonalları $b$, $2m_b$ olan paraleloqram alınır: $4m_b^2 + b^2 = 2(a^2 + c^2) \\Rightarrow m_b = \\tfrac12\\sqrt{2a^2 + 2c^2 - b^2}$."
+   ]}
+  ]
+ },
+ "varinyon": {
+  "title": "Varinyon teoremi",
+  "formula": "S(MNPQ) = S(ABCD) / 2",
+  "about": "İstənilən dördbucaqlının tərəflərinin orta nöqtələri paraleloqramın təpələridir; qabarıq dördbucaqlıda onun sahəsi dördbucaqlının sahəsinin yarısıdır.",
+  "topic": "PLA",
+  "geogebra": "varinyon",
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Orta xətt ilə", "steps": [
+    "$M, N, P, Q$ – $AB, BC, CD, DA$ tərəflərinin ortaları.",
+    "$\\triangle ABC$-də $MN$ orta xətdir: $MN \\parallel AC$, $MN = \\tfrac12 AC$. $\\triangle ACD$-də $QP$ orta xətdir: $QP \\parallel AC$, $QP = \\tfrac12 AC$.",
+    "$MN$ və $QP$ paralel və bərabərdir $\\Rightarrow MNPQ$ paraleloqramdır.",
+    "Sahə: $S_{AMQ} = \\tfrac14 S_{ABD}$, $S_{CNP} = \\tfrac14 S_{CBD}$ (tərəflər iki dəfə kiçik, bucaq ortaq) $\\Rightarrow$ cəmi $\\tfrac14 S$. Eyni qayda ilə $S_{BMN} + S_{DPQ} = \\tfrac14 S$.",
+    "Qalan: $S_{MNPQ} = S - \\tfrac14 S - \\tfrac14 S = \\tfrac12 S$. $\\blacksquare$"
+   ]},
+   {"ad": "Vektorlarla", "steps": [
+    "Orta nöqtələr: $M = \\tfrac{A + B}{2}$, $N = \\tfrac{B + C}{2}$, $P = \\tfrac{C + D}{2}$, $Q = \\tfrac{D + A}{2}$.",
+    "$\\overrightarrow{MN} = N - M = \\tfrac{C - A}{2}$ və $\\overrightarrow{QP} = P - Q = \\tfrac{C - A}{2}$.",
+    "$\\overrightarrow{MN} = \\overrightarrow{QP} \\Rightarrow MNPQ$ paraleloqramdır (hətta dördbucaqlı qabarıq olmasa da). $\\blacksquare$"
+   ]}
+  ]
+ },
+ "bissektrisa": {
+  "title": "Tənbölən haqqında teorem",
+  "formula": "AL / LC = AB / BC",
+  "about": "Üçbucağın tənböləni qarşı tərəfi bucağın tərəfləri ilə mütənasib hissələrə bölür.",
+  "topic": "PLA",
+  "geogebra": "bissektrisa",
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Sahələrlə", "steps": [
+    "$BL$ – $\\angle B$-nin tənböləni, $\\angle ABL = \\angle LBC = \\tfrac{\\beta}{2}$.",
+    "$\\triangle ABL$ və $\\triangle CBL$-in $B$-dən hündürlüyü ortaqdır: $\\dfrac{S_{ABL}}{S_{CBL}} = \\dfrac{AL}{LC}$.",
+    "Digər tərəfdən $\\dfrac{S_{ABL}}{S_{CBL}} = \\dfrac{\\tfrac12 AB\\cdot BL\\sin\\tfrac{\\beta}{2}}{\\tfrac12 CB\\cdot BL\\sin\\tfrac{\\beta}{2}} = \\dfrac{AB}{BC}$. $\\blacksquare$"
+   ]},
+   {"ad": "Paralel xətt ilə", "steps": [
+    "$C$-dən $BL$-ə paralel xətt çəkirik; o, $AB$-nin uzantısını $E$ nöqtəsində kəsir.",
+    "$\\angle BEC = \\angle ABL$ (uyğun bucaqlar), $\\angle BCE = \\angle LBC$ (çarpaz bucaqlar), $\\angle ABL = \\angle LBC \\Rightarrow \\triangle BCE$ bərabəryanlıdır: $BE = BC$.",
+    "Fales teoremi ($BL \\parallel EC$): $\\dfrac{AL}{LC} = \\dfrac{AB}{BE} = \\dfrac{AB}{BC}$. $\\blacksquare$"
+   ]}
+  ]
  },
  "kvadrat-cem": {
   "title": "Cəmin kvadratı",
@@ -15,7 +226,18 @@
   "topic": "CEB",
   "own": "000c-kvadrat-cem-2-isbat",
   "geogebra": "kvadrat-cem",
-  "tiktok": []
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Cəbri", "steps": [
+    "$(a + b)^2 = (a + b)(a + b) = a\\cdot a + a\\cdot b + b\\cdot a + b\\cdot b$ (paylama qanunu).",
+    "$ab = ba \\Rightarrow (a + b)^2 = a^2 + 2ab + b^2$. $\\blacksquare$"
+   ]},
+   {"ad": "Sahələrlə", "steps": [
+    "Tərəfi $a + b$ olan kvadratın tərəflərini $a$ və $b$ hissələrinə bölüb kəsişən iki düz xətt çəkirik.",
+    "Kvadrat 4 hissəyə bölünür: tərəfi $a$ olan kvadrat ($a^2$), tərəfi $b$ olan kvadrat ($b^2$) və tərəfləri $a$, $b$ olan iki düzbucaqlı ($ab + ab$).",
+    "Sahələri toplayırıq: $(a + b)^2 = a^2 + 2ab + b^2$. $\\blacksquare$"
+   ]}
+  ]
  },
  "daire-sahesi": {
   "title": "Dairənin sahəsi",
@@ -23,7 +245,19 @@
   "about": "Dairəni nazik sektorlara kəsib düzəltsək, düzbucaqlıya bənzəyir: uzunluğu πr, eni r.",
   "topic": "PLA",
   "own": "000d-daire-sahesi-2-isbat",
-  "tiktok": []
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Sektorları düzmək", "steps": [
+    "Dairəni $2n$ bərabər sektora bölüb onları növbə ilə (biri yuxarı, biri aşağı) bir sıraya düzürük.",
+    "Alınan fiqurun hündürlüyü $r$-ə, uzunluğu çevrə uzunluğunun yarısına – $\\pi r$-ə yaxındır; $n$ böyüdükcə fiqur düzbucaqlıya yaxınlaşır.",
+    "Limitdə $S = \\pi r \\cdot r = \\pi r^2$. $\\blacksquare$"
+   ]},
+   {"ad": "Daxili düzgün çoxbucaqlılarla", "steps": [
+    "Çevrəyə daxil edilmiş düzgün $n$-bucaqlını mərkəzdən $n$ bərabəryanlı üçbucağa bölürük: $S_n = \\tfrac12 P_n\\, h_n$ ($P_n$ – perimetr, $h_n$ – apofema).",
+    "$n \\to \\infty$ olanda $P_n \\to 2\\pi r$ (çevrənin uzunluğu), $h_n \\to r$, $S_n \\to S$.",
+    "Deməli $S = \\tfrac12 \\cdot 2\\pi r \\cdot r = \\pi r^2$. $\\blacksquare$"
+   ]}
+  ]
  },
  "natural-cem": {
   "title": "1 + 2 + … + n cəmi",
@@ -31,7 +265,19 @@
   "about": "İki eyni pilləkən birləşəndə düzbucaqlı alınır.",
   "topic": "PRO",
   "own": "000e-natural-cem-2-isbat",
-  "tiktok": []
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Qauss üsulu", "steps": [
+    "$S = 1 + 2 + \\dots + n$ və tərsinə $S = n + (n - 1) + \\dots + 1$.",
+    "Altalta toplayırıq: hər cüt $n + 1$ verir, cütlərin sayı $n$: $2S = n(n + 1)$.",
+    "$S = \\dfrac{n(n + 1)}{2}$. $\\blacksquare$"
+   ]},
+   {"ad": "Riyazi induksiya", "steps": [
+    "$n = 1$: $1 = \\tfrac{1\\cdot 2}{2}$ – doğrudur.",
+    "Fərz edək ki, $1 + \\dots + k = \\tfrac{k(k + 1)}{2}$. Onda $1 + \\dots + k + (k + 1) = \\tfrac{k(k + 1)}{2} + (k + 1) = \\tfrac{(k + 1)(k + 2)}{2}$.",
+    "Düstur $n = k + 1$ üçün də doğrudur, deməli bütün natural $n$ üçün. $\\blacksquare$"
+   ]}
+  ]
  },
  "daxili-cevre": {
   "title": "Daxilə çəkilmiş çevrənin radiusu",
@@ -39,6 +285,19 @@
   "about": "Üçbucağın sahəsi yarımperimetrlə daxilə çəkilmiş çevrənin radiusunun hasilinə bərabərdir: S = p · r.",
   "topic": "PLA",
   "own": "000-incircle",
-  "tiktok": []
+  "geogebra": "daxili-cevre",
+  "tiktok": [],
+  "proofs": [
+   {"ad": "Üç üçbucağa bölmək", "steps": [
+    "$I$ – daxilə çəkilmiş çevrənin mərkəzi; o, hər tərəfdən $r$ məsafədədir (radius toxunma nöqtəsində tərəfə perpendikulyardır).",
+    "$\\triangle ABC$-ni $\\triangle IBC$, $\\triangle ICA$, $\\triangle IAB$-yə bölürük; hündürlüklərin hamısı $r$-dir.",
+    "$S = \\tfrac12 a r + \\tfrac12 b r + \\tfrac12 c r = \\tfrac{a + b + c}{2}\\, r = p\\,r \\Rightarrow r = \\dfrac{S}{p}$. $\\blacksquare$"
+   ]},
+   {"ad": "Toxunanlarla (deltoidlər)", "steps": [
+    "Hər təpədən çevrəyə çəkilmiş iki toxunan bərabərdir: $x = p - a$, $y = p - b$, $z = p - c$.",
+    "Üçbucaq 3 deltoidə bölünür (təpə, iki toxunma nöqtəsi və $I$); hər deltoid tərəfləri $r$ və toxunan olan iki düzbucaqlı üçbucaqdır: sahələr $xr$, $yr$, $zr$.",
+    "$S = (x + y + z)\\,r = p\\,r$. $\\blacksquare$"
+   ]}
+  ]
  }
 }
