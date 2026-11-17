@@ -7,11 +7,12 @@ const BANK_BASE = 'https://bank.fizmatix.com/P0010_Riyaziyyat_Test_Bank/app/publ
 const SUBS: Record<string, string> = {
   dim5: 'DİM 5-ci sinif', dim9: 'DİM 9-cu sinif', dim11: 'DİM 11 – sınaqlar', bank: 'Test bankı', buraxilis: 'Buraxılış sınaqları',
   sinif: 'Sinif testləri', sinaq: 'Sınaqlar', nezeri: 'Nəzəri testlər', sual: 'Günün tapşırığı', derslik5: 'Riyaziyyat 5 – dərslik',
-  derslik6: 'Riyaziyyat 6 – dərslik', ingilis: 'İngilis dili',
+  derslik6: 'Riyaziyyat 6 – dərslik', ingilis: 'İngilis dili', guven: 'Güvən 11 – test bankı',
 }
 const FRAMES: Record<string, { title: string; src: string }> = {
   dim9: { title: 'DİM 9-cu sinif', src: 'https://dim9.fizmatix.com/' },
   bank: { title: 'Test bankı', src: 'https://bank.fizmatix.com/' },
+  guven: { title: 'Güvən 11 – test bankı', src: 'https://guven.fizmatix.com/' },
 }
 
 // Günün sınağı: Bakı tarixinə görə hamı üçün eyni test (15.11.2026 = 1-ci test)
