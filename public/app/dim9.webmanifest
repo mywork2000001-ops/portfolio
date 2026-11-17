@@ -1,0 +1,25 @@
+{
+ "id": "/bolme/dim9",
+ "name": "DİM 9-cu sinif · Fizmatix",
+ "short_name": "DİM 9-cu sinif",
+ "start_url": "/bolme/dim9",
+ "scope": "/bolme/dim9",
+ "display": "standalone",
+ "background_color": "#0B1026",
+ "theme_color": "#0B1026",
+ "lang": "az",
+ "icons": [
+  {
+   "src": "/app/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/app/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}

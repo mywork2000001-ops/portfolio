@@ -582,6 +582,18 @@ function NotFound() {
   )
 }
 
+// 18.11.2026 (istifadəçi: «Chrome-da quraşdırmaq olmur»): alt sayt brend daxilində açılır, ona görə tətbiq manifesti
+// bu səhifədə olmalıdır – hər bölmənin öz manifesti (public/app/<alt>.webmanifest, scripts/bolme-pwa.py) və sw (scope /bolme/)
+function bolmeApp(sub: string) {
+  if (!document.querySelector('link[rel="manifest"]')) {
+    const l = document.createElement('link')
+    l.rel = 'manifest'
+    l.href = `/app/${sub}.webmanifest`
+    document.head.appendChild(l)
+  }
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('/bolme/sw.js', { scope: '/bolme/' }).catch(() => {})
+}
+
 export default function App() {
   const path = typeof window !== 'undefined' ? window.location.pathname.replace(/\/+$/, '') : ''
   const titles: Record<string, string> = { '': BASE_TITLE, '/bugun': 'Günün tapşırığı', '/sinaq': 'Günün sınağı', '/vizual': 'Vizual izahlar' }
@@ -600,6 +612,8 @@ export default function App() {
       </div>
     )
   const m = path.match(/^\/bolme\/(\w+)$/)
+  const sb = path.match(/^\/bolme\/([a-z0-9]+)/)
+  if (sb && SUBS[sb[1]]) bolmeApp(sb[1])
   if (m && FRAMES[m[1]]) return <FramePage title={FRAMES[m[1]].title} src={FRAMES[m[1]].src} brandOnly />
   // PROBLEMLER P-3: /bolme/<alt>/<yol> – birbaşa açılan alt sayt səhifəsi brend daxilində (Caddy bura yönləndirir)
   const g = window.location.pathname.match(/^\/bolme\/([a-z0-9]+)(\/.*)?$/)

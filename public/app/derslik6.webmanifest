@@ -1,0 +1,25 @@
+{
+ "id": "/bolme/derslik6",
+ "name": "Riyaziyyat 6 – dərslik · Fizmatix",
+ "short_name": "Riyaziyyat 6 – dərslik",
+ "start_url": "/bolme/derslik6",
+ "scope": "/bolme/derslik6",
+ "display": "standalone",
+ "background_color": "#0B1026",
+ "theme_color": "#0B1026",
+ "lang": "az",
+ "icons": [
+  {
+   "src": "/app/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png",
+   "purpose": "any"
+  },
+  {
+   "src": "/app/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "any maskable"
+  }
+ ]
+}
